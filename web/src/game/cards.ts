@@ -9,6 +9,7 @@
  */
 
 import type { World } from './world.ts';
+import { hasJapanese, tr, trSentence, wrapJa } from '../i18n/index.ts';
 import type { PlayerRecord } from './player.ts';
 import { CARD_WIDTH, type Card, type CardTone } from './io.ts';
 
@@ -22,11 +23,15 @@ export function hitChance(armour: number): number {
 
 /** A card's line with `label` at its left and `value` at its right. */
 export function cardRow(label: string, value: string): string {
+  label = tr(label);
+  value = tr(value);
   return label + value.padStart(CARD_WIDTH - label.length);
 }
 
 /** Words wrapped to a card's width. */
 export function cardWrap(text: string): string[] {
+  text = trSentence(text);
+  if (hasJapanese(text)) return wrapJa(text, CARD_WIDTH);
   const lines: string[] = [];
   for (const word of text.split(' ')) {
     const last = lines.length - 1;

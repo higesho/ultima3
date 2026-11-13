@@ -1,0 +1,1404 @@
+# Ultima III 日本語訳
+# 書式: 英文<TAB>訳。\n は改行。英文が re: で始まる行は正規表現（全体に一致）で、訳の $1 などに取り出した部分が入る
+# 英文の前後の空白と改行は比べるときに除き、訳の前後にそのまま付く。メッセージ欄は1行16マス、日本語1字が1マス
+
+# ================= 原作の表: 職業・種族 =================
+Fighter	戦士
+Cleric	僧侶
+Wizard	魔術師
+Thief	盗賊
+Paladin	聖騎士
+Barbarian	蛮族
+Lark	道化
+Illusionist	幻術師
+Druid	ドルイド
+Alchemist	錬金術師
+Ranger	レンジャー
+Human	人間
+Elf	エルフ
+Dwarf	ドワーフ
+Bobbit	ボビット
+Fuzzy	ファジー
+
+# ================= 原作の表: メッセージ =================
+Ouch, that hurt.	いたっ、痛いなあ。
+TIME IS BENEATH YOU	時は なんじの下に
+Read John Varley	ジョン・ヴァーリィを読め
+Dismount	降りる
+Refer to the "Ultima III Manual" for help choosing a race, type, etc.	種族や職業の選び方は「Ultima III マニュアル」を見よ。
+Attack-	攻撃-
+Board	乗る
+Mount horse!	馬に 乗った!
+Board frigate!	船に 乗った!
+Descend	下りる
+Enter	入る:
+dungeon!	ダンジョン!
+town!	町!
+castle!	城!
+shrine!\nWho enters?-	ほこら!\nだれが 入る?-
+Fire	大砲
+Direct-	方向-
+Get chest!\nPlr to search-	宝箱を 開ける!\nだれが 調べる-
+No such player!	その者は いない!
+ACID TRAP!	酸の わな!
+POISON TRAP!	毒の わな!
+BOMB TRAP!	爆弾の わな!
+GAS TRAP!	ガスの わな!
+Trap evaded!	わなを かわした!
+GOLD+	金+
+(overflowing!)	(持ちきれない!)
+and a	と
+and	と
+Hand Equipment!\nFrom plr-	装備を 渡す!\nだれから-
+to plr-	だれへ-
+Amount-	量-
+Not enough!	足りない!
+Too much!	多すぎる!
+Done!	済んだ!
+None!	ない!
+How many-	いくつ-
+Which weapon:	どの武器:
+Which armour:	どの防具:
+In use!	使用中!
+Ignite a torch	たいまつを ともす
+Whose torch-	だれの たいまつ-
+Join gold to-	金を 集める-
+None left!	もう ない!
+Klimb	上る
+Look-	見る-
+Modify order!\nPlr:-	並びを 変える!\nだれ:-
+Aborted!	やめた!
+Plr:-	だれ:-
+Exchanged!	入れかえた!
+Negate time!\nWhose powd?-	時を 止める!\nだれの粉?-
+Peer at gem!\nWhose gem-	宝石を のぞく!\nだれの宝石-
+Quit & save...	中断と セーブ…
+Only on surface!	地上でのみ!
+Moves	歩数
+Ready for # -	武器を 持つ #-
+Weapon-	武器-
+Not owned!	持っていない!
+Not allowed!	使えない!
+Ready	持つ
+Plr to steal-	だれが 盗む-
+Failed!	失敗!
+Watch out!	気をつけろ!
+Who will\nTransact-	だれが\n話す-
+GOOD DAY!	よき日を!
+WELCOME MY CHILD	よくぞ来た、子よ
+EXPERIENCE MORE!!	もっと 経験を 積め!!
+NO MORE!	これ以上は ない!
+SEEK YE, THE\nMARK OF KINGS!	王のしるしを\n探すがよい!
+THOU ART GREATER	そなたは 強くなった
+Unlock-	鍵を あける-
+Whose key-	だれの鍵-
+Volume	音
+ON!	オン!
+OFF!	オフ!
+Wear for # -	防具を 着る #-
+Armour-	防具-
+X-it	降りる
+X-it craft	乗り物を 降りる
+Yell, whom?-	叫ぶ、だれが?-
+Ztats for #-	状態 #-
+WHAT?	なに?
+<-WHAT?	<-なに?
+Not here!	ここでは だめ!
+ALL PLAYERS OUT!	全員 倒れた!
+A ship was\ndestroyed!	船が 1せき\n沈められた!
+A HUGE SWIRLING\n --WHIRLPOOL--\n  ENGULFS YOU\n AND YOUR SHIP\n DRAGGING BOTH\n     TO A\n WATERY GRAVE!	巨大な\n --うず潮--\nが 船もろとも\n一行を のみこみ\n海の 墓場へと\n引きずりこむ!
+AS THE WATER\n ENTERS  YOUR\nLUNGS YOU PASS\nINTO DARKNESS!	水が 肺に\n 流れこみ、\n意識は 闇へと\n沈んでいく…
+You awaken on\n the shores of\n  a forgotten\nland. Your ship\n and crew lost\n  to the sea!	気がつくと\n 忘れられた地の\n 浜辺に いた。\n 船も 船乗りも\n 海に 消えた!
+All is dark!	真っ暗だ!
+You made it!	助かった!
+INVALID MOVE!	進めない!
+destroyed!	消え去った!
+OFF only!	オフだけ!
+Cast by whom?-	だれが 唱える?-
+Cancelled.	とりやめた。
+Not a mage!	呪文は 使えない!
+M.P. too low!	MPが 足りない!
+Spell type W/C-	呪文の種類 W/C-
+Cleric Spell-	僧侶の呪文-
+Wizard Spell-	魔術の呪文-
+Incapacitated!	動けない!
+Cure whom?-	だれを 解毒?-
+Resurect whom?-	だれを 蘇生?-
+Recall whom?-	だれを 呼び戻す?-
+Heal whom?-	だれを 治す?-
+KILLED! Exp.+	倒した! 経験+
+****VICTORY!****	*****勝利!*****
+---CONFLICT!!---\n->	-----戦闘!!-----\n->
+----PLAYER-	----仲間-
+Cast Spell!	呪文を 唱える!
+Negate Time!	時を 止める!
+Ready a Weapon!	武器を 持て!
+Ztats	状態
+NOT USABLE CMD!	使えない 命令!
+Plr-	仲間-
+-Missed!	-はずれ!
+-HIT!	-命中!
+KILLED!!!	死んだ!!!
+attack\nDir-	の攻撃\n方向-
+HIT!	命中!
+Missed!	はずれ!
+-PILFERED!	-盗まれた!
+-POISONED!	-毒を受けた!
+It's dark!	暗い!
+You see a vision\nof the Time Lord\n  He tells you\n the one way is\n   Love, Sol,\n Moons & Death,\n all else fails.	時の王の 幻が\n見える。\n  彼は 告げる\n ただ一つの 道は\n 愛、太陽、\n 月、そして死。\n ほかは 失敗する
+A fountain, who\nwill drink?-	泉がある。\nだれが 飲む?-
+Can't	できない
+YUCK! HORRIBLE!	うえっ! ひどい!
+How wonderful!	すばらしい!
+ARGH! BLAH! YUK!	ぐえっ! まずい!
+Ah! That's nice!	ああ、うまい!
+Strange wind!	あやしい風!
+ARGH!! A TRAP!!	うわっ! わなだ!!
+Evaded!!	かわした!!
+A red hot rod\nin the wall, who\nwill touch?-	壁に 赤く焼けた\n棒がある。\nだれが さわる?-
+It left a mark!	しるしが ついた!
+Gremlins!	グレムリンだ!
+Misty Writing:	かすんだ 文字:
+Advance	前進
+Retreat	後退
+Turn right	右を 向く
+Turn left	左を 向く
+INVALID CMD!	使えない 命令!
+NOT A DNG CMD!	地下では だめ!
+None	なし
+Strength	力
+Dexterity	素早さ
+Intelligence	知力
+Wisdom	知恵
+Offering*100-	ささげ物*100-
+Then be off!	ならば 去れ!
+YOU CAN'T CHEAT\nTHE GODS!	神々を あざむく\nことは できぬ!
+SHAZAM!	シャザーム!
+Exit to Sosaria!	ソサリアへ 出る!
+POISON!	毒!
+STARVING!	飢えている!
+WELCOME TO\nTHE PUB!	酒場へ\nようこそ!
+Here friend,\nhave a drink!\nIt cost 7 g.p.\nYOU PAY?-	さあ、友よ\n一杯 やりな!\n7gp だよ。\n払うかい?-
+LEAVE MY SHOP!\nYOU SCUM!!	出ていけ!\nこのクズめ!!
+WHAT? CAN'T PAY!\nOUT YOU SCUM!	なに? 払えない?\n出ていけ クズめ!
+another drink?	もう一杯?
+Its been a\npleasure!!	まいど\nありがとよ!!
+YE LOCAL\n     GROCER	   食料品店
+RATIONS:\n1 g.p. EACH,\nHow many would\nyou like?-	食料:\n1つ 1gp。\nいくつ\n買うかね?-
+WHAT? CAN'T PAY!\nOUT! YOU SCUM!!!	なに? 払えない?\n出ていけ クズめ!!!
+Thank you,\nanything else?	ありがとう、\nほかには?
+very well,\ncome again!	そうかい、\nまた どうぞ!
+CLERICAL HEALING\nSACRAMENTS:	僧院の 癒しの\n秘跡:
+1-Curing,\n 2-Healing,\n 3-Resurrection,\n 4-Recallings.\nYour needs:	1-解毒\n 2-治療\n 3-蘇生\n 4-灰からの蘇生\nご用は:
+1\n\nA curing will\ncost 100 g.p.\nWilt thou pay?	1\n\n解毒は\n100gp じゃ。\n払うかな?
+2\n\nHealings cost\n200 g.p. Wilt\nthou pay?	2\n\n治療は\n200gp じゃ。\n払うかな?
+3\n\nResurrection\ncost 500 g.p.\nWilt thou pay?	3\n\n蘇生は\n500gp じゃ。\n払うかな?
+Resurrect whom?-	だれを 蘇生?-
+4\n\nRecallings\ncost 900 g.p.\nWilt thou pay?	4\n\n灰からの蘇生は\n900gp じゃ。\n払うかな?
+Welcome to the\nWEAPONS SHOP!\n\nlist (Y/N)?-	武器屋へ\nようこそ!\n\n品物を 見るか?-
+Welcome to the\nWEAPONS SHOP!	武器屋へ\nようこそ!
+Buy or Sell?-	買うか 売るか?-
+Your interest?-	どれにする?-
+I'm very sorry\nbut you haven't\nthe gold!	悪いが\n金が 足りないよ!
+Here you are\nmay it serve\nyou well!	さあ どうぞ。\n役に 立つと\nいいね!
+for sale?-	どれを 売る?-
+You don't own\none of those!	それは\n持ってないよ!
+Thank you!	ありがとう!
+More gold than\nthou can carry!\nSale cancelled.	金が 多すぎて\n持てないよ!\n売るのは やめだ。
+oh well, maybe\nnext time.	まあいいさ、\nまたの機会に。
+Welcome to the\nARMOUR SHOP!\n\nlist (Y/N)?-	防具屋へ\nようこそ!\n\n品物を 見るか?-
+Welcome to the\nARMOUR SHOP!	防具屋へ\nようこそ!
+THE GUILD SHOP\nWE HAVE:	ギルドの店\n品物は:
+Your need:	ご用は:
+Thank you,\ncome again!	ありがとう、\nまた どうぞ!
+Anything else?	ほかには?
+RADRION:\nPROPHET OF LIFE!	ラドリオン:\n生命の預言者!
+How many 100gp\nis your\noffering?	100gp を\nいくつ\nささげるか?
+More offering?	まだ ささげるか?
+Fare thee well\nand good luck!	達者でな、\n幸運を!
+EQUINE EMPORIUM:	馬屋:
+-Horses cost,	頭の 値段は、
+gp. will you\nbuy?	gp。\n買うかね?
+Ah, too bad.\nThese are the\nbest in town!	ああ、残念。\nこの町 いちばんの\n馬なのに!
+I'm sorry but\nyou haven't\nthe gold!	悪いが\n金が 足りないよ!
+May you ride\nfast and true\nfriend!	速く 確かに\n駆けておくれ、\n友よ!
+I'm sorry,\nbut you have\nnot the funds!	悪いが\n金が 足りないよ!
+Without proper\nofferings I\ncan not help!	ふさわしい\nお布施が なくば\n助けられぬ!
+I'm sorry but\nthou hast not\ngold enough.	気の毒だが\n金が 足りぬ。
+Fare thee well,\nmy children.	達者でな、\n子らよ。
+Welcome to the\n   Shrine  of	ようこそ
+Other command!\nWhose action-	その他!\nだれが-
+AVAILABLE:	品物:
+Cmd:-	命令:-
+Dir-	方向-
+CONGRATULATIONS!\n   THOU  HAST\n   COMPLEATED\nEXODUS: ULTIMA 3\n       IN	 おめでとう!\n  そなたは\nエクソダス:\nウルティマIIIを
+MOVES\nREPORT THY FEAT!	手で 成しとげた!\n偉業を 伝えよ!
+Exotics!	秘宝だ!
+A card, with\nstrange marks!	奇妙な しるしの\nついた カード!
+Not enough gold!	金が 足りない!
+Yell 'EVOCARE'	「EVOCARE」と 叫べ
+Everyone\nhates you.	みんな\nおまえが 嫌いだ。
+No effect!	効き目なし!
+Resurrecting!	蘇生中!
+Southwest	南西
+Southeast	南東
+Northwest	北西
+Northeast	北東
+All is calm.	すべて 静かだ。
+CONGRATULATIONS! Thou hast compleated EXODUS: ULTIMA III in	おめでとう! そなたは エクソダス: ウルティマIIIを
+A huge swirling whirlpool engulfs you and your ship, dragging both to a watery grave!	巨大な うず潮が 船もろとも 一行を のみこみ、海の 墓場へと 引きずりこむ!
+As the water enters your lungs, you pass into darkness!	水が 肺に 流れこみ、意識は 闇へと 沈んでいく…
+You awaken on the shores of a forgotten land, your ship and crew lost to the sea!	気がつくと 忘れられた地の 浜辺に いた。船も 船乗りも 海に 消えた!
+Welcome to the Shrine of	ようこそ、ほこらへ:
+Not enough room!	もう 入らない!
+Keys-50gp\n Torches-5/30gp\n Powders-90gp\n Gems-75gp	鍵-50gp\n たいまつ-5/30gp\n 時の粉-90gp\n 宝石-75gp
+Exodus is\nno more!	エクソダスは\n滅びた!
+SOSARIA THANKS\nYOU!	ソサリアは\nそなたに 感謝する!
+
+# ================= 原作の表: そのほかのメッセージ =================
+JOURNEY ONWARD	旅に出る
+(Not formed)	(組んでいない)
+REGISTER	名簿
+FORM THE PARTY	仲間を 組む
+(Party in use)	(仲間に いる)
+PLAYER-1-	仲間-1-
+PLAYER-2-	仲間-2-
+PLAYER-3-	仲間-3-
+PLAYER-4-	仲間-4-
+(Not a player)	(仲間ではない)
+(Formed)	(組んだ)
+DISPERSE THE PARTY	仲間を 解散する
+(No one there)	(だれも いない)
+(Dispersed!)	(解散した!)
+CREATE	作る
+Entry#	番号#
+(1-20 only!)	(1〜20のみ!)
+(Not empty!)	(空いていない!)
+Character creation aborted.	人物を 作るのを やめた。
+Character created.	人物を 作った。
+TERMINATE!	消す!
+(With a party)	(仲間に いる)
+(Terminated)	(消した)
+© 1983-2014 Lord British & LairWare	(C) 1983-2014 Lord British & LairWare
+FROM THE DEPTHS OF HELL...	地獄の 底より…
+...HE COMES FOR VENGEANCE!	…やつは 復讐に やってくる!
+From the depths of hell...	地獄の 底より…
+...he comes for vengeance!	…やつは 復讐に やってくる!
+Return to the view	タイトルに もどる
+Organize a party	仲間の 編成
+Journey onward	旅に出る
+OPTIONS:	えらぶ:
+PARTY ORGANIZATION	仲間の 編成
+Examine the register	名簿を 見る
+Create a character	人物を 作る
+Form the party	仲間を 組む
+Disperse the party	仲間を 解散する
+Terminate a character	人物を 消す
+Main  menu	最初へ
+(Player is out!)	(倒れている!)
+CALM WINDS	   無風
+NORTH WIND	   北風
+EAST  WIND	   東風
+SOUTH WIND	   南風
+WEST  WIND	   西風
+Lvl:0	階:0
+HEAD-	向き-
+-East	-東
+-West	-西
+PRESS  <SPACE>	スペースキー
+ULTIMA III	ウルティマIII
+entered this place	ここに 入った
+entered this dungeon	この ダンジョンに 入った
+entered this town	この 町に 入った
+entered this castle	この 城に 入った
+entered the whirlpool	うず潮に 入った
+exited a location or saved the game	場所を 出たか セーブした
+Level	レベル
+Good Health	良好
+Poisoned	毒
+Dead	死亡
+Ashes	灰
+Female	女
+Male	男
+Other	その他
+Magic Points	魔力
+Hit Points	体力
+Experience	経験
+Food	食料
+Gold	金
+non-mage	魔法なし
+Card of Death	死のカード
+Card of Sol	太陽のカード
+Card of Love	愛のカード
+Card of Moons	月のカード
+Mark of Force	力のしるし
+Mark of Fire	炎のしるし
+Mark of the Snake	蛇のしるし
+Mark of Kings	王のしるし
+Torches	たいまつ
+Gems	宝石
+Keys	鍵
+Powders	時の粉
+Ratings	能力
+Values	数値
+Weapons	武器
+Armour	防具
+Stuff	持ち物
+Game Paused	一時停止
+- empty -	- 空き -
+Click mouse or press a key to continue	クリックするか キーを押すと 続く
+last saved the game outdoors	最後に 外で セーブした
+
+# ================= 原作の表: 酒場のうわさ・賢者の歌 =================
+Thank you,\nkindly!	どうも\nありがとよ!
+Ambrosia,\never heard\nof it?	アンブロシアって\n聞いたことが\nあるかい?
+Dawn,\nthe city of\nmyths & magic!	ドーンは\n神話と魔法の\n町だ!
+The conjunction\nof the moons\nfinds link!	二つの月が\n重なるとき\n道が つながる!
+Nasty creatures,\n  nasty  dark,\nsure thee ready,\nfore thee embark	いやな化け物、\n  いやな闇、\n備えを 固めて\nから 船出しな
+None return or\n so I'm told,\nfrom the pool,\ndark and cold!	あのうず潮から\n 戻った者は\nいないってよ、\n暗く 冷たい\n海の底さ!
+Shrines of\n  knowledge,\n  shrines of\n   strength,\n all are lost\ninto the brink!	  知恵の ほこら\n  力の ほこら\n どれも みんな\n 失われて\n しまったのさ!
+Fountains fair\n       &\n fountains foul\nall are found in\n dungeons bowel	 きれいな泉も\n きたない泉も\nみんな ダンジョン\n の奥に あるよ
+EXODUS:\n   Ultima III\n which is next?\nNow could it be.	   エクソダス:\n ウルティマIII\n その次は?\n さて なんだろう
+Seek ye out the\n Lord of Time,\nand the one way\nis a sure find!	時の王を\n 探し出せば\nただ一つの 道が\nきっと 見つかる!
+And so the sage\nsaid unto thee\n'If thou can\nsolve my rhyme,	かくて 賢者は\nそなたに 告げた\n「わが謎を\n解けたなら
+you'll learn of\nmarks & playing\ncards & hidden\nholy shrines.	しるしと\nカードと 隠された\n聖なるほこらの\nことが わかろう。
+Of marks I say\nthere are but 4\nof fire, force,\nsnake & king.	しるしは ただ4つ\n炎、力、\n蛇、そして王。
+Learn their use\nin Devil Guard,\nor death you'll\nsurely bring.	その使い道は\nデビルガードで\n学べ。さもなくば\n死を 招こう。
+Shrines there\nare again but 4\nto which you\ngo and pray.	ほこらも また\nただ4つ、\nそこへ行き\n祈るがよい。
+Their uses are\ninnumerable and\nclues throughout\nI say	その使い道は\n数知れず、\n手がかりは\n至る所に ある。
+The cards their\nsuits do number\n4, called sol,\nmoon, death\nand love.	カードの 組は\n4つ、\nその名は 太陽、\n月、死、\nそして愛。
+Unto the Montors\nthou must go\nfor guidance\nfrom above.	モントールへ\n行き、天の\n導きを\n求めよ。
+To aid thee in\nthy cryptic\nsearch, to\ndungeons thou\nmust fare.	謎めいた 探索の\n助けとして\nダンジョンへ\n向かうがよい。
+There seek out\nthe Lord of Time\nto help you\nif he cares.'	そこで 時の王を\n探し出せ、\n心あらば\n助けてくれよう」
+
+# ================= 原作の表: 呪文 =================
+REPOND	レポンド
+MITTAR	ミッタル
+LORUM	ローラム
+DOR ACRON	ドル・アクロン
+SUR ACRON	スル・アクロン
+FULGAR	フルガー
+DAG ACRON	ダグ・アクロン
+MENTAR	メンタル
+DAG LORUM	ダグ・ローラム
+FAL DIVI	ファル・ディヴィ
+NOXUM	ノクサム
+DECORP	デコープ
+ALTAIR	アルテア
+DAG MENTAR	ダグ・メンタル
+NECORP	ネコープ
+PONTORI	ポントリ
+APPAR UNEM	アッパル・ウネム
+SANCTU	サンクトゥ
+LUMINAE	ルミナエ
+REC SU	レク・ス
+REC DU	レク・ドゥ
+LIB REC	リブ・レク
+ALCORT	アルコート
+SEQUITU	セクイトゥ
+SOMINAE	ソミナエ
+SANCTU MANI	サンクトゥ・マニ
+VIEDA	ヴィエダ
+EXCUUN	エクスクーン
+SURMANDUM	サーマンダム
+ZXKUQYB	ズクスクイブ
+ANJU SERMANI	アンジュ・セルマニ
+
+# ================= 原作の表: 地形・乗り物・人・怪物 =================
+Water	水
+Grass	草原
+Brush	やぶ
+Forest	森
+Mountains	山
+Dungeon	ダンジョン
+Towne	町
+Castle	城
+Floor	床
+Chest	宝箱
+Horse	馬
+Frigate	フリゲート船
+Whirlpool	うず潮
+Serpent	海蛇
+Man-O-War	軍艦
+Pirate	海賊
+Merchant	商人
+Jester	道化師
+Guard	衛兵
+Lord British	ロード・ブリティッシュ
+Orc	オーク
+Skeleton	がいこつ
+Giant	巨人
+Daemon	デーモン
+Pincher	ピンチャー
+Dragon	ドラゴン
+Balron	バルロン
+Exodus	エクソダス
+Force Field	力場
+Lava	溶岩
+Moon Gate	ムーンゲート
+Wall	壁
+Void	虚空
+Snake	大蛇
+Magic	魔法
+Shrine	ほこら
+Brigand	山賊
+Cutpurse	すり
+Goblin	ゴブリン
+Troll	トロール
+Ghoul	グール
+Zombie	ゾンビ
+Golem	ゴーレム
+Titan	タイタン
+Gargoyle	ガーゴイル
+Mane	マネス
+Snatch	スナッチ
+Bradle	ブラドル
+Griffon	グリフォン
+Wyvern	ワイバーン
+Orcus	オーカス
+Devil	悪魔
+Dungeons	ダンジョン
+Townes	町
+Castles	城
+Floors	床
+Chests	宝箱
+Horses	馬たち
+Frigates	フリゲート船たち
+Whirlpools	うず潮
+Serpents	海蛇たち
+Man-O-Wars	軍艦たち
+Pirates	海賊たち
+Merchants	商人たち
+Jesters	道化師たち
+Guards	衛兵たち
+Fighters	戦士たち
+Clerics	僧侶たち
+Wizards	魔術師たち
+Thieves	盗賊たち
+Orcs	オークたち
+Skeletons	がいこつたち
+Giants	巨人たち
+Daemons	デーモンたち
+Pinchers	ピンチャーたち
+Dragons	ドラゴンたち
+Balrons	バルロンたち
+Force Fields	力場
+Moon Gates	ムーンゲート
+Walls	壁
+Rangers	レンジャーたち
+Brigands	山賊たち
+Cutpurses	すりたち
+Goblins	ゴブリンたち
+Trolls	トロールたち
+Ghouls	グールたち
+Zombies	ゾンビたち
+Golems	ゴーレムたち
+Titans	タイタンたち
+Gargoyles	ガーゴイルたち
+Manes	マネスたち
+Snatches	スナッチたち
+Bradles	ブラドルたち
+Griffons	グリフォンたち
+Wyverns	ワイバーンたち
+Orcuses	オーカスたち
+Devils	悪魔たち
+
+# ================= 原作の表: 武器・防具 =================
+Hand	素手
+Dagger	短剣
+Mace	メイス
+Sling	スリング
+Axe	斧
+Bow	弓
+Sword	剣
+2-H-Swd	両手剣
++2 Axe	+2斧
++2 Bow	+2弓
++2 Swd	+2剣
+Gloves	手甲
++4 Axe	+4斧
++4 Bow	+4弓
++4 Swd	+4剣
+Exotic	秘宝
+Skin	素肌
+Cloth	布の服
+Leather	革の鎧
+Chain	鎖帷子
+Plate	板金鎧
++2 Chain	+2鎖帷子
++2 Plate	+2板金鎧
+
+# ================= 方角 =================
+Pass	パス
+North	北
+South	南
+East	東
+West	西
+
+# ================= 会話（町・城） =================
+WEST-8, SOUTH-35,\nAND AWAIT DAWN!	西へ8、南へ35\nそして 夜明けを 待て!
+COOKIE CRIES:\nLIKE THE FOOD?	クッキーの声:\n料理は いかが?
+IOLO SINGS:\nHO EYO HE HUM!	イオロの歌:\nホー エヨ ヘ ハム!
+GWINO SINGS:\nMUH EH OYE OH!	グウィノの歌:\nムー エー オイ オー!
+PHANTOM FIGHTER:\nTHE FOOD SUCKS!!	幻の戦士:\n飯が まずい!!
+THE WISE CLERIC:\n4 CARDS, 4 SLOTS	賢き僧侶:\nカード4枚、穴も4つ
+ENTER...\nIF YOU DARE!	入るがよい…\n勇気が あれば!
+CHUCKLES:\nWELCOME ALL!	チャックルズ:\nみんな ようこそ!
+ALL MAY ENTER,\nNONE SHALL LEAVE	だれでも 入れる、\nだが だれも 出られぬ
+CHOOSE WELL,\nYOUR WAY!	道は よく\n選ぶがよい!
+SAVE ME,\nPLEASE!!!	どうか\n助けて!!!
+DEATH IS HERE!	ここには 死がある!
+LEAVE, QUICKLY!	すぐに 去れ!
+IS IT NOT LOVELY	すてきでしょう?
+QUEST YE UNTO\nLOST AMBROSIA!	失われた\nアンブロシアを\n探し求めよ!
+ONLY WITH EXOTIC\nARMS CAN YOU WIN	秘宝の武具で\nなければ 勝てぬ
+EXODUS LIES\nBEYOND THE\nSILVER SNAKE!	エクソダスは\n銀の大蛇の\n向こうに いる!
+'DAWN' COMES\nEACH NEW PAIR!	「ドーン」は\n月が そろうたび\n現れる!
+DUPRE LAUGHS:\nDRINK UP!	デュプレの笑い:\n飲め 飲め!
+ROUND BACK!	裏へ まわれ!
+HO! HO!	ホー! ホー!
+IF YOU DARE!	勇気が あれば!
+WE ARE HONORED!	光栄です!
+SEEK YE, THE\nSHRINES OF TRUTH	真実の ほこらを\n探すがよい
+<BRIBE> GUARDS!\nTHEY WILL LEAVE!	衛兵に\n<BRIBE>せよ!\n去ってくれる!
+TO ARMS! AND\nTO BATTLE!!	武器を取れ!\nいざ 戦いへ!!
+PEACE BE\nWITH YOU.	あなたに\n平和を。
+I'VE BEEN BEYOND\nTHE WHIRLPOOL!	わしは うず潮の\n向こうへ\n行ったことが ある!
+DAWN RISES IN\nTHE DARK FOREST.	ドーンは\n暗い森に\n現れる。
+DEPART!\n   OR DIE!!!	去れ!\n さもなくば 死ね!!!
+SEARCH, AND\nYE SHALL FIND!	探せ、\nさらば 見つからん!
+WELCOME TO THE\nCIRCLE OF LIGHT!	光の輪へ\nようこそ!
+BONIM ANIMA\nTEURI, AMEN!	ボニム アニマ\nテウリ、アーメン!
+KNOW YE WELL\nTHY FOES!!	己の敵を\nよく 知れ!!
+SHAWN:\nI GOO FOR LIV!	ショーン:\nずっと ベトベト!
+<INSERT> CARDS\nINTO PANELS!	カードを 台に\n<INSERT>せよ!
+4 CARDS,\n4 PANELS	カード4枚、\n台も4つ
+JOLLY JOE:\nHO HO HO!	陽気なジョー:\nホー ホー ホー!
+BABY BOB:\nBRING ME BUCKS!	赤ん坊ボブ:\nお金 ちょうだい!
+'CARDS' ARE\nUSEFUL!	「カード」は\n役に立つ!
+'MARKS' ARE\nUSEFUL!	「しるし」は\n役に立つ!
+'EXOTICS' ARE\nUSEFUL!	「秘宝」は\n役に立つ!
+GOOD STUFF EH?	いい品だろ?
+SEEK THE JESTER\nIN CASTLE FIRE!	炎の城で\n道化師を 探せ!
+SENTRI:\nGOOD GROG!	セントリ:\nうまい酒だ!
+SHAMINO:\nGOOD FOOD!	シャミノ:\nうまい飯だ!
+<SEARCH>\nTHE SHRINES!	ほこらで\n<SEARCH>せよ!
+<SEARCH>\nFOR CARDS!	<SEARCH>して\nカードを 探せ!
+NONE SHALL PASS!	だれも 通さぬ!
+YO! HO! HO!\nAND A BOTTLE\nOF RUM!!!	ヨー ホー ホー\nラム酒を\n1本!!!
+WATCH IT BUB!	気をつけな、\nあんちゃん!
+EVER SEEN,\nEXOTIC ARMS?	秘宝の武具を\n見たことは\nあるかい?
+EXOTIC CLUES\nFOUND AT DAWN!	秘宝の\n手がかりは\nドーンに ある!
+ONLY EXOTICS\nWILL PROTECT\nFROM GREAT EVIL!	大いなる悪から\n身を 守れるのは\n秘宝だけ!
+DON'T YOU WISH\nYOU WERE A\nJESTER!	道化師に\nなりたいと\n思わない?
+WELCOME,\nTO DAWN!	ドーンへ\nようこそ!
+<DIG> ON ISLES	島で <DIG>せよ
+<DIG> UP EXOTICS	<DIG>して 秘宝を
+<DIG> CAREFULLY!	注意して <DIG>!
+JOLLY GOOD DAY!	ごきげんよう!
+DAWN LASTS\nBUT A BRIEF\nMOMENT!	ドーンは\nほんの つかのま\nしか ない!
+AMBROSIA AWAITS!	アンブロシアが\n待っている!
+SEEK YE\nTHY FORTUNE!	運命を\n探し求めよ!
+'MARKS' GAINED\nIN DUNGEONS!	「しるし」は\nダンジョンで\n手に入る!
+HOT METAL\nLEAVES A 'MARK'!	焼けた 金属は\n「しるし」を 残す!
+THE KING FAVORS\nA 'MARK'!	王は「しるし」を\nお好みだ!
+A 'MARK' HELPS\nINVOKE THE SNAKE	「しるし」は\n大蛇を 呼ぶ\n助けになる
+4 'MARKS',\n4 USES!	「しるし」は4つ、\n使い道も4つ!
+SEEK YE THE\nDUNGEON OF FIRE!	炎の\nダンジョンを\n探せ!
+MARK THEE WELL!	しるしを\n大切にな!
+<PRAY> FOR\nTHE INVOCATION!	呼び出すため\n<PRAY>せよ!
+<PRAY> IN THE\nCIRCLE OF LIGHT!	光の輪で\n<PRAY>せよ!
+'INVOKE' THE\nSILVER SNAKE!	銀の大蛇を\n「呼び出せ」!
+TO PASS YOU\nNEED A MARK!	通るには\nしるしが いる!
+FAWN IS A\nNICE PLACE!	フォーンは\nいい所だよ!
+WELCOME TO FAWN,\nCITY OF THE SEA!	フォーンへ\nようこそ:\n海の都です!
+FAUN IS A\nNICE PLACE!	フォーンは\nいい所だよ!
+WELCOME TO FAUN,\nCITY OF THE SEA!	フォーンへ\nようこそ:\n海の都です!
+BEGONE FOOL!	去れ、 愚か者!
+<BRIBE> ME\nTO ENTER!	入りたければ\n<BRIBE>せよ!
+EXODUS IS\nFOUR AS ONE!	エクソダスは\n四にして 一!
+BEASTIE:\nMACINTOSH THULE!	ビースティ:\nマッキントッシュ・\nトゥーリ!
+REESIE:\n JASMINE JOY,\n LITTLE TOY!	リーシー:\n ジャスミン・ジョイ、\n ちいさな おもちゃ!
+
+# ================= 地下牢（ダンジョン）の各階の文 =================
+WELCOME FOOLS,\nTO YOUR DOOM!!	愚か者ども、\n破滅へ ようこそ!!
+SECRET CORNERS!	隠された 角!
+TRAPS & TREASURE	わなと 宝
+BEWARE THE WINDS	風に 気をつけよ
+DANGER!	危険!
+MAP WELL!!!	地図を よく描け!!!
+REACH UP!	上へ 手をのばせ!
+WINDY SECRET	風の 秘密
+BEWARE, THE\nFIRES OF HELL!	地獄の 炎に\n気をつけよ!
+TRAPPED DOOR!	わなの 扉!
+TWISTY MAZE!	曲がりくねった\n迷路!
+WINDY WALK!	風の 通り道!
+GREMLIN CITY!	グレムリンの町!
+DEVILS DEN!	悪魔の 巣!
+GO BACK! PITS!	戻れ! 穴だ!
+CHAMBER OF FIRE!	炎の間!
+TIME AWAITS!	時が 待つ!
+GREMLIN GOLD!	グレムリンの金!
+GOLDEN CENTER!	黄金の 中心!
+STAIR TO HEAVEN!	天への 階段!
+TIME RUNS SHORT!	時は 残り少ない!
+LONG MARCH!	長い 行進!
+TRAP!	わな!
+VERY NEAR NOW!	もう すぐだ!
+CLUES TO FOLLOW!	手がかりは 先に!
+<INSERT> CARDS\nINTO EXODUS!	カードを\nエクソダスに\n<INSERT>せよ!
+<SEARCH> THE\nSHRINES!	ほこらで\n<SEARCH>せよ!
+DEATH BELOW!	下に 死が!
+DON'T DRINK!	飲むな!
+GREMLINS!	グレムリン!
+WINDY GOLD!	風と 金!
+PERINIAN DEPTHS	ペリニアンの深み
+GO BACK!	戻れ!
+NOT HERE!	ここでは ない!
+QUARTER EACH!	それぞれ 4分の1!
+DEATH AWAITS!	死が 待つ!
+MAP WELL!	地図を よく描け!
+DRY HOLE	かれた 穴
+MINES OF MORINIA	モリニアの鉱山
+TERROR TUNNELS!	恐怖の トンネル!
+MISTY MINES!	霧の 鉱山!
+MINES OF MADNESS	狂気の 鉱山
+DARK PREVAILES	闇が 支配する
+DARDIN'S PIT!	ダーディンの穴!
+SECRET SLIDES!	隠し すべり台!
+BEWARE TRAPS!	わなに 注意!
+EVER ADVENTURE!	永遠の 冒険!
+CIRCLE DEATH!	死の円!
+COLLASAL CAVERN!	巨大な 洞窟!
+TRAPS TO GOLD!	わなの先に 金!
+
+# ================= 冒険の記録（journal） =================
+Journal	記録
+Journal updated	記録を 更新した
+SEEK YE, THE MARK OF KINGS!	王のしるしを 探すがよい!
+The circle of light	光の輪
+YELL 'EVOCARE'	「EVOCARE」と 叫べ
+The Time Lord	時の王
+THE ONE WAY IS LOVE, SOL, MOONS & DEATH, ALL ELSE FAILS.	ただ一つの 道は 愛、太陽、月、そして死。ほかは 失敗する。
+Lord British sits in his castle north of Britain's town. Walk into him.	ロード・ブリティッシュは ブリテンの町の 北の城に いる。王に 向かって 歩けば 話せる。
+Level 1 of the Perinian Depths, north-east of Britain: step on the rod. Light: Lorum, Luminae, or torches from a guild.	ブリテンの北東、ペリニアンの深みの 1階で 棒に 触れる。明かりは ローラムか ルミナエ、または ギルドの たいまつ。
+The four cards	4枚の カード
+In Ambrosia's four shrines, Other and say SEARCH. Two lie past locked doors: bring keys and take a pirate's ship.	アンブロシアの 4つの ほこらで、その他(O)で SEARCH と言う。2つは 鍵の かかった扉の 先: 鍵を 持ち、海賊の 船を 奪って行く。
+Exotic arms	秘宝の 武具
+Other, DIG once per member. Weapons: the islet east of Fawn, its east square. Armour: the islet east of Grey, its west square.	その他(O)で DIG を 1人1回ずつ。武器: フォーンの東の 小島の 東の端。防具: グレイの東の 小島の 西の端。
+Level 8 of the Perinian Depths, the Fires of Hell or Morinia. Each member needs it to cross lava.	ペリニアンの深み、地獄の炎、モリニアの どれかの 8階。溶岩を 渡るには 全員に 要る。
+Level 8 of Doom or the Fires of Hell. Each member, for the force fields in Exodus' castle.	ドゥームか 地獄の炎の 8階。エクソダスの城の 力場の ため、全員に 要る。
+Silver Snake	銀の大蛇
+Mark of Snake: level 8 of Clues. PRAY in Yew's circle of light for the word. Yell it from a ship just south of the serpent.	蛇のしるしは 手がかりの 8階。ユーの 光の輪で PRAY と言えば 言葉を 授かる。大蛇の すぐ南で 船から 叫ぶ。
+Cards' order	カードの 順番
+The Time Lord waits on level 8 of Time Awaits, beside Death Gulch. He names the order of the cards.	時の王は デス・ガルチの そばの「時は待つ」の 8階に いる。カードの 順番を 教えてくれる。
+Exodus' castle: the south-west isle, past the serpent. Only exotics bite. INSERT the cards left to right in the Time Lord's order.	エクソダスの城は 南西の島、大蛇の 先。秘宝の 武器しか 効かない。時の王の 順に カードを 左から INSERT する。
+Lord British's castle, where the party starts. Walk into the king to speak with him.	ロード・ブリティッシュの城、一行が 旅立つ 所。王に 向かって 歩けば 話せる。
+Britain	ブリテン
+Beside Lord British's castle, where the party starts.	ロード・ブリティッシュの城の そば、一行が 旅立つ 所。
+Moon	ムーン
+In the far north-west. On foot.	はるか 北西。歩いて 行ける。
+Yew	ユー
+West of Britain, on foot. Its circle of light: the ring of fire in the woods south-east of the town. PRAY at its centre.	ブリテンの西、歩いて 行ける。光の輪は 町の 南東の 森の 炎の輪。その中心で PRAY と言う。
+East Montor	東モントール
+In the far south, beside West Montor. On foot.	はるか南、西モントールの となり。歩いて 行ける。
+West Montor	西モントール
+In the far south, beside East Montor. On foot.	はるか南、東モントールの となり。歩いて 行ける。
+Grey	グレイ
+In the south-west. On foot.	南西。歩いて 行ける。
+Dawn	ドーン
+In the forest west of the Montors, 8 west and 35 south of Lord British's castle. It stands only while both moons are new.	モントールの西の 森、ロード・ブリティッシュの城から 西へ8、南へ35。二つの月が ともに 新月の 間だけ 現れる。
+Devil Guard	デビルガード
+An isle in the west: a ship is needed. Take one from pirates.	西の島: 船が 要る。海賊から 奪う。
+Fawn	フォーン
+A small isle in the far north: a ship is needed. Take one from pirates.	はるか北の 小島: 船が 要る。海賊から 奪う。
+Death Gulch	デス・ガルチ
+An isle in the east: a ship is needed. Take one from pirates.	東の島: 船が 要る。海賊から 奪う。
+the Mark of Force	力のしるし
+the Mark of Fire	炎のしるし
+the Mark of Snake	蛇のしるし
+the Mark of Kings	王のしるし
+the Time Lord	時の王
+Perinian Depths	ペリニアンの深み
+North-east of Britain, on foot. Level 1: the Mark of Kings. Level 8: the Mark of Fire.	ブリテンの北東、歩いて 行ける。1階: 王のしるし。8階: 炎のしるし。
+Dardin's Pit	ダーディンの穴
+North of Britain, on foot. Level 2: the Mark of Kings.	ブリテンの北、歩いて 行ける。2階: 王のしるし。
+Morinia	モリニア
+The Mines of Morinia, in the west. On foot. Level 8: the Mark of Fire.	モリニアの鉱山、西に ある。歩いて 行ける。8階: 炎のしるし。
+Fires of Hell	地獄の炎
+South of Britain, on foot. Level 8: the Marks of Fire and Force.	ブリテンの南、歩いて 行ける。8階: 炎と 力の しるし。
+Doom	ドゥーム
+In the far south-west. On foot. Level 8: the Mark of Force.	はるか 南西。歩いて 行ける。8階: 力のしるし。
+Clues	手がかり
+An isle in the east: a ship is needed. Level 8: the Mark of Snake.	東の島: 船が 要る。8階: 蛇のしるし。
+Time Awaits	時は待つ
+Ringed by mountains beside Death Gulch: the moongate at its door is the only way in. Level 8: the Time Lord.	デス・ガルチの そば、山に 囲まれている: 入口の ムーンゲートだけが 入る道。8階: 時の王。
+Love	愛
+Sol	太陽
+Moons	月
+Death	死
+Standing in one of Ambrosia's shrines, finds its card.	アンブロシアの ほこらに 立って 言えば、その カードが 見つかる。
+Taught in Yew and West Montor.	ユーと 西モントールで 教わる。
+Pays a guard 100 gold to leave his post.	衛兵に 100 ゴールド 払って 持ち場を 離れさせる。
+Taught in Moon and Death Gulch.	ムーンと デス・ガルチで 教わる。
+In the right place, a prayer is answered with a word.	しかるべき 場所で 祈れば、言葉が 授かる。
+Taught in Fawn. The place: Yew's circle of light.	フォーンで 教わる。場所は ユーの 光の輪。
+Yelled beside the Silver Snake by one with the Mark of Snake: the serpent parts.	蛇のしるしを 持つ者が 銀の大蛇の そばで 叫ぶと、大蛇が 道を あける。
+Other, PRAY at the centre of Yew's circle of light.	ユーの 光の輪の 中心で、その他(O)で PRAY と言う。
+In Exodus' castle, sets a card in its slot.	エクソダスの城で、カードを 穴に はめる。
+Taught in East Montor.	東モントールで 教わる。
+Digs where something lies buried.	何かが 埋まっている 所を 掘る。
+Taught in Dawn, which stands only while both moons are new.	ドーンで 教わる。二つの月が ともに 新月の 間だけ 現れる 町。
+In a town or castle, calms those nearby who have turned on the party. Pax: peace.	町や 城で、一行に 敵意を 向けた 近くの 者を 静める。パックスは 平和の 意。
+Learnt in Moon, from one who wishes the party peace.	ムーンで、一行の 平和を 願う 者から 教わる。
+Mystery...	謎…
+Not yet heard of.	まだ 聞いていない。
+Held by no one.	だれも 持っていない。
+Held by all.	全員が 持っている。
+re:Held by (.+)\.	$1 が 持っている。
+Pub	酒場
+Radrion	ラドリオン
+Pub:	酒場:
+A pub	酒場
+Radrion:	ラドリオン:
+re:(.+), level (\d+)	$1 の $2階
+done	済
+Audience had. He raises a level for any with the experience.	謁見 済み。経験の 足りた 者の レベルを 上げてくれる。
+He awaits in his castle, beside Britain's town.	ブリテンの町の そばの 城で 待っている。
+Lord British raises no one past level 5 without it.	これが ないと ロード・ブリティッシュは レベル5より 上げてくれない。
+re:Held: (.+)\.	持つ者: $1。
+None held yet.	まだ だれも 持っていない。
+re:(.*) All four are set in Exodus' castle\.	$1 4枚とも エクソダスの城で はめる。
+re:Exotic weapons (\d+), armour (\d+), in the pack or in use\.	秘宝の 武器 $1、防具 $2(持ち物と 装備)。
+Each member needs it to cross lava.	溶岩を 渡るには 全員に 要る。
+Each member needs it for the force fields in Exodus' castle.	エクソダスの城の 力場の ため、全員に 要る。
+Passed: the serpent parted at the word.	通過: 言葉で 大蛇が 道を あけた。
+re:The mark: (.+)\. The word: (.+)\.	しるし: $1。言葉: $2。
+not held	だれも 持っていない
+not known	まだ 知らない
+The Time Lord: LOVE, SOL, MOONS & DEATH, all else fails.	時の王: 愛、太陽、月、そして死。ほかは 失敗する。
+Four cards, four slots, and one order. Not yet known.	カード4枚、穴4つ、順番は 一つ。まだ 知らない。
+Destroyed. Sosaria is saved.	滅ぼした。ソサリアは 救われた。
+Exodus waits in its castle, on an isle in the south-west.	エクソダスは 南西の 島の 城で 待つ。
+re:In the circle of light: (.+)	光の輪にて: $1
+Found, not yet entered.	見つけた。まだ 入っていない。
+Heard of. It stands only while both moons are new.	話には 聞いた。二つの月が ともに 新月の 間だけ 現れる。
+Heard of, not yet found.	話には 聞いた。まだ 見つけていない。
+Undiscovered.	まだ 見つけていない。
+An audience with Lord British.	ロード・ブリティッシュへの 謁見。
+Entered. All its clues found.	入った。手がかりは すべて 聞いた。
+re:Entered\. (\d+) of its (\d+) clues found\.	入った。手がかり $2 のうち $1 を 聞いた。
+Entered. What it holds for the quest is yet to be found.	入った。探索に 要る ものは まだ 見つけていない。
+re:Entered\. Found here: (.+)\. More lies within\.	入った。ここで 見つけた: $1。まだ 奥に ある。
+re:Entered\. Found here: (.+)\.	入った。ここで 見つけた: $1。
+re:Stand in the shrine: Other, SEARCH for the Card of (\w+)\. Offer gold there to raise (\w+)\.	ほこらに 立ち、その他(O)で SEARCH と言えば $1の カード。金を ささげると $2が 上がる。
+re:The Card of (\w+): held by (.+)\.	$1の カード: $2 が 持っている。
+Its card is not yet found.	カードは まだ 見つけていない。
+re:Entered\. Gold offered here raises (\w+)\. (.*)	入った。ここで 金を ささげると $1が 上がる。$2
+Pubs: Britain, Moon, both Montors, Grey, Dawn, Devil Guard and Fawn. Pay 10 gold more for each rumour further on, up to 90.	酒場: ブリテン、ムーン、東西モントール、グレイ、ドーン、デビルガード、フォーン。10 ゴールド ずつ 多く 払うと 先の うわさが 聞ける(90 まで)。
+Radrion's counter: Lord British's castle, Britain and Dawn. Offer nothing for the opening verse, then a hundred gold for each.	ラドリオンの 店: ロード・ブリティッシュの城、ブリテン、ドーン。最初の 節は ささげ物なしで、あとは 1節 100 ゴールド ずつ。
+Pub rumours	酒場の うわさ
+re:Every pub tells the same nine, picked by what the drink costs\. (\d+) of 9 heard\.	どの 酒場も 同じ 9つを 語り、酒代で 決まる。9つの うち $1 を 聞いた。
+re:The Prophet of Life sells his rhyme a verse at a time, by the hundred gold offered\. (\d+) of 9 heard\.	生命の預言者は 100 ゴールド ごとに 歌を 1節ずつ 売る。9節の うち $1 を 聞いた。
+Guilds sell keys, torches, powders and gems: in Grey, a walk south-west; Devil Guard and Fawn, on isles; and Dawn.	ギルドは 鍵・たいまつ・時の粉・宝石を 売る: 南西へ 歩いて グレイ、島の デビルガードと フォーン、そして ドーン。
+One town's shops sell them: Dawn, in the forest west of the Montors, standing only while both moons are new.	売るのは 一つの 町の 店だけ: モントールの 西の 森の ドーン。二つの月が ともに 新月の 間だけ 現れる。
+Left moon: which gate stands. Right moon: where it leads. For Time Awaits, step in with the right moon one phase short of new.	左の月: どの 門が 開くか。右の月: どこへ 通じるか。「時は待つ」へは 右の月が 新月の 1つ前の ときに 入る。
+Moongates	ムーンゲート
+re:Come out of (\d+) of 8\. One gate stands at a time, by the left moon; step in, and the right moon picks where you come out\.	8つの うち $1 から 出た。開く 門は 左の月で 一つ。入ると、右の月で 出る 場所が 決まる。
+Supplies	道具
+Find a guild to get adventuring supplies.	冒険の 道具は ギルドで 手に入る。
+Found a guild: keys, torches, powders and gems.	ギルドを 見つけた: 鍵・たいまつ・時の粉・宝石。
+Magic Weapons	魔法の 武器
+Find the shop that sells magic weapons.	魔法の 武器を 売る 店を 探す。
+Found, in Dawn: the +2 and +4 weapons. Ordinary shops stop at the 2-H sword.	ドーンで 見つけた: +2と +4の 武器。ふつうの 店は 両手剣まで。
+Magic Armour	魔法の 防具
+Find the shop that sells magic armour.	魔法の 防具を 売る 店を 探す。
+Found, in Dawn: +2 chain and +2 plate. Ordinary shops stop at plate.	ドーンで 見つけた: +2鎖帷子と +2板金鎧。ふつうの 店は 板金鎧まで。
+Ships	船
+Acquire a ship...	船を 手に入れる…
+Boarded. A ship reaches the isles, and through the whirlpool, Ambrosia.	乗った。船なら 島々へ、うず潮を 抜けて アンブロシアへも 行ける。
+No one sells ships. Attack a pirate ship from the shore, then board (B) the frigate it leaves.	船を 売る 者は いない。岸から 海賊船を 攻撃し、残った フリゲート船に 乗る(B)。
+Sail a frigate into the whirlpool; the ship is lost. Home from Ambrosia is a pirate's ship into the lake's whirlpool.	フリゲート船で うず潮に 入る。船は 失う。アンブロシアから 帰るには 海賊船で 湖の うず潮に 入る。
+Not yet heard said.	まだ 聞いていない。
+Main quest	本筋の 探索
+All that stands between you and Exodus. After the king, in any order.	エクソダスまでに 要る すべて。王の あとは どの 順でも よい。
+Talk to everyone: the townsfolk tell what the quest needs. Each step has its own hint.	みんなと 話そう: 町の 人々が 探索に 要る ことを 教えてくれる。それぞれに ヒントが ある。
+Towns	町
+Lord British's castle and the ten towns, and the clues to be heard in each.	ロード・ブリティッシュの城と 10の 町、それぞれで 聞ける 手がかり。
+Walk into townsfolk to talk. The isles need a ship: take one from pirates.	町の 人に 向かって 歩けば 話せる。島へは 船が 要る: 海賊から 奪う。
+Rumours	うわさ
+What the pubs, and an oracle, will tell for gold.	酒場と 預言者が 金と 引きかえに 語る こと。
+Buy a drink in a pub, or make an offering at an oracle: the more gold, the further the tale goes.	酒場で 一杯 おごるか、預言者に ささげ物を する: 金が 多いほど 話が 先へ 進む。
+Seven dungeons, each holding something the quest needs.	7つの ダンジョン。どれにも 探索に 要る ものが ある。
+Bring light: torches, or the spells Lorum and Luminae. What the quest needs is mostly on level 8.	明かりを 持って行く: たいまつ、または ローラムと ルミナエの 呪文。探索に 要る ものは たいてい 8階。
+Ambrosia	アンブロシア
+re:The lost land\. (\d+) of its four shrines' cards held\.	失われた 地。4つの ほこらの カードの うち $1 枚を 持つ。
+The lost land. Heard of, not yet reached.	失われた 地。話には 聞いた。まだ 行っていない。
+Equipment	装備
+What the party can go and get, beyond what it sets out with.	旅立ちの ときの ほかに、一行が 手に入れられる もの。
+Each line has its own hint.	それぞれに ヒントが ある。
+Words	言葉
+Words to say with Other (O), learnt from those who say them.	その他(O)で 言う 言葉。言う 人から 教わる。
+Other: choose who speaks, then the word. On a controller, the words learnt are offered.	その他: 言う 人を 選び、言葉を 入れる。コントローラーでは 覚えた 言葉から 選べる。
+
+# ================= タイトルのメニュー・名簿（menu.ts） =================
+Export game	ゲームを 書き出す
+Import game	ゲームを 読みこむ
+Update: restart	更新: 再起動
+Settings	設定
+Quit	やめる
+re:Ultima III (.+) is out	ウルティマIII $1 が 出ました
+Your saved game carries over	セーブは そのまま 続けられます
+Open release page	公開ページを 開く
+What is new, and the download	新しい点と ダウンロード
+Later	あとで
+Update stays in the title menu	更新は タイトルの メニューに 残ります
+Update available	更新が あります
+Nothing to export	書き出す ものが ない
+To the clipboard	クリップボードへ
+To a file	ファイルへ
+Export	書き出す
+Game copied to the clipboard	クリップボードに 写した
+The clipboard is not available here	ここでは クリップボードが 使えない
+Game saved as a file	ファイルに 保存した
+Could not save a file here	ここでは ファイルに 保存できない
+From the clipboard	クリップボードから
+From a file	ファイルから
+Import	読みこむ
+The clipboard cannot be read here	ここでは クリップボードを 読めない
+The clipboard is empty	クリップボードが 空
+Could not read the file	ファイルを 読めない
+Replace the saved game	今の セーブと 入れかえる
+Keep the saved game	今の セーブを 残す
+Import?	読みこむ?
+re:Not imported: (.+)	読みこまなかった: $1
+Game imported	読みこんだ
+not JSON	JSON ではない
+not a game	ゲームではない
+not an Ultima III game	ウルティマIII の ゲームではない
+from a newer version	新しい 版の もの
+no save inside	セーブが 入っていない
+save version unknown	セーブの 版が 分からない
+save incomplete	セーブが 欠けている
+Modern (Recommended)	モダン(おすすめ)
+Classic (Hardcore)	クラシック(手ごわい)
+Story (Relaxed)	ストーリー(やさしい)
+Choose Thine Adventure!	冒険を 選べ!
+Clear notes	記録を 消す
+re:(\d+) \(empty\)	$1 (空き)
+re:Max STR (\d+) DEX (\d+) INT (\d+) WIS (\d+)	最大 力$1 早$2 知$3 恵$4
+any weapon	武器は すべて
+re:to ([a-z0-9+ -]+)	$1まで
+any armour	防具は すべて
+both magics,	両方の 魔法、
+cleric magic,	僧侶の 魔法、
+wizard magic,	魔術の 魔法、
+steals,	盗む、
+Which entry?	どの 番号?
+The roster is full.	名簿が いっぱい。
+re:Entry (\d+): (.+)	番号 $1: $2
+Type a name	名前を 入れる
+re:Use "(.+)"	「$1」に する
+Another random name	ほかの 名前
+Name	名前
+Name:	名前:
+Sex	性別
+Race	種族
+Type	職業
+50 points	50 ポイント
+re:STR (\d+)  DEX (\d+)  INT (\d+)  WIS (\d+)	力$1 早$2 知$3 恵$4
+Create this character	この人物を 作る
+Cancel	やめる
+Disperse it and form a new one	解散して 組み直す
+Keep the current party	今の 仲間の ままに する
+A party is already formed	もう 仲間を 組んでいる
+No characters to choose from.	選べる 人物が いない。
+re:Done \((\d+) chosen\)	決定($1人)
+Choose up to four	4人まで 選ぶ
+Yes, disperse the party	はい、解散する
+Disperse the party?	仲間を 解散する?
+CLEAR NOTES	記録を 消す
+No, keep them	いいえ、残す
+Yes, clear map, journal, moongates	はい、地図・記録・ムーンゲートを 消す
+Clear notes?	記録を 消す?
+(Notes cleared!)	(記録を 消した!)
+Terminate whom?	だれを 消す?
+No one can be terminated (a party member must be dispersed first).	消せる 人物が いない(仲間は 先に 解散する)。
+re:Yes, terminate (.+)	はい、$1 を 消す
+re:Terminate (.+)\?	$1 を 消す?
+
+# ================= 店（shops.ts） =================
+Curing (100 gp)	解毒(100gp)
+Healing (200 gp)	治療(200gp)
+Resurrection (500 gp)	蘇生(500gp)
+Recalling (900 gp)	灰からの蘇生(900gp)
+Nothing	なし
+Yes, list	はい、見る
+re:Readied: (.+)	装備中: $1
+re:Worn: (.+)	着ている: $1
+Buy	買う
+Sell	売る
+re:Ready it\? \(Y/N\)-	持つか? (Y/N)-
+re:Wear it\? \(Y/N\)-	着るか? (Y/N)-
+Keys (50 gp)	鍵(50gp)
+Torches x5 (30 gp)	たいまつ x5(30gp)
+Powders (90 gp)	時の粉(90gp)
+Gems (75 gp)	宝石(75gp)
+
+# ================= 呪文（spells.ts） =================
+Only in a fight.	戦いの 中だけ。
+re:No (.+) here\.	ここに $1 は いない。
+Tried already this fight.	この戦いで もう 試した。
+Repel orcs	オーク退散
+may destroy an orc pack, once a fight	オークの群れを 消す ことがある。1戦に1回
+Magic bolt	魔法の矢
+a bolt at one foe	敵1体に 矢を 放つ
+Light	明かり
+lights a dungeon for a while	しばらく ダンジョンを 照らす
+Down a level	1階 下へ
+sink to the level below	下の 階へ 沈む
+Up a level	1階 上へ
+rise to the level above	上の 階へ 上がる
+Fireball	火の玉
+a strong bolt at one foe	敵1体に 強い 矢
+Far teleport	遠くへ 瞬間移動
+a random spot on Sosaria	ソサリアの どこかへ
+Mind bolt	心の矢
+a bolt as strong as your mind	知力の 強さの 矢
+Long light	長い明かり
+lights a dungeon for a long time	長く ダンジョンを 照らす
+Cleric spell	僧侶の呪文
+cast any cleric spell	僧侶の呪文を どれでも
+Blast all foes	敵全体に 爆発
+hurts every foe on the field	戦場の 敵 全員を 傷つける
+Death bolt	死の矢
+slays one foe	敵1体を 倒す
+Stop time	時間停止
+foes stand still for twenty turns	敵が 20ターン 止まる
+Mind storm	心の嵐
+hurts every foe, twice your mind	敵 全員に 知力の 2倍の 傷
+Weaken all	全体弱化
+every foe drops to 5 hit points	敵 全員の 体力が 5に なる
+Slay all foes	敵全滅
+may slay every foe on the field	戦場の 敵 全員を 倒す ことがある
+Repel undead	不死退散
+may destroy the undead, once a fight	不死の者を 消す ことがある。1戦に1回
+Safe chest	安全な宝箱
+opens a chest without its trap	わなを 外して 宝箱を 開ける
+heals one member a little	1人を 少し 治す
+Near teleport	近くへ 瞬間移動
+a random spot on this level	この階の どこかへ
+Cure poison	解毒
+cures one member	1人の 毒を 消す
+Leave dungeon	ダンジョン脱出
+straight out to the surface	すぐに 地上へ 出る
+Great heal	大回復
+heals one member a lot	1人を 大きく 治す
+Show the map	地図を 見る
+a map, as a gem would show	宝石と 同じ 地図
+Resurrect	蘇生
+raises the dead; may leave ashes	死者を 生き返らせる。灰に なる ことも
+Recall ashes	灰からの蘇生
+restores ashes, for 5 wisdom	灰から 戻す。知恵 5 と ひきかえ
+Terraform	地形変化
+sets the square ahead to any tile	前の マスを 好きな 地形に する
+Armageddon	アルマゲドン
+every creature becomes a chest	すべての 生き物が 宝箱に なる
+Conjure frigate	船の召喚
+a frigate on the nearest water	いちばん 近い 水に 船が 現れる
+Nameless	名なし
+Cost	消費
+Mana	魔力
+Wizard spell	魔術の呪文
+re:(.+)\non (.+)	$1\n$2 に
+re:(.+)\nby (.+)	$1\n$2 が
+
+# ================= 手引き（tips.ts） =================
+First steps	はじめの 一歩
+A new party starts next to Lord British's castle and the town of Britain.	新しい 一行は ロード・ブリティッシュの城と ブリテンの町の そばから 旅立つ。
+Go visit Lord British first!	まず ロード・ブリティッシュに 会いに 行こう!
+Walk into townsfolk to talk. Notes are saved to the Journal.	町の 人に 向かって 歩けば 話せる。聞いた ことは 記録に 残る。
+Levels	レベル
+Fights give experience. A level is earned every 100 XP.	戦えば 経験が たまる。100 XP ごとに レベルが 上がれる。
+A character with an L or blue name can level up - go visit Lord British!	L が 付くか 名前が 青い 人物は レベルを 上げられる。ロード・ブリティッシュに 会いに 行こう!
+Levels increase max hit points by 100.	レベルが 上がると 最大体力が 100 増える。
+Abilities are raised at shrines, not by leveling.	能力は レベルではなく ほこらで 上がる。
+The party eats as it travels. F: shows remaining food.	一行は 旅の 間に 食べる。F: は 残りの 食料。
+Grocers sell food at a gold piece a ration.	食料品店は 食料を 1食 1ゴールドで 売る。
+Out of food, the party starves!	食料が 尽きると 飢える!
+Gameplay -> Starving sets the starvation penalty.	遊び方 -> 飢え で 飢えの 罰を 決める。
+Healing	回復
+Members heal a little as the party travels.	旅の 間に 少しずつ 傷が 治る。
+Healers cure poison, heal, raise the dead and restore ashes.	僧院は 解毒・治療・蘇生・灰からの 蘇生を してくれる。
+There is a healer in Lord British's castle.	ロード・ブリティッシュの城に 僧院が ある。
+With a member hurt, the command menu puts a caster's heal first.	けが人が いると、命令の メニューの いちばん上に 回復の 呪文が 出る。
+Casters	呪文の 使い手
+A wizard's mana grows back to its intelligence, a cleric's to its wisdom.	魔術師の 魔力は 知力まで、僧侶の 魔力は 知恵まで 戻る。
+Paladins, larks and the other mixed classes get half.	聖騎士や 道化など 混じった 職業は その 半分。
+The spell list greys a spell if the caster lacks sufficient mana.	魔力が 足りない 呪文は 一覧で 灰色に なる。
+Mana grows back as the party travels.	魔力は 旅の 間に 戻る。
+Defeated monsters leave treasure chests.	倒した 怪物は 宝箱を 残す。
+About half are trapped with acid, poison, a bomb or gas!	半分ほどに 酸・毒・爆弾・ガスの わなが ある!
+Safe chest, a cleric spell, opens one without springing a trap.	僧侶の 呪文「安全な宝箱」なら わなを 作動させずに 開けられる。
+Guilds	ギルド
+Guilds sell keys, torches, powders and gems. Keys open locked doors.	ギルドは 鍵・たいまつ・時の粉・宝石を 売る。鍵は 閉じた 扉を 開ける。
+Powders can pause time in a combat!	時の粉は 戦いの 時を 止められる!
+Gems can show a map of the area you are in.	宝石は 今いる 場所の 地図を 見せる。
+Grey is about 60 steps south-west of the castle and has a guild.	グレイは 城から 南西に 60歩ほど。ギルドが ある。
+Dungeons are dark.	ダンジョンは 暗い。
+A torch (Ignite) burns for 255 turns.	たいまつ(I)は 255ターン 燃える。
+The Light spell activates for 10 turns, Long light for 250.	明かりの 呪文は 10ターン、長い明かりは 250ターン。
+Klimb and Descend to activate ladders.	はしごは K(上る)と D(下りる)で 使う。
+Fights	戦い
+A fight has no way out - you can't run away!	戦いからは 逃げられない!
+Gameplay -> Timer sets how long a turn waits before automatically passing.	遊び方 -> タイマー で 自動で パスするまでの 待ち時間を 決める。
+Auto combat plays the fight for you.	自動戦闘に すると 代わりに 戦ってくれる。
+If the whole party falls, you can reload or go back to Lord British.	全員 倒れたら、読み直すか ロード・ブリティッシュの もとへ 戻れる。
+Monsters	怪物
+The spell Repel orcs also affects goblins and trolls.	オーク退散は ゴブリンと トロールにも 効く。
+The spell Repel undead affects ghouls and zombies.	不死退散は グールと ゾンビに 効く。
+Both Repel spells are free, but get one try a fight.	退散の 呪文は 魔力を 使わないが、1戦に 1回だけ。
+Many monsters poison - stay near a healer until you can cure poison.	毒を 使う 怪物が 多い。解毒が できるまで 僧院の 近くに いよう。
+Ships and horses	船と 馬
+No one sells ships.	船を 売る 者は いない。
+Attack a pirate ship from the shore!	岸から 海賊船を 攻撃しよう!
+Board the frigate they leave.	残った フリゲート船に 乗る。
+Horse dealers sell a horse for each member, 200 gold a head.	馬屋は 1人1頭、1頭 200 ゴールドで 売る。
+Stats	能力
+Strength, dexterity, intelligence and wisdom rise only at Ambrosia's shrines.	力・素早さ・知力・知恵は アンブロシアの ほこらでだけ 上がる。
+Each stops at its race's limit.	種族の 上限で 止まる。
+Gold paid past it is lost.	上限を 越えて 払った 金は むだに なる。
+Saving	セーブ
+The game saves itself at every town, castle and dungeon door.	町・城・ダンジョンの 入口で 自動で セーブされる。
+Quit and save saves on the surface.	「中断と セーブ」は 地上で セーブする。
+Export game on the title screen to keep a copy as a file.	タイトル画面の「ゲームを 書き出す」で ファイルに 写しを 残せる。
+New to Sosaria?\nSee Tips, in the\nPause menu.	ソサリアは 初めて?\nポーズ メニューの\n手引きを 見よう。
+Tips	手引き
+
+# ================= ヘルプ（help.ts）。1行20マスまで =================
+The name's colour:	名前の 色:
+Green: poisoned	緑: 毒
+Grey: dead	灰色: 死亡
+Dark grey: ashes	濃い灰色: 灰
+Blue: level up from	青: レベル上げは
+A letter by the name	名前の 横の 文字
+G: good	G: 良好
+L: level up from	L: レベル上げは
+P: poisoned	P: 毒
+D: dead	D: 死亡
+A: ashes	A: 灰
+re:Keys (\d)/(\d)	キー $1/$2
+Arrows: walk; move	矢印: 歩く、戦闘で
+in combat	動く
+Space: pass a turn	スペース: パス
+Escape: pause menu	Esc: ポーズ メニュー
+J: journal	J: 記録
+!: heal the party	!: 一行を 回復
+@: safe chest	@: 安全に 宝箱
+$: light the way	$: 明かりを ともす
+A "Who?" prompt	「だれ?」には
+takes 1-4, or	1-4 か、
+Up/Down and Enter.	上下と Enter。
+A direction is an	方向は
+arrow key.	矢印キー。
+A: attack	A: 攻撃
+B: board horse/ship	B: 馬・船に 乗る
+C: cast a spell	C: 呪文を 唱える
+E: enter a place	E: 場所に 入る
+F: fire cannons	F: 大砲を 撃つ
+G: get a chest	G: 宝箱を 開ける
+I: ignite a torch	I: たいまつを ともす
+K: klimb a ladder	K: はしごを 上る
+L: look	L: 見る
+M: marching order	M: 並びを 変える
+N: negate time	N: 時を 止める
+O: other, say a word	O: その他、言葉
+P: peer at a gem	P: 宝石を のぞく
+Q: quit and save	Q: 中断と セーブ
+(surface only)	(地上でのみ)
+R: ready a weapon	R: 武器を 持つ
+S: steal	S: 盗む
+T: transact: talk,	T: 話す・買い物・
+shop, the king	王に 会う
+U: unlock a door	U: 扉の 鍵を あける
+V: volume	V: 音
+W: wear armour	W: 防具を 着る
+X: exit horse/ship	X: 馬・船を 降りる
+Y: yell (same as O)	Y: 叫ぶ(Oと 同じ)
+Z: ztats	Z: 状態
+COMBAT	戦闘
+Arrows: move; into	矢印: 動く。怪物へ
+a monster attacks	進むと 攻撃
+A: attack, then a	A: 攻撃、そして
+C, N, R, Z: as above	C,N,R,Z: 上と同じ
+B or Escape: take	B か Esc: 自動戦闘
+the fight back	から 手動に
+from auto combat	戻す
+DUNGEONS	ダンジョン
+Up/Down: advance,	上下: 前進、
+Left/Right: turn	左右: 向きを 変える
+I, K, D: ignite,	I,K,D: ともす、
+klimb, descend	上る、下りる
+L: change view:	L: 見え方を 変える:
+first person,	一人称、
++ map, top down	+地図、見下ろし
+re:Controller (\d)/(\d)	コントローラー $1/$2
+D-pad: move, menus	十字: 移動、メニュー
+A: menu, and choose	A: メニュー、決定
+B: cancel, or pass	B: 取り消し、パス
+X: ztats	X: 状態
+Y: look; attack in	Y: 見る。戦闘で
+combat; ignite in	攻撃、ダンジョンで
+View or Menu: pause	View か Menu: ポーズ
+Keys for the pad:	キーで 操作するとき:
+WASD/arrows: d-pad	WASD/矢印: 十字
+Enter or Z: A	Enter か Z: A
+X or B: B	X か B: B
+C: X    V or Y: Y	C: X    V か Y: Y
+Escape: pause	Esc: ポーズ
+The pause menu holds	ポーズ メニューに
+the settings, auto	設定、自動戦闘、
+combat and quit.	中断が ある。
+Quit (Pause) saves;	中断(ポーズ)で セーブ、
+resumes next visit.	次は 続きから。
+Q saves and resumes	Q で セーブし、
+next visit.	次は 続きから。
+re:Status (\d)/(\d)	状態 $1/$2
+re:Build (.+)	ビルド $1
+
+# ================= 入力・メニュー（input.ts, menus.ts） =================
+V slow	とても 遅い
+Slow	遅い
+Medium	ふつう
+Fast	速い
+Transact (talk)	話す(取引)
+Look	見る
+Fire cannons	大砲を 撃つ
+Get chest	宝箱を 開ける
+Unlock door	扉の 鍵を あける
+Steal	盗む
+Cast spell	呪文を 唱える
+Ready weapon	武器を 持つ
+Wear armour	防具を 着る
+Modify order	並びを 変える
+Negate time	時を 止める
+Peer at gem	宝石を のぞく
+Other command	その他の 命令
+View map	地図を 見る
+Ignite torch	たいまつを ともす
+Change view	見え方を 変える
+Klimb ladder	はしごを 上る
+Descend ladder	はしごを 下りる
+DEL	消す
+DONE	決定
+
+# ================= 設定・画面（screen.ts） =================
+On	オン
+Off	オフ
+Paused	ポーズ
+PAUSED	ポーズ
+Resume	続ける
+Quit and save	中断と セーブ
+Cheats	ずる
+re:Auto combat: (.+)	自動戦闘: $1
+Visuals	見た目
+Gameplay	遊び方
+Audio	音
+Help	ヘルプ
+Back	もどる
+re:Tiles: (.+)	絵柄: $1
+re:Scanlines: (.+)	走査線: $1
+re:Smooth motion: (.+)	なめらか移動: $1
+re:Sound FX: (.+)	効果音: $1
+re:FX level: (.+)	効果音量: $1
+re:Music: (.+)	音楽: $1
+re:Music level: (.+)	音楽の 音量: $1
+FX level	効果音量
+Music level	音楽の 音量
+re:Input: (.+)	操作: $1
+Controller	コントローラー
+Keyboard	キーボード
+re:Poison kills: (.+)	毒で 死ぬ: $1
+re:Starving: (.+)	飢え: $1
+re:Balanced XP: (.+)	経験の 調整: $1
+re:Timer: (.+)	タイマー: $1
+re:Max input: (.+)	入力の 速さ: $1
+re:Battery saver: (.+)	省電力: $1
+Mild	ゆるい
+Harsh	きびしい
+Original	原作どおり
+re:(.+)  up/down	$1  上下
+A next  B close	A 次  B 閉じる
+Any key next  Esc	キーで 次  Esc
+Y hint	Y ヒント
+H hint	H ヒント
+Up/Down: scroll	上下: 送る
+D-pad: places	十字: 場所
+Y: the party	Y: 一行
+X: next map	X: 次の 地図
+B: back	B: もどる
+B: close	B: 閉じる
+Arrows: places	矢印: 場所
+Enter: its map	Enter: その地図
+Space: party	スペース: 一行
+Bksp: back	Bksp: もどる
+Esc: close	Esc: 閉じる
+Choose	選ぶ
+re:(\d+) points left to spend	残り $1 ポイント
+All points spent	ポイントを 使いきった
+Press A or Enter to accept	A か Enter で 決定
+Command	命令
+Who? B: Cancel	だれ? B: 取り消し
+Who? Esc Cancel	だれ? Esc 取り消し
+Direction? B: Cancel	方向? B: 取り消し
+Direction? Esc Cancel	方向? Esc 取り消し
+Amount	量
+None learnt yet. Townsfolk say them: walk into everyone.	まだ 覚えていない。町の 人が 口にする: みんなと 話そう。
+None known	知らない
+Word	言葉
+re:level (\d+)	$1階
+And so it came to	かくして この日、
+pass  that  on  this	地獄より 生まれし
+day EXODUS,hell-born	悪の化身
+incarnate  of  evil,	エクソダスは
+was vanquished  from	ソサリアから
+SOSARIA.   What  now	消え去った。この先
+lies  ahead  in  the	ウルティマの 物語に
+ULTIMA saga can only	何が 待つのかは
+be pure speculation!	まだ だれも 知らない!
+Onward to ULTIMA IV!	いざ ウルティマIVへ!
+Saved games in an iOS browser tab are deleted after seven days of browser use without a visit here.	iOS の ブラウザの タブの セーブは、ここに 来ないまま ブラウザを 7日 使うと 消されます。
+That is a WebKit rule, the same in Safari, Chrome and Brave. To keep a game: add this page to the Home Screen	WebKit の 決まりで、Safari・Chrome・Brave でも 同じです。残すには: このページを ホーム画面に 追加する
+(Share, then Add to Home Screen), or export it to a file from the title menu.	(共有 → ホーム画面に追加)か、タイトルの メニューから ファイルに 書き出してください。
+
+# ================= 状態（actions.ts の Z） =================
+re:\((in hand|worn)(, \+\d+)?\)	($1$2)
+in hand	手に持つ
+worn	着ている
+re:STR\.\.\.(.*)	力.....$1
+re:DEX\.\.\.(.*)	素早さ..$1
+re:INT\.\.\.(.*)	知力...$1
+re:WIS\.\.\.(.*)	知恵...$1
+re:H\.P\.\.\.(.*)	体力...$1
+re:H\.M\.\.\.(.*)	最大...$1
+re:EXP\.\.\.(.*)	経験...$1
+re:GEMS\.\.(.*)	宝石...$1
+re:KEYS\.\.(.*)	鍵.....$1
+re:POWD\.\.(.*)	時の粉.$1
+re:TRCH\.\.(.*)	たいまつ$1
+CARD OF DEATH	死のカード
+CARD OF SOL	太陽のカード
+CARD OF LOVE	愛のカード
+CARD OF MOONS	月のカード
+MARK OF FORCE	力のしるし
+MARK OF FIRE	炎のしるし
+MARK OF SNAKE	蛇のしるし
+MARK OF KINGS	王のしるし
+re:WEAPON:(.+)	武器:$1
+re:ARMOUR:(.+)	防具:$1
+*PARTY WEAPONS*	*一行の 武器*
+*PARTY ARMOUR*	*一行の 防具*
+re:(\d+)-(.+)-\(([A-Z])\)	$1-$2-($3)
+
+# ================= 地図の表示（automap.ts） =================
+First person	一人称
+1st person + map	一人称+地図
+Top down	見下ろし
+
+# ================= 装備の比較（cards.ts） =================
+Hands	素手
+re:An? (\w+) cannot ready it	$1 は 持てない
+re:An? (\w+) cannot wear it	$1 は 着られない
+In hand now	いま 手に 持つ
+Worn now	いま 着ている
+re:vs (.+)	いまの $1 と比べ
+Damage	攻撃力
+same	同じ
+Reach	届く 距離
+afar	遠く
+close	近く
+Foes hit	命中
+Now	いま
+Price	値段
+In pack	持ち物
+
+# ================= ずる（cheats.ts） =================
+Full restore	全員 全快
+Everyone is whole again.	全員 元気に なった。
+Raise every level	全員 レベルを 上げる
+Everyone is a level greater.	全員 レベルが 上がった。
+Go home (Lord British)	帰る(ロード・ブリティッシュ)
+Back at the castle gate.	城の 門に 戻った。
+Exit dungeon	ダンジョンを 出る
+Up and out.	地上へ 出た。
+Get 100 gold	100 ゴールド もらう
+re:Gold: (\d+)\.	金: $1。
+Get 100 food	食料を 100 もらう
+re:Food: (\d+)\.	食料: $1。
+Get 10 gems	宝石を 10 もらう
+re:Gems: (\d+)\.	宝石: $1。
+Get 5 keys	鍵を 5 もらう
+re:Keys: (\d+)\.	鍵: $1。
+Get 5 torches	たいまつを 5 もらう
+re:Torches: (\d+)\.	たいまつ: $1。
+Add word	言葉を 覚える
+Word:	言葉:
+No word added.	言葉は 覚えなかった。
+re:Other offers no word (.+)\.	その他(O)に $1 という 言葉は ない。
+re:(.+) is known already\.	$1 は もう 知っている。
+re:Known now: (.+)\. Other offers it from now on\.	覚えた: $1。これから その他(O)で 選べる。
+
+# ================= 戦闘・命令（combat.ts, context.ts, death.ts, game.ts） =================
+Manual combat	手動で 戦う
+re:Cast \((.+)\)	唱える($1)
+re:Attack \((.+)\)	攻撃($1)
+Try again from last save	最後の セーブから やり直す
+Flee to Lord British, lose gear	ロード・ブリティッシュの もとへ 逃げる(装備を 失う)
+All players out!	全員 倒れた!
+(saved)	(セーブした)
+(not saved)	(セーブしていない)
+Attack	攻撃
+Unlock	鍵を あける
+re:View:\n(.+)	見え方:\n$1
+
+# ================= 町・その他（interact.ts, io.ts） =================
+AIEEEEE!	ぎゃあああ!
+0 (nothing)	0 (なし)
+re:(\d) = (\d)00 gold	$1 = $200 ゴールド
+Yes	はい
+No	いいえ
+
+# ================= 世界の地図（worldMap.ts） =================
+The party	一行
+You are here	現在地
+Castle?	城?
+Dungeon?	ダンジョン?
+Towne?	町?
+Party inside	一行が 中に いる
+A: its map	A: その地図
+Been in	入った
+Not yet entered	まだ 入っていない
+At this moon:	この月では:
+re:Shrine of (.+)	$1の ほこら
+Shrine?	ほこら?
+
+# ================= 起動・タイトル（main.ts, attract.ts） =================
+the save does not fit	セーブが 入りきらない
+re:Update \((.+)\)	更新($1)
+Macintosh version by Leon McNeill	Macintosh 版: Leon McNeill
+PRESS ANY KEY	キーを 押してください
+
+# ================= 自動プレイで見つかった分 =================
+Heal	回復
+undead	不死の者
+orcs	オーク
+Peer at gem!	宝石を のぞく!
+re:([A-P]) (.+?) x(\d+)	$1 $2 x$3
+re:(Human|Elf|Dwarf|Bobbit|Fuzzy) (\w+)	$1の$2
+re:(Human|Elf|Dwarf|Bobbit|Fuzzy)
+(\w+)	$1の
+$2
+
+seen	見た
+# ================= 汎用の型（最後に試す） =================
+re:([A-P]) ([^()]+?)( \(.*\))?	$1 $2$3

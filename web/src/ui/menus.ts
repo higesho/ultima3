@@ -10,6 +10,7 @@
  * menu and what to do with the answer.
  */
 
+import { hasJapanese, tr, wrapJa } from '../i18n/index.ts';
 import { Key, Sound, type CommandScope, type MenuOption } from '../game/io.ts';
 import { VIEW_MAP_KEY } from '../game/context.ts';
 import { GraphicsSet } from './graphics.ts';
@@ -170,6 +171,9 @@ const SCREEN_COLUMNS = 40;
  * then centred on the whole screen.
  */
 export function layoutMenu(title: string, items: string[], columns = 1): MenuWindow {
+  // In Japanese the window is sized to the translations.
+  title = tr(title);
+  items = items.map((s) => tr(s));
   const longestItem = Math.max(0, ...items.map((s) => s.length));
   const rows = Math.ceil(items.length / columns);
   const visibleRows = Math.min(rows, MAX_ROWS);
@@ -311,7 +315,9 @@ export const HINT_ROWS = 2;
 /** Break text into at most `rows` lines of `width` characters, at spaces where possible. */
 export function wrapText(s: string, width: number, rows: number): string[] {
   const lines: string[] = [];
-  let rest = s.trim();
+  let rest = tr(s).trim();
+  // Japanese has few spaces between words: it is broken at the width, by its own rules.
+  if (hasJapanese(rest)) return wrapJa(rest, width).slice(0, rows);
   while (rest && lines.length < rows) {
     if (rest.length <= width) {
       lines.push(rest);

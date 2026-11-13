@@ -23,6 +23,11 @@ const env = `import.meta.env = { BASE_URL: '/', MODE: 'development', DEV: true, 
 
 registerHooks({
   load(url, context, nextLoad) {
+    // `?raw`, as Vite gives it: the file's text as the module's default export (the translations, i18n/ja.tsv).
+    if (url.startsWith('file:') && url.endsWith('?raw')) {
+      const text = readFileSync(fileURLToPath(url.slice(0, -'?raw'.length)), 'utf8');
+      return { format: 'module', source: `export default ${JSON.stringify(text)};`, shortCircuit: true };
+    }
     if (!url.startsWith('file:') || !url.endsWith('.ts') || url.includes('/node_modules/')) return nextLoad(url, context);
     const fileName = fileURLToPath(url);
     const { outputText } = ts.transpileModule(readFileSync(fileName, 'utf8'), { fileName, compilerOptions });

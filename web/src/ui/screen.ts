@@ -83,6 +83,7 @@ import {
   wrapText,
 } from './menus.ts';
 import { DungeonCell } from '../game/world.ts';
+import { getLang, LANG_NAMES, LANGS, setLang, tr, trPadded } from '../i18n/index.ts';
 
 export const COLUMNS = 40;
 export const ROWS = 24;
@@ -640,8 +641,13 @@ export class Screen implements GameIO {
   // Text
   // -------------------------------------------------------------------------
 
-  /** Draw a string with the bitmap font at cell (x, y), no wrapping. */
+  /** Draw a string with the bitmap font at cell (x, y), no wrapping; in Japanese, its translation. */
   drawText(text: string, x: number, y: number, colour?: string): void {
+    this.drawCells(text.length > 1 ? trPadded(text) : text, x, y, colour);
+  }
+
+  /** Draw a string as it is (already in the language shown): the message area's rows. */
+  private drawCells(text: string, x: number, y: number, colour?: string): void {
     const { ctx, cell } = this;
     if (this.overlayShown && y >= MAP_OVERLAY_TOP && y < MAP_OVERLAY_TOP + MAP_OVERLAY_SIZE && x + text.length > MAP_OVERLAY_LEFT) {
       // Only the part left of the overlay is drawn; the overlay repaints itself.
@@ -670,11 +676,12 @@ export class Screen implements GameIO {
   }
 
   centreText(y: number, text: string): void {
+    text = tr(text, false);
     this.textAt(20 - Math.floor(text.length / 2), y, text);
   }
 
   private redrawTextArea(): void {
-    for (let r = 0; r < this.textRows.length; r++) this.drawText(this.textRows[r].join(''), TEXT_LEFT, TEXT_TOP + r);
+    for (let r = 0; r < this.textRows.length; r++) this.drawCells(this.textRows[r].join(''), TEXT_LEFT, TEXT_TOP + r);
   }
 
   /** Scroll the message area up one line. (`UTextScroll`) */
@@ -697,6 +704,7 @@ export class Screen implements GameIO {
   }
 
   print(text: string): void {
+    text = tr(text);
     for (const ch of text) {
       if (ch === '\n') {
         if (!this.foldRepeat()) this.newline();
@@ -705,7 +713,7 @@ export class Screen implements GameIO {
       if (ch < ' ') continue;
       if (this.cursorX >= TEXT_RIGHT) continue; // the original simply ran off the edge
       this.textRows[this.cursorY - TEXT_TOP][this.cursorX - TEXT_LEFT] = ch;
-      this.drawText(ch, this.cursorX, this.cursorY);
+      this.drawCells(ch, this.cursorX, this.cursorY);
       this.cursorX++;
     }
   }
@@ -724,7 +732,7 @@ export class Screen implements GameIO {
     const width = TEXT_RIGHT - TEXT_LEFT;
     const padded = text.slice(0, width).padEnd(width);
     this.textRows[row] = padded.split('');
-    this.drawText(padded, TEXT_LEFT, TEXT_TOP + row);
+    this.drawCells(padded, TEXT_LEFT, TEXT_TOP + row);
   }
 
   private countLabel(text: string, count: number): string {
@@ -1039,6 +1047,7 @@ export class Screen implements GameIO {
       const options: MenuOption[] = [
         ...resume,
         { key: 'A', label: `Auto combat: ${onOff(w.autoCombat)}` },
+        { key: 'L', label: `Language/言語: ${LANG_NAMES[getLang()]}` },
         { key: 'V', label: 'Visuals' },
         { key: 'P', label: 'Gameplay' },
         { key: 'U', label: 'Audio' },
@@ -1062,6 +1071,11 @@ export class Screen implements GameIO {
         case 'A':
           w.autoCombat = !w.autoCombat;
           w.onAutoCombatChange?.();
+          break;
+        case 'L':
+          // The next language; what is on the screen now is drawn again in it (the message area keeps what it said).
+          setLang(LANGS[(LANGS.indexOf(getLang()) + 1) % LANGS.length]);
+          this.redrawAll();
           break;
         case 'P':
           await this.gameplayMenu();

@@ -1,3 +1,5 @@
 node_modules/
 dist/
 videos/
+i18n-todo.tsv
+i18n-missing.tsv

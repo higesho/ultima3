@@ -24,6 +24,7 @@
 import { DUNGEON_STYLES, paintDungeonSheet, type DungeonStyle } from './dungeonArt.ts';
 import { MOON_STYLES, MOON_CELL, paintMoons } from './moonArt.ts';
 import { displayOf, type DisplayStyle } from './display.ts';
+import { drawJaGlyph, isJaLetter, JA_LARGE_SETS } from './jaFont.ts';
 import { MapValue, Shape, CLASS_COUNT, CLASS_FALLBACK_TILE, FIRST_CLASS_TILE, classFallbackTile, isClassTile } from '../game/tiles.ts';
 
 export const TILE_COLUMNS = 12;
@@ -156,6 +157,8 @@ export class GraphicsSet {
   readonly fontHeight: number;
   /** Pixel size of one UI piece. */
   readonly uiSize: number;
+  /** Whether Japanese is drawn in the large face (Shinonome, 16 dots), as for a set drawn at a modern resolution. */
+  jaLarge = false;
 
   /** Which tiles are currently showing their alternate frame. (`gShapeSwapped`) */
   private swapped = new Uint8Array(TILE_COLUMNS * TILE_ROWS);
@@ -263,7 +266,7 @@ export class GraphicsSet {
     }
     const moonStyle = MOON_STYLES[name];
     const moons = moonStyle ? paintMoons(moonStyle) : null;
-    return new GraphicsSet(
+    const set = new GraphicsSet(
       tiles,
       applyMask(tiles, mask),
       font,
@@ -276,6 +279,8 @@ export class GraphicsSet {
       CLASS_FIGURE_SETS.has(name),
       displayOf(name),
     );
+    set.jaLarge = JA_LARGE_SETS.includes(name);
+    return set;
   }
 
   /** Source rectangle of a tile index, honouring the animation frame. (`GetTileRectForIndex`) */
@@ -332,6 +337,8 @@ export class GraphicsSet {
 
   /** Draw a glyph of the classic bitmap font. */
   drawGlyph(ctx: CanvasRenderingContext2D, ch: string, dx: number, dy: number, size: number): void {
+    // A Japanese letter (anything past ASCII) comes from the shared Japanese sheet, into the same cell.
+    if (isJaLetter(ch) && drawJaGlyph(ctx, ch, dx, dy, size, this.jaLarge)) return;
     let code = ch.charCodeAt(0) - 0x20;
     if (code < 0 || code >= FONT_GLYPHS) code = 0;
     // The whole glyph, however tall, fits the square cell.

@@ -32,6 +32,7 @@
  * found) is recorded as it happens. The whole state lives in the save file.
  */
 
+import { tr } from '../i18n/index.ts';
 import type { World } from './world.ts';
 import { Location } from './party.ts';
 import { MapValue } from './tiles.ts';
@@ -414,6 +415,9 @@ const MYSTERY = 'Mystery...';
 
 /** `name` at the left, `right` at the right, in the page's width; the name cut short should both not fit. */
 function row(name: string, right = ''): string {
+  // In Japanese the name and its standing are each translated before they are set in the line.
+  name = tr(name);
+  right = tr(right);
   if (!right) return name.slice(0, WIDTH);
   return name.slice(0, WIDTH - right.length - 1).padEnd(WIDTH - right.length) + right;
 }

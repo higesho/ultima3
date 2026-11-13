@@ -10,6 +10,8 @@
  */
 
 import { loadResources } from './data/resources.ts';
+import { defaultLang, getLang, LANGS, missing, setLang, type Lang } from './i18n/index.ts';
+import { loadJaFont } from './ui/jaFont.ts';
 import { World, STARVATION_MODES, TIMER_MODES, type Starvation, type Timer } from './game/world.ts';
 import { Game } from './game/game.ts';
 import { localSave, exportGame, parseExport, restoreExported } from './game/save.ts';
@@ -73,6 +75,8 @@ interface Prefs {
   batterySaver: boolean;
   /** Max input: how soon a held key repeats (input.ts INPUT_PACES). */
   maxInput: InputPace;
+  /** The language shown (i18n): Japanese for a browser set to Japanese on first visit, else English. */
+  language: Lang;
 }
 
 const DEFAULT_PREFS: Prefs = {
@@ -94,6 +98,7 @@ const DEFAULT_PREFS: Prefs = {
   touchPad: typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches,
   batterySaver: false,
   maxInput: 'medium',
+  language: defaultLang(),
 };
 
 function loadPrefs(): Prefs {
@@ -115,6 +120,7 @@ function loadPrefs(): Prefs {
     if (!SOUND_SETS.includes(prefs.soundSet)) prefs.soundSet = 'Standard';
     prefs.effectsLevel = validLevel(prefs.effectsLevel);
     prefs.musicLevel = validLevel(prefs.musicLevel);
+    if (!LANGS.includes(prefs.language)) prefs.language = DEFAULT_PREFS.language;
     return prefs;
   } catch {
     return { ...DEFAULT_PREFS };
@@ -218,6 +224,9 @@ async function start(): Promise<void> {
   const canvas = document.getElementById('screen') as HTMLCanvasElement;
   const params = new URLSearchParams(location.search);
   const prefs = loadPrefs();
+  setLang(prefs.language);
+  // Development: the English shown untranslated, for finding what is left to translate (i18n/index.ts).
+  if (import.meta.env.DEV) (window as { u3missing?: Set<string> }).u3missing = missing;
   // Development starts (devStarts.ts, `npm run dev` only): ?peek saves nothing, ?tiles= is a set for this page alone.
   const dev = import.meta.env.DEV ? await import('./game/devStarts.ts') : null;
   const peek = dev !== null && params.has('peek');
@@ -235,7 +244,7 @@ async function start(): Promise<void> {
       ? newerRelease(appVersion)
       : Promise.resolve(null);
 
-  const [resources, gfx, images] = await Promise.all([loadResources(), GraphicsSet.load(tiles), loadImages()]);
+  const [resources, gfx, images] = await Promise.all([loadResources(), GraphicsSet.load(tiles), loadImages(), loadJaFont()]);
 
   // The party never moves diagonally, as on the Apple II (the Mac's option stays in the code, unexposed).
   const world = new World(resources);
@@ -316,6 +325,7 @@ async function start(): Promise<void> {
       touchPad: prefs.touchPad,
       batterySaver: screen.batterySaver,
       maxInput: screen.maxInput,
+      language: getLang(),
     });
   };
   screen.onSettingsChange = remember;
