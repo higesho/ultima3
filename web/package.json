@@ -12,7 +12,6 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "extract": "node tools/extract-resources.ts",
     "figures": "node tools/compose-figures.ts",
     "graphics-index": "node tools/graphics-index.ts",
     "font-sheet": "node tools/font-sheet.ts",

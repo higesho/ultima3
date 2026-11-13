@@ -1,6 +1,9 @@
 # Ultima III: Exodus
 
-![EXODUS: Ultima III, 1983 to 2026, beside the demon from Denis Loubet's box painting](promo/banner.jpg)
+> **This branch (ja)**: a Japanese edition that ships none of the original game's data. It plays your own copy of
+> the DOS game sold by GOG.com and Steam ("Ultima 3"), reading its files; the Mac resources, the other machines'
+> tile sets, the music and the box art are not in this branch. Download: [Releases](https://github.com/higesho/ultima3/releases).
+> 日本語版の紹介ページ: <https://higesho.github.io/ultima-ja/ultima3/>
 
 *A modernized port of the original game. Both historic and modern play,
 for the browser, Windows, macOS, Linux, Android and the Steam Deck.*
@@ -23,10 +26,6 @@ changes:
    white.
 3. Includes an updated Standard experience: controller play, new art and
    sound, and tweakable settings.
-
-![The Standard experience: a town, combat, controller mode, a dungeon in first person, with a map beside the view and top down, a dungeon's View map, the map of Sosaria as the party has seen it, the quest journal, Tips, a shop weighing its wares and the Pause menu](promo/features.jpg)
-
-![Twelve tile sets, each at the opening, in combat and in a dungeon](promo/tile-sets.jpg)
 
 The following were design principles for the updated Standard experience:
 
