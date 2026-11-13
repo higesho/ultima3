@@ -172,7 +172,7 @@ describe('the journal', () => {
     p.bytes[29] = 0x58; // 600
     io.keys = ['1'];
     await transactToward(world, io, 1, 0);
-    expect(io.output).toContain('SEEK YE');
+    expect(io.output).toContain('Seek ye');
     const kings = lineOf(world, 'Main quest', 'Mark of Kings');
     expect(kings.label).toBe('Mark of Kings    0/4');
     expect(kings.open?.text).toEqual(['Lord British: SEEK YE, THE MARK OF KINGS!']);
@@ -222,7 +222,7 @@ describe('the journal', () => {
     io.keys = ['1'];
     io.inputs = ['PRAY'];
     await otherCommand(world, io);
-    expect(io.output).toContain('EVOCARE');
+    expect(io.output).toContain('Evocare');
     expect(world.journal.words).toEqual(['EVOCARE']);
     expect(lineOf(world, 'Towns', 'Yew').label).toBe('Yew              1/3');
     expect(lineOf(world, 'Main quest', 'Silver Snake').about).toBe('The mark: not held. The word: EVOCARE.');
@@ -258,7 +258,7 @@ describe('the journal', () => {
     io.output = '';
     personEast(world, 5);
     await talkTo(world, io, 0, 0);
-    expect(io.output.replace(/\s+/g, ' ')).toContain('PEACE BE WITH YOU');
+    expect(io.output.replace(/\s+/g, ' ')).toContain('Peace be with you');
     expect(knownWords(world)).toEqual(['PAXUM']);
     expect(lineOf(world, 'Towns', 'Moon').label).toBe('Moon             0/4');
     expect(lineOf(world, 'Words', 'PAXUM').about).toContain('Pax: peace.');
@@ -274,8 +274,8 @@ describe('the journal', () => {
     expect(knownWords(world)).toEqual(['SEARCH', 'INSERT']);
     // "INSERT CARDS" names the cards; the order of them it only bears on.
     expect(lineOf(world, 'Main quest', 'The four cards').open?.text).toEqual([
-      'Clues, level 2: <INSERT> CARDS INTO EXODUS!',
-      'Clues, level 3: <SEARCH> THE SHRINES!',
+      'Clues, level 2: <Insert> cards into Exodus!',
+      'Clues, level 3: <Search> the Shrines!',
     ]);
     expect(labels(world, 'Main quest')[7]).toBe('Mystery...');
   });
@@ -422,7 +422,7 @@ describe('the journal', () => {
     await shop(world, io, 6, 0);
     const radrion = lineOf(world, 'Rumours', 'Radrion');
     expect(radrion.label).toBe('Radrion          0/9');
-    expect(radrion.open?.text?.[0]).toBe("And so the sage said unto thee 'If thou can solve my rhyme,");
+    expect(radrion.open?.text?.[0]).toBe("And so the sage said unto thee 'If thou can solve my rhyme");
     expect(section(world, 'Rumours').label).toBe('Rumours         1/18');
   });
 

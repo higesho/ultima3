@@ -106,7 +106,7 @@ describe('monster planning', () => {
     c.tiles[4 * 11 + 5] = Shape.Wall;
     handleMove(world, io, 0, 0, -1);
     expect(c.members[0].y).toBe(5);
-    expect(io.output).toContain('INVALID MOVE!');
+    expect(io.output).toContain('Invalid Move!');
     handleMove(world, io, 0, 1, 0);
     expect(c.members[0].x).toBe(6);
     expect(io.sounds).toContain('Step');
@@ -149,9 +149,9 @@ describe('a whole fight', () => {
     await combat(world, io, MapValue.Orc >> 1, 0);
     expect(world.combat).toBeNull();
     expect(world.party.location).toBe(Location.Town);
-    expect(io.output).toContain('CONFLICT');
-    expect(io.output).toContain('VICTORY');
-    expect(io.output).toContain('KILLED! Exp.+');
+    expect(io.output).toContain('Conflict');
+    expect(io.output).toContain('Victory');
+    expect(io.output).toContain('Killed! Exp.+');
     const totalExp = [0, 1, 2, 3].reduce((sum, m) => sum + world.member(m).bytes[31], 0);
     expect(totalExp).toBeGreaterThan(expBefore);
   });
@@ -181,9 +181,9 @@ describe('a whole fight', () => {
     };
 
     await combat(world, io, MapValue.Orc >> 1, 0);
-    expect(io.output).toContain('VICTORY');
-    expect(io.output).toContain('Sword attack');
-    expect(io.output).toContain('KILLED! Exp.+');
+    expect(io.output).toContain('Victory');
+    expect(io.output).toContain('Sword Attack');
+    expect(io.output).toContain('Killed! Exp.+');
   });
 
   it('a monster on the map becomes a chest on the terrain it stood on', async () => {
@@ -204,7 +204,7 @@ describe('a whole fight', () => {
     await attackMonster(world, io, 0);
     expect(m.type(0)).toBe(0);
     expect(world.getXYVal(33, 32)).toBe(MapValue.Chest + 2); // chest on brush
-    expect(io.output).toContain('VICTORY');
+    expect(io.output).toContain('Victory');
   });
 });
 

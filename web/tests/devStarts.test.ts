@@ -26,8 +26,8 @@ describe('development starts', () => {
     expect(pickName(places, 'm')).toBeNull(); // Moon, the Montors, Morinia
     for (const name of places) expect(pickName(places, slug(name.replace(/^Dungeon /, '')))).toBe(name); // the /debug links
     for (const name of fights) expect(pickName(fights, slug(name))).toBe(name);
-    expect(tileSetAsked('commodore64', TILE_SETS)).toBe('Commodore 64');
-    expect(tileSetAsked('pc', TILE_SETS)).toBeNull();
+    expect(tileSetAsked('pccga', TILE_SETS)).toBe('PC CGA');
+    expect(tileSetAsked('nosuch', TILE_SETS)).toBeNull();
     expect(tileSetAsked(null, TILE_SETS)).toBeNull();
   });
 

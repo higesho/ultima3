@@ -9,13 +9,13 @@
 // Steam's Game Mode compositor, GPU acceleration and the Chromium sandbox
 // are turned off: see below. Only one copy runs; a second launch brings the
 // first window forward.
-const { app, BrowserWindow, protocol, net, shell, session, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, protocol, net, shell, session, ipcMain, screen, dialog } = require('electron');
 const { join, normalize } = require('node:path');
 const { pathToFileURL } = require('node:url');
-const { writeFileSync, existsSync } = require('node:fs');
+const { writeFileSync, existsSync, readdirSync, readFileSync, statSync } = require('node:fs');
+const { execFileSync } = require('node:child_process');
 const { placeOnScreen, readState, startsFullScreen, writeState } = require('./windowState.cjs');
 const updates = require('./updates.cjs');
-const { installSteamArt } = require('./steamArt.cjs');
 const { portableData } = require('./portable.cjs');
 const { homedir } = require('node:os');
 
@@ -162,6 +162,107 @@ ipcMain.handle('open-release', async () => {
   if (offer) await shell.openExternal(offer.url);
 });
 
+// The player's own Ultima III (web/src/data/dosGame.ts): the app carries none of the game, and reads the DOS game
+// GOG.com and Steam sell from its folder. The folder chosen before (game.json) is looked in first, then where GOG
+// Galaxy and Steam install it; failing those the page asks, and the folder chosen is remembered.
+const gameChoice = () => join(app.getPath('userData'), 'game.json');
+const GOG_ID = '1207662613';
+
+function holdsGame(dir) {
+  try {
+    return readdirSync(dir).some((n) => n.toUpperCase() === 'EXODUS.BIN');
+  } catch {
+    return false;
+  }
+}
+
+/** A value from the Windows registry, or null. */
+function registryValue(key, name) {
+  if (process.platform !== 'win32') return null;
+  try {
+    const out = execFileSync('reg', ['query', key, '/v', name], { encoding: 'utf8', windowsHide: true, timeout: 5000, stdio: ['ignore', 'pipe', 'ignore'] });
+    const m = new RegExp(`${name}\\s+REG_\\w+\\s+(.+)`).exec(out);
+    return m ? m[1].trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Steam's libraries (libraryfolders.vdf), each a folder holding steamapps. */
+function steamLibraries() {
+  const roots = [
+    registryValue('HKCU\\Software\\Valve\\Steam', 'SteamPath'),
+    registryValue('HKLM\\SOFTWARE\\WOW6432Node\\Valve\\Steam', 'InstallPath'),
+    join(homedir(), '.steam', 'steam'),
+    join(homedir(), '.local', 'share', 'Steam'),
+    join(homedir(), 'Library', 'Application Support', 'Steam'),
+  ].filter(Boolean);
+  const libraries = [...roots];
+  for (const root of roots) {
+    try {
+      const vdf = readFileSync(join(root, 'steamapps', 'libraryfolders.vdf'), 'utf8');
+      for (const m of vdf.matchAll(/"path"\s+"([^"]+)"/g)) libraries.push(m[1].replace(/\\\\/g, '\\'));
+    } catch {
+      /* no Steam here */
+    }
+  }
+  return libraries;
+}
+
+/** Where the game may be, the likeliest first. */
+function gameCandidates() {
+  const list = [];
+  if (process.env.U3_GAME_DIR) list.push(process.env.U3_GAME_DIR);
+  try {
+    const saved = JSON.parse(readFileSync(gameChoice(), 'utf8')).dir;
+    if (typeof saved === 'string') list.push(saved);
+  } catch {
+    /* none chosen yet */
+  }
+  for (const key of [`HKLM\\SOFTWARE\\WOW6432Node\\GOG.com\\Games\\${GOG_ID}`, `HKLM\\SOFTWARE\\GOG.com\\Games\\${GOG_ID}`]) {
+    const path = registryValue(key, 'path');
+    if (path) list.push(path);
+  }
+  for (const lib of steamLibraries()) list.push(join(lib, 'steamapps', 'common', 'Ultima III'));
+  list.push(
+    'C:\\GOG Games\\Ultima 3',
+    'C:\\Program Files (x86)\\GOG Galaxy\\Games\\Ultima 3',
+    'C:\\Program Files\\GOG Galaxy\\Games\\Ultima 3',
+    join(homedir(), 'GOG Games', 'Ultima 3'),
+  );
+  return list;
+}
+
+/** The named files of the game's folder (names in capitals, as DOS has them), each read whole. */
+function readGame(dir, names) {
+  const wanted = new Set((Array.isArray(names) ? names : []).map((n) => String(n).toUpperCase()));
+  const out = {};
+  for (const name of readdirSync(dir)) {
+    const upper = name.toUpperCase();
+    if (!wanted.has(upper)) continue;
+    const path = join(dir, name);
+    if (statSync(path).size <= 1 << 20) out[upper] = readFileSync(path);
+  }
+  return out;
+}
+
+const fromGamePage = (event) => String(event.senderFrame?.url ?? '').startsWith(`${SCHEME}://`);
+ipcMain.handle('game-files', (event, names) => {
+  if (!fromGamePage(event)) return null;
+  const dir = gameCandidates().find(holdsGame);
+  return dir ? readGame(dir, names) : null;
+});
+ipcMain.handle('choose-game-folder', async (event, names) => {
+  if (!fromGamePage(event)) return null;
+  const win = BrowserWindow.fromWebContents(event.sender);
+  const choice = await dialog.showOpenDialog(win, { properties: ['openDirectory'], title: 'Ultima III' });
+  const dir = choice.canceled ? null : choice.filePaths[0];
+  if (!dir) return null;
+  if (!holdsGame(dir)) return {};
+  writeFileSync(gameChoice(), JSON.stringify({ dir }));
+  return readGame(dir, names);
+});
+
 /** How long the smoke test waits for the game to start, and then for it to draw before the screenshot. */
 const SMOKE_START_MS = 30_000;
 const SMOKE_DRAW_MS = 3000;
@@ -203,19 +304,8 @@ app.whenReady().then(() => {
   // Nothing in the game needs a permission prompt; deny them all rather than show a dialog.
   session.defaultSession.setPermissionRequestHandler((_wc, permission, callback) => callback(permission === 'clipboard-read' || permission === 'clipboard-sanitized-write'));
   const win = createWindow();
-  // Launched from a non-Steam shortcut, the first time: Steam's library artwork put in place (steamArt.cjs), a moment
-  // after the window is up, apart from everything else. It never throws, and what it did is only logged.
-  setTimeout(() => {
-    installSteamArt({
-      env: process.env,
-      home: homedir(), // $HOME (the Flatpak's is the player's own home)
-      platform: process.platform,
-      artDir: join(__dirname, 'build', 'steam'),
-      noteFile: join(app.getPath('userData'), 'steam-art.json'),
-    })
-      .then((r) => r.result !== 'not from a shortcut' && console.log('steam artwork:', JSON.stringify(r)))
-      .catch(() => {});
-  }, 3000);
+  // (Steam's library artwork, steamArt.cjs, is not put in place: it was made from the box's painting, which this
+  // build, playing the player's own copy of the game, does not ship.)
   // A smoke test (smoke.cjs): wait for the game to start, screenshot it once drawn, then quit. The start is waited for
   // rather than given a fixed time: a slow CI runner took longer than six seconds, and the test failed with nothing
   // wrong. The page's errors and how long the start took go to the log, so a failure says why.

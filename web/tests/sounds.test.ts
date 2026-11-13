@@ -62,8 +62,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 describe('sound player', () => {
   afterEach(() => vi.unstubAllGlobals());
 
-  it('has both sets', () => {
-    expect(SOUND_SETS).toEqual(['Standard', 'Lairware']);
+  it('has the Standard set alone', () => {
+    expect(SOUND_SETS).toEqual(['Standard']);
   });
 
   it('plays from the chosen set with its gain, and does not restart the same effect within a moment', async () => {

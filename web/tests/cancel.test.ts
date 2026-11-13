@@ -107,8 +107,8 @@ describe('backing out of a command', () => {
       return ' ';
     };
     await combat(world, io, MapValue.Orc >> 1, 0);
-    const firstTurn = io.output.slice(0, io.output.indexOf('PLAYER-2'));
-    expect(firstTurn.split('PLAYER-1').length - 1).toBe(4); // asked again after each of the three
+    const firstTurn = io.output.slice(0, io.output.indexOf('Player 2'));
+    expect(firstTurn.split('Player 1').length - 1).toBe(4); // asked again after each of the three
     expect(firstTurn.split('Cancelled.').length - 1).toBe(2); // Attack and Ready; Ztats is just closed
     expect(firstTurn).toContain('Pass');
   });

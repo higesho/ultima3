@@ -46,7 +46,7 @@ describe('movement', () => {
     await move(world, io, 'east');
     await move(world, io, 'west');
     expect(world.x).toBe(32);
-    expect(io.output).toContain('INVALID MOVE!');
+    expect(io.output).toContain('Invalid Move!');
     expect(io.sounds.filter((s) => s === 'Bump')).toHaveLength(2);
   });
 
@@ -67,7 +67,7 @@ describe('movement', () => {
     world.windDirection = 1; // north wind
     await move(world, io, 'north');
     expect(world.y).toBe(31);
-    expect(io.output).toContain('INVALID MOVE!');
+    expect(io.output).toContain('Invalid Move!');
     world.putXYVal(MapValue.Grass, 32, 30);
     world.windDirection = 0;
     await move(world, io, 'north');
@@ -94,7 +94,7 @@ describe('board and exit', () => {
     exit(world, io);
     expect(world.party.shape).toBe(PartyShape.OnFoot);
     expect(world.getXYVal(32, 32)).toBe(MapValue.Horse);
-    expect(io.output).toContain('Mount horse!');
+    expect(io.output).toContain('Mount Horse!');
     expect(io.output).toContain('Dismount');
   });
 
@@ -104,7 +104,7 @@ describe('board and exit', () => {
     world.putXYVal(MapValue.Brush, 32, 32);
     exit(world, io);
     expect(world.party.shape).toBe(PartyShape.Frigate);
-    expect(io.output).toContain('Not here!');
+    expect(io.output).toContain('Not Here!');
   });
 });
 
@@ -153,7 +153,7 @@ describe('enter and leave a town', () => {
   it('does nothing on plain grass', () => {
     const { world, io } = flatWorld();
     enter(world, io);
-    expect(io.output).toContain('<-WHAT?');
+    expect(io.output).toContain('<-What?');
     expect(world.party.location).toBe(Location.Sosaria);
   });
 });
@@ -363,7 +363,7 @@ describe('peer at gem', () => {
     const { world, io } = flatWorld();
     world.party.gems = 0;
     await peerGem(world, io);
-    expect(io.output).toContain('None left');
+    expect(io.output).toContain('None Left');
   });
 });
 
@@ -394,7 +394,7 @@ describe('starvation', () => {
     world.starvation = 'none';
     await endTurn(world, io, noHooks);
     expect(world.member(0).hitPoints).toBe(hp[0]);
-    expect(io.output.split('STARVING!').length - 1).toBe(1);
+    expect(io.output.split('Starving!').length - 1).toBe(1);
     world.starvation = 'mild';
     for (let i = 0; i < 20; i++) await endTurn(world, io, noHooks);
     expect(world.member(0).hitPoints).toBe(50);

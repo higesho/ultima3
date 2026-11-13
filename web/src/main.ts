@@ -9,7 +9,8 @@
  * visits, in localStorage.
  */
 
-import { loadResources } from './data/resources.ts';
+import { resourcesFromDos } from './data/dosGame.ts';
+import { obtainGameFiles } from './ui/gameFolder.ts';
 import { defaultLang, getLang, LANGS, missing, setLang, type Lang } from './i18n/index.ts';
 import { loadJaFont } from './ui/jaFont.ts';
 import { World, STARVATION_MODES, TIMER_MODES, type Starvation, type Timer } from './game/world.ts';
@@ -35,7 +36,7 @@ function readWarnedAt(): number | null {
 import { AutoMap, MAP_MODES, type MapMode } from './game/automap.ts';
 import { chooseRules, mainMenu } from './game/menu.ts';
 import { Attract } from './ui/attract.ts';
-import { GraphicsSet, loadImages } from './ui/graphics.ts';
+import { GraphicsSet, loadImages, useGameFiles } from './ui/graphics.ts';
 import { INPUT_PACE_NAMES, Keyboard, type InputPace } from './ui/input.ts';
 import { LEVELS, SoundPlayer, SOUND_SETS, validLevel, type SoundSet } from './ui/sound.ts';
 import { TouchPad } from './ui/touch.ts';
@@ -244,7 +245,11 @@ async function start(): Promise<void> {
       ? newerRelease(appVersion)
       : Promise.resolve(null);
 
-  const [resources, gfx, images] = await Promise.all([loadResources(), GraphicsSet.load(tiles), loadImages(), loadJaFont()]);
+  // The player's own game (gameFolder.ts, data/dosGame.ts): the port carries none of it, and plays it from its files.
+  const files = await obtainGameFiles(prefs.language);
+  useGameFiles(files);
+  const resources = resourcesFromDos(files);
+  const [gfx, images] = await Promise.all([GraphicsSet.load(tiles), loadImages(), loadJaFont()]);
 
   // The party never moves diagonally, as on the Apple II (the Mac's option stays in the code, unexposed).
   const world = new World(resources);
@@ -271,7 +276,8 @@ async function start(): Promise<void> {
   const music = new MusicPlayer();
   music.level = prefs.musicLevel;
   sounds.onLong = (seconds) => music.duck(seconds); // long effects duck the music
-  music.enabled = prefs.music;
+  // No music: the songs are the original's, and the port ships none of the original (data/dosGame.ts).
+  music.enabled = false;
   const keyboard = new Keyboard();
   // Audio may only start after a user gesture. A key press or a click is
   // one; a gamepad button is not, but once the page has had a click (to

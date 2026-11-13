@@ -165,7 +165,7 @@ describe('auto-combat in a fight', () => {
     const io = new FakeIO(world.resources);
     await combat(world, io, MapValue.Orc >> 1, 0);
     expect(world.combat).toBeNull();
-    expect(io.output).toContain('VICTORY');
+    expect(io.output).toContain('Victory');
     expect(io.macro).toEqual([]);
   });
 

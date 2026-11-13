@@ -42,7 +42,7 @@ describe('dungeon movement', () => {
     expect(world.dungeon.heading).toBe(2);
     forward(world, io);
     expect(world.y).toBe(1);
-    expect(io.output).toContain('INVALID MOVE!');
+    expect(io.output).toContain('Invalid Move!');
     turn(world, io, false);
     turn(world, io, false); // north
     expect(world.dungeon.heading).toBe(0);
@@ -129,7 +129,7 @@ describe('the dungeon loop', () => {
     await runDungeon(world, io);
     expect(world.dungeon.torch).toBeGreaterThan(0);
     expect(io.images).toContain('Fountain');
-    expect(io.output).toContain('ARGH! BLAH! YUK!');
+    expect(io.output).toContain('Argh! Blah! Yuk!');
     expect(world.member(0).hitPoints).toBe(hp - 25);
     expect(world.dungeon.exit).toBe(true);
   });
@@ -199,7 +199,7 @@ describe('a trap', () => {
 
   it('is evaded where the knack passes, and goes off where it fails', async () => {
     const passed = await step('low');
-    expect(passed.io.output).toContain('A TRAP');
+    expect(passed.io.output).toContain('A trap');
     expect(passed.io.output).toContain('Evaded');
     expect(passed.hurt).toBe(false);
     const failed = await step('high');
@@ -218,7 +218,7 @@ describe('fountain prompts', () => {
     // Ignite, step onto the fountain (asked: cancel with 0), turn twice and pass (not asked), retreat, climb.
     io.keys = ['I', Key.Up, '0', Key.Left, Key.Right, ' ', Key.Down, 'K'];
     await runDungeon(world, io);
-    const asks = io.output.split('who\nwill drink?').length - 1;
+    const asks = io.output.split('Who\nwill drink?').length - 1;
     expect(asks).toBe(1);
     expect(world.dungeon.exit).toBe(true);
   });
@@ -245,7 +245,7 @@ describe('the light shortcut in the dungeon loop', () => {
     io.keys = [LIGHT_KEY, 'K'];
     await runDungeon(world, io);
     expect(world.dungeon.torch).toBe(0);
-    expect(io.output).toContain('WHAT?');
+    expect(io.output).toContain('What?');
     world.dungeon.exit = false;
     world.member(3).mana = 40;
     io.keys = [LIGHT_KEY, 'K'];

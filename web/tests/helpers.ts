@@ -1,32 +1,23 @@
 /**
- * Shared test helpers: load the extracted resources from disk and provide a
- * fake GameIO that records what the game printed and played.
+ * Shared test helpers: the game's data, read from the player's own copy of Ultima III (tools/gameFiles.ts: the folder
+ * U3_GAME_DIR names, or where GOG Galaxy or Steam put it), and a fake GameIO that records what the game printed and
+ * played.
  */
 
-import { readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { resourcesFromBundle, type Bundle, type GameResources } from '../src/data/resources.ts';
+import type { GameResources } from '../src/data/resources.ts';
+import { gameResources } from '../tools/gameFiles.ts';
 import { serialize, type SaveData } from '../src/game/save.ts';
 import { World } from '../src/game/world.ts';
 import { Key, type GameIO, type MenuOption, type CommandScope } from '../src/game/io.ts';
-
-const HERE = dirname(fileURLToPath(import.meta.url));
-
-let cached: GameResources | null = null;
 
 /** A save as it comes back from storage: through JSON, so nothing but plain data survives. */
 export function savedCopy(world: World): SaveData {
   return JSON.parse(JSON.stringify(serialize(world))) as SaveData;
 }
 
-/** Load public/data/resources.json once per test run. */
+/** The game's data, read once per test run from the game's folder. */
 export function loadTestResources(): GameResources {
-  if (!cached) {
-    const json = readFileSync(join(HERE, '..', 'public', 'data', 'resources.json'), 'utf8');
-    cached = resourcesFromBundle(JSON.parse(json) as Bundle);
-  }
-  return cached;
+  return gameResources();
 }
 
 /** A fresh world on Sosaria with the default party, using a fixed RNG seed. */

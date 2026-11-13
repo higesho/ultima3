@@ -4,6 +4,10 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('u3native', {
+  /** The player's Ultima III, the named files of its folder, found or chosen before; null when there is none. */
+  gameFiles: (names) => ipcRenderer.invoke('game-files', names),
+  /** Ask for the game's folder: its files, or null when cancelled (main.cjs remembers the folder). */
+  chooseGameFolder: (names) => ipcRenderer.invoke('choose-game-folder', names),
   updateOffer: () => ipcRenderer.invoke('update-offer'),
   openRelease: () => ipcRenderer.invoke('open-release'),
   fullScreen: {

@@ -3,3 +3,6 @@ dist/
 videos/
 i18n-todo.tsv
 i18n-missing.tsv
+
+# tools/dos-strings.py の確認用の一覧（原作の英文を含むので入れない）
+tools/dos-strings-report.txt

@@ -24,7 +24,8 @@
  */
 
 export type SoundSet = 'Standard' | 'Lairware';
-export const SOUND_SETS: SoundSet[] = ['Standard', 'Lairware'];
+/** The sets on offer: the Standard set alone, the Mac's recordings being LairWare's and not shipped. */
+export const SOUND_SETS: SoundSet[] = ['Standard'];
 
 const FOLDER: Record<SoundSet, string> = { Standard: 'standard/', Lairware: '' };
 /** Names a set serves from another file: the Standard set has one swing, varied at play time, where the Mac had four. */

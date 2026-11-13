@@ -1,0 +1,928 @@
+# DOS 版から読む文の訳: @e/@l/@r<TAB>英文の指紋<TAB>訳（tools/dos-strings.py が作る。手で直さない）
+# @e はそのまま、@l は小文字にした英文、@r は空白と改行を1つの空白にした英文の指紋（i18n/index.ts の引き方）
+@e	swgujb42do	馬に 乗った!\n
+@l	1i6qeswatud	馬に 乗った!\n
+@r	brdbp4ajcd	馬に 乗った!
+@e	lb7lco8yxm	船に 乗った!\n
+@l	etr99a0khe	船に 乗った!\n
+@r	wj64v9hz7b	船に 乗った!
+@e	3xct49mwnl	ダンジョン!\n
+@l	2fqes97r3bq	ダンジョン!\n
+@r	sm84p7a4wq	ダンジョン!
+@e	27a9qlo6scb	城!\n
+@l	19rarydqo2q	城!\n
+@r	pbqzlptxpy	城!
+@e	geii9oxl81	ほこら!\nだれが 入る?-
+@l	11klo70hblf	ほこら!\nだれが 入る?-
+@r	28mxam01lkw	ほこら!だれが 入る?-
+@e	16dddyu99im	宝箱を 開ける!\nだれが 調べる-
+@l	zxhbeba4bg	宝箱を 開ける!\nだれが 調べる-
+@r	25nsw9f4sq0	宝箱を 開ける!だれが 調べる-
+@e	11eb3jr9e00	酸の わな!\n
+@l	q5f053d7wp	酸の わな!\n
+@r	1jli0nka7i7	酸の わな!
+@e	ts5fd5ec76	毒の わな!\n
+@l	17fq5fteob8	毒の わな!\n
+@r	1grpkgke8re	毒の わな!
+@e	1xm2ber15ww	爆弾の わな!\n
+@l	xq8u9txtr1	爆弾の わな!\n
+@r	1dnygceukuj	爆弾の わな!
+@e	2cdycf45d7a	ガスの わな!\n
+@l	284172ndbym	ガスの わな!\n
+@r	1rrfo0ggg8a	ガスの わな!
+@e	2gipp1jh47y	金+
+@l	pvipw72759	金+
+@e	vgwxj192uy	装備を 渡す!\nだれから-
+@l	kbcmluymy1	装備を 渡す!\nだれから-
+@r	1seos6yq8zu	装備を 渡す!だれから-
+@e	ezhogzxdb3	足りない!\n
+@l	1e04a6zhz91	足りない!\n
+@r	tfjw3ludli	足りない!
+@e	2eegmfpa90a	多すぎる!\n
+@l	1ib6x0h4n72	多すぎる!\n
+@r	2cj31v5s55k	多すぎる!
+@e	b7de6qqhdx	済んだ!\n
+@l	1m6jeu9i6ty	済んだ!\n
+@r	24u4z4jz96z	済んだ!
+@e	26hixrytl3a	いくつ-
+@l	ochwf1wrk1	いくつ-
+@r	207jhequjln	いくつ-
+@e	y4yvmxixsh	使用中!\n
+@l	2d89fp6362o	使用中!\n
+@r	23rlh3bi5ah	使用中!
+@e	o7hsn6ixkt	だれの たいまつ-
+@l	1lh097aqjxj	だれの たいまつ-
+@r	1s4tygrobni	だれの たいまつ-
+@e	tbmloerwqa	金を 集める-
+@l	1qfasbr16b3	金を 集める-
+@r	tbmloerwqa	金を 集める-
+@e	uo0ar1ujgp	もう ない!\n
+@l	1m2af2igff9	もう ない!\n
+@r	eqtn3x3rfj	もう ない!
+@e	1muz20o8d9y	上る 
+@l	nh0btyt2jq	上る 
+@e	auom9psk85	並びを 変える!\nだれ:-
+@l	3rcoedmvqx	並びを 変える!\nだれ:-
+@r	250s7jztc00	並びを 変える!だれ:-
+@e	x5vuh5wujc	仲間-
+@l	24a9h4s0f26	仲間-
+@r	24i6r5ud1d6	仲間-
+@e	mg8hxtnla6	\n入れかえた!\n
+@l	hqbstn1g3y	\n入れかえた!\n
+@r	1tixe4aa9tn	入れかえた!
+@e	r3olrm5jms	時を 止める!\nだれの粉?-
+@l	1705oi84wse	時を 止める!\nだれの粉?-
+@r	xixysktqja	時を 止める!だれの粉?-
+@e	1ql7hmuzd5u	宝石を のぞく!\nだれの宝石-
+@l	1nlzqohitma	宝石を のぞく!\nだれの宝石-
+@r	1itmg682rcm	宝石を のぞく!だれの宝石-
+@e	pvypnvtxtt	中断と セーブ…\n
+@l	1bzm8fg2unx	中断と セーブ…\n
+@r	2de6dinyqbo	中断と セーブ…
+@e	29r1n9y7usg	 歩数\n
+@l	29r1n9y7usg	 歩数\n
+@r	1jmmt7mkqhk	歩数
+@e	8oc445x5h0	武器を 持つ #- 
+@l	2apg2kmw18w	武器を 持つ #- 
+@r	assuvkncbj	武器を 持つ #-
+@e	raffnzzls8	武器-
+@l	24rvwxlqdbw	武器-
+@e	8kk1ibpe5h	だれが\n話す-
+@l	gs3z473hwb	だれが\n話す-
+@r	zq8i19l9yw	だれが話す-
+@e	1iz8jh05pxm	\nよき日を!\n\n
+@l	rvdhi3g3h3	\nよき日を!\n\n
+@r	f40idub1se	よき日を!
+@e	1s6o60xwuq7	よくぞ来た、子よ\n
+@l	2ecumvmx3s9	よくぞ来た、子よ\n
+@r	2c8ypjet2y6	よくぞ来た、子よ
+@e	11ogo9t9q56	もっと 経験を 積め!!\n\n
+@l	i0by8ofegv	もっと 経験を 積め!!\n\n
+@r	feyw6ngiw6	もっと 経験を 積め!!
+@e	1deuej31jq0	これ以上は ない!\n
+@l	2b8uycv8ufr	これ以上は ない!\n
+@r	1mecz7ls69b	これ以上は ない!
+@e	sbkgyd9uuo	王のしるしを\n探すがよい!\n
+@l	2cl4v9y4t7s	王のしるしを\n探すがよい!\n
+@r	1rmq3ii20yd	王のしるしを探すがよい!
+@e	1ysbjcl52s7	そなたは 強くなった\n\n
+@l	1um6mn1fm5s	そなたは 強くなった\n\n
+@r	k7it3bosal	そなたは 強くなった
+@e	15nt3qq8la5	だれの鍵-
+@l	cliayv8ohy	だれの鍵-
+@r	13977mb2xiw	だれの鍵-
+@e	19yjdixu207	オン!\n
+@l	121cxooi2kf	オン!\n
+@r	p3fecpsztu	オン!
+@e	1ghbnmw3hih	オフ!\n
+@l	1yi1iux49sg	オフ!\n
+@r	m63hmui2o9	オフ!
+@e	23ol5owz0co	防具を 着る #- 
+@l	1mzo8uz0ndd	防具を 着る #- 
+@r	17ixs7wch5q	防具を 着る #-
+@e	2f8f1jatcly	防具-
+@l	mbkvclsiyg	防具-
+@e	ozgx5dueqk	叫ぶ、だれが?-
+@l	1i2foz0g7tu	叫ぶ、だれが?-
+@r	24hv24zpkqo	叫ぶ、だれが?-
+@e	1dq9lt4gss0	状態 #-
+@l	2f7awmmdv42	状態 #-
+@r	c4xbvjltx4	状態 #-
+@e	283nz9mh3qx	なに?\n
+@l	ilw1ezjd3d	なに?\n
+@r	2f3bi4cit08	なに?
+@e	22l8ahvn9es	<-なに?\n
+@l	1hpo1az21ma	<-なに?\n
+@r	apqn9y0you	<-なに?
+@e	v87fu8nhax	ここでは だめ!\n
+@l	eoikvmmhs8	ここでは だめ!\n
+@r	1le26outnfu	ここでは だめ!
+@e	usd0qlex2p	\n\n全員 倒れた!\n
+@l	1rt5y9hpbps	\n\n全員 倒れた!\n
+@r	1uv78l3dlqx	全員 倒れた!
+@e	24seq8g38az	\n船が 1せき\n沈められた!\n 
+@l	1lx3bu9dbv2	\n船が 1せき\n沈められた!\n 
+@r	1q2eyfqewcn	船が 1せき沈められた!
+@e	26dc71e8g0w	\n\n\n\n巨大な うず潮が 船もろとも 一行を のみこみ、海の 墓場へと 引きずりこむ!\n
+@l	1yqhzkwfjc8	\n\n\n\n巨大な うず潮が 船もろとも 一行を のみこみ、海の 墓場へと 引きずりこむ!\n
+@r	ef3catgkxz	巨大な うず潮が 船もろとも 一行を のみこみ、海の 墓場へと 引きずりこむ!
+@e	1h0kowev277	\n\n\n\n水が 肺に 流れこみ、意識は 闇へと 沈んでいく…\n
+@l	1tumump28zg	\n\n\n\n水が 肺に 流れこみ、意識は 闇へと 沈んでいく…\n
+@r	manrnk8zrw	水が 肺に 流れこみ、意識は 闇へと 沈んでいく…
+@e	29maojq2pfk	\n\n\n気がつくと 忘れられた地の 浜辺に いた。船も 船乗りも 海に 消えた!\n
+@l	u3zqpbyyq6	\n\n\n気がつくと 忘れられた地の 浜辺に いた。船も 船乗りも 海に 消えた!\n
+@r	2nr137g906	気がつくと 忘れられた地の 浜辺に いた。船も 船乗りも 海に 消えた!
+@e	w6stc2l3th	\n\n\n\n\n 真っ暗だ!\n\n
+@l	1oaqbvkdsyp	\n\n\n\n\n 真っ暗だ!\n\n
+@r	zqhjpfock6	真っ暗だ!
+@e	74nl2kq16x	進めない!\n
+@l	241gf9vcz50	進めない!\n
+@r	6nnmc5tid8	進めない!
+@e	1je0ejiwyrc	\n消え去った!\n
+@l	ob4djgvwly	\n消え去った!\n
+@r	bx8rag9ljy	消え去った!
+@e	cmofo3ccv2	だれが 唱える?-
+@l	261j6ombuu5	だれが 唱える?-
+@r	cmofo3ccv2	だれが 唱える?-
+@e	z716ew7e24	僧侶の呪文-
+@l	r8h5pwyt7o	僧侶の呪文-
+@r	z716ew7e24	僧侶の呪文-
+@e	1tkxtpjtuu	魔術の呪文-
+@l	gjud7jw5e0	魔術の呪文-
+@r	1tkxtpjtuu	魔術の呪文-
+@e	1edaxlf2mz7	だれを 解毒?-
+@l	1nhaz0inyvt	だれを 解毒?-
+@r	swrv85jli9	だれを 解毒?-
+@e	1zs921nusty	だれを 蘇生?-
+@l	prh5oqee1b	だれを 蘇生?-
+@r	1dyerx77zo4	だれを 蘇生?-
+@e	vj2b4e3w4j	だれを 呼び戻す?-
+@l	lv39g8zao5	だれを 呼び戻す?-
+@r	1mob2eb3dye	だれを 呼び戻す?-
+@e	299rhyjenhp	だれを 治す?-
+@l	1hkejc7kqc1	だれを 治す?-
+@r	1rgxod2fqnh	だれを 治す?-
+@e	17vkfkm43tn	倒した! 経験+
+@l	g7t0ork749	倒した! 経験+
+@r	17vkfkm43tn	倒した! 経験+
+@e	7f5evb22wp	\n*****勝利!*****\n\n
+@l	mnmjqh7aj9	\n*****勝利!*****\n\n
+@r	2e4dteqv5z9	*****勝利!*****
+@e	6y084ad7zm	\n-----戦闘!!-----\n->
+@l	1taikt1z8yh	\n-----戦闘!!-----\n->
+@r	223s1oegkjt	-----戦闘!!------>
+@e	1tg488snmfc	----仲間-
+@l	1yiguth8b5b	----仲間-
+@r	e71t6idqi3	----仲間-
+@e	1olu63jn0dm	武器を 持て!\n
+@l	14p2pwsc3s7	武器を 持て!\n
+@r	1autzr5q555	武器を 持て!
+@e	ofa79t7c2i	使えない 命令!\n 
+@l	2el4vi8uzd1	使えない 命令!\n 
+@r	2fm4qqbz6u	使えない 命令!
+@e	zb9g1hlaes	-はずれ!\n
+@l	15md1jmfmn	-はずれ!\n
+@r	bh4sow4wk	-はずれ!
+@e	h77ilbjkn6	-命中!\n
+@l	1mjr8qd8uo3	-命中!\n
+@r	edqf6099ph	-命中!
+@e	yb2ei18sbx	死んだ!!!\n
+@l	12eqbcz8j5z	死んだ!!!\n
+@r	2c88khsj5a1	死んだ!!!
+@e	z6m6v2vcq7	 の攻撃\n方向-
+@l	3q0z8j8167	 の攻撃\n方向-
+@r	1qq1i6h2jxt	の攻撃方向-
+@e	256hr9gki82	\n命中!\n
+@l	25qyr0m30zz	\n命中!\n
+@r	edqf6099ph	命中!
+@e	1tnuxe931a7	-盗まれた!\n
+@l	1pqhluc3zd5	-盗まれた!\n
+@r	weww08dq6	-盗まれた!
+@e	2ghs2xecyd2	毒!\n
+@l	1drfa3b3d7d	毒!\n
+@r	9l12pn5icb	毒!
+@e	1w4ob1ffz2b	時の王の 幻が\n見える。\n  彼は 告げる\n ただ一つの 道は\n 愛、太陽、\n 月、そして死。\n ほかは 失敗する
+@l	1la2qndmrs1	時の王の 幻が\n見える。\n  彼は 告げる\n ただ一つの 道は\n 愛、太陽、\n 月、そして死。\n ほかは 失敗する
+@r	1o9pde2jin7	時の王の 幻が見える。  彼は 告げる ただ一つの 道は 愛、太陽、 月、そして死。 ほかは 失敗する
+@e	16cnam1zp13	\n泉がある。\nだれが 飲む?-
+@l	cz4p7rac74	\n泉がある。\nだれが 飲む?-
+@r	29bf5o2bwws	泉がある。だれが 飲む?-
+@e	2eixjky9xr5	できない\n
+@l	118fxj4if0f	できない\n
+@r	1zne05h5gn3	できない
+@e	1zzszq5a3lk	うえっ! ひどい!\n
+@l	a6bwgueovi	うえっ! ひどい!\n
+@r	itc9291g29	うえっ! ひどい!
+@e	2fj4emxlvx5	ぐえっ! まずい!\n
+@l	1cn3oqesxj8	ぐえっ! まずい!\n
+@r	1xhgkeqm8v1	ぐえっ! まずい!
+@e	2fgrza4nvce	うわっ! わなだ!!\n
+@l	1bblksxvc7k	うわっ! わなだ!!\n
+@r	1gd429x7dyp	うわっ! わなだ!!
+@e	2fqb0xjtdcv	壁に 赤く焼けた\n棒がある。\nだれが さわる?-
+@l	6jot88kl5m	壁に 赤く焼けた\n棒がある。\nだれが さわる?-
+@r	19gri3jxi71	壁に 赤く焼けた棒がある。だれが さわる?-
+@e	1mmghjq1nj4	かすんだ 文字:\n
+@l	1p9tefhha6q	かすんだ 文字:\n
+@r	1avdvocibhp	かすんだ 文字:
+@e	1gmty13iyr0	地下では だめ!\n
+@l	1q2xzn4b8c1	地下では だめ!\n
+@r	1gv4ay6hzo3	地下では だめ!
+@e	1h8pe24bqvh	\n神々を あざむく\nことは できぬ!\n
+@l	1795ifnqbdd	\n神々を あざむく\nことは できぬ!\n
+@r	jzkrspy1uz	神々を あざむくことは できぬ!
+@e	21wwx1aow3a	\nシャザーム!\n
+@l	zh2nmswly5	\nシャザーム!\n
+@r	1ymsoi7o3q8	シャザーム!
+@e	bw020mp1re	\n飢えている!\n
+@l	15cmle29cub	\n飢えている!\n
+@r	20nqo4p5n4i	飢えている!
+@e	2nfr9z8gse	\n酒場へ\nようこそ!\n
+@l	1np0w4dsp60	\n酒場へ\nようこそ!\n
+@r	27da51i6po4	酒場へようこそ!
+@e	1owp5i2960t	\nさあ、友よ\n一杯 やりな!\n7gp だよ。\n払うかい?-
+@l	1uk70nj3xq1	\nさあ、友よ\n一杯 やりな!\n7gp だよ。\n払うかい?-
+@r	1ub48hcd7vj	さあ、友よ一杯 やりな!7gp だよ。払うかい?-
+@e	7vvd9mhf8u	出ていけ!\nこのクズめ!!\n
+@l	y27gotukm2	出ていけ!\nこのクズめ!!\n
+@r	1wu24cki220	出ていけ!このクズめ!!
+@e	yr3dt0qxm6	なに? 払えない?\n出ていけ クズめ!\n
+@l	14uuzblyey8	なに? 払えない?\n出ていけ クズめ!\n
+@r	6arpulao95	なに? 払えない?出ていけ クズめ!
+@e	rxi0gwf87q	\n\nまいど\nありがとよ!!\n
+@l	x8ucmweln1	\n\nまいど\nありがとよ!!\n
+@r	rfn6l6zm49	まいどありがとよ!!
+@e	1vdhuso4rq0	       食料品店\n\n
+@l	bnimozu1tg	       食料品店\n\n
+@r	b4gfkgwont	食料品店
+@e	cqybj5n8gm	食料:\n1つ 1gp。\nいくつ\n買うかね?-
+@l	1yv17qdil9c	食料:\n1つ 1gp。\nいくつ\n買うかね?-
+@r	jmcdxg9vix	食料:1つ 1gp。いくつ買うかね?-
+@e	1owliub9zmi	\n\nなに? 払えない?\n出ていけ クズめ!!!\n
+@l	23ovx4c0qn5	\n\nなに? 払えない?\n出ていけ クズめ!!!\n
+@r	6arpulao95	なに? 払えない?出ていけ クズめ!!!
+@e	g0e6phmz3g	\n僧院の 癒しの\n秘跡:\n
+@l	h2e016sbc4	\n僧院の 癒しの\n秘跡:\n
+@r	3jar37zac7	僧院の 癒しの秘跡:
+@e	pb8yo9lkaw	1\n\n解毒は\n100gp じゃ。\n払うかな? 
+@l	ob47dsmsd1	1\n\n解毒は\n100gp じゃ。\n払うかな? 
+@r	2chkoybnjru	1解毒は100gp じゃ。払うかな?
+@e	cxnqodg0u4	2\n\n治療は\n200gp じゃ。\n払うかな? 
+@l	kk65frly5q	2\n\n治療は\n200gp じゃ。\n払うかな? 
+@r	1vh9vgb1wf8	2治療は200gp じゃ。払うかな?
+@e	8kpne8vjbl	3\n\n蘇生は\n500gp じゃ。\n払うかな? 
+@l	kncve3q4uv	3\n\n蘇生は\n500gp じゃ。\n払うかな? 
+@r	1oqk0luaoo9	3蘇生は500gp じゃ。払うかな?
+@e	q2sbf66agv	だれを 蘇生?-
+@l	z2959jto43	だれを 蘇生?-
+@r	4v7fdjnta2	だれを 蘇生?-
+@e	7ffp744d9h	4\n\n灰からの蘇生は\n900gp じゃ。\n払うかな? 
+@l	teasrqnoui	4\n\n灰からの蘇生は\n900gp じゃ。\n払うかな? 
+@r	xcuvbc7zfh	4灰からの蘇生は900gp じゃ。払うかな?
+@e	82s5zfxtfn	\n武器屋へ\nようこそ!\n\n品物を 見るか?-
+@l	1ehfzbhg51a	\n武器屋へ\nようこそ!\n\n品物を 見るか?-
+@r	7ffwzwejsn	武器屋へようこそ!品物を 見るか?-
+@e	tsuygo29rt	\n買うか 売るか?-
+@l	7022luq60x	\n買うか 売るか?-
+@r	28w2hhm177l	買うか 売るか?-
+@e	22doyuhc4t	\n\nどれにする?-
+@l	1d1ppig8m2l	\n\nどれにする?-
+@r	16e2y0ipse0	どれにする?-
+@e	1xscg2fvlv0	悪いが\n金が 足りないよ!\n
+@l	1le490useb5	悪いが\n金が 足りないよ!\n
+@r	t3hn3oyvbh	悪いが金が 足りないよ!
+@e	1ubs76bsq5y	\n\nさあ どうぞ。\n役に 立つと\nいいね!\n
+@l	2cwuz9vudil	\n\nさあ どうぞ。\n役に 立つと\nいいね!\n
+@r	7bc7oez9b	さあ どうぞ。役に 立つといいね!
+@e	1kjjaehis2f	\n\nどれを 売る?-
+@l	zw1eq5m22s	\n\nどれを 売る?-
+@r	24xzt0ntufn	どれを 売る?-
+@e	1lchwmyisnr	\n\nそれは\n持ってないよ!\n
+@l	awl7n2uakc	\n\nそれは\n持ってないよ!\n
+@r	ey8kuas5v4	それは持ってないよ!
+@e	74ikspp53e	\n\nありがとう!\n
+@l	1kyswkmgiub	\n\nありがとう!\n
+@r	212f7wq439k	ありがとう!
+@e	yy2u8mok0f	\nまあいいさ、\nまたの機会に。\n
+@l	2fbxcibadp1	\nまあいいさ、\nまたの機会に。\n
+@r	hzjc92drj5	まあいいさ、またの機会に。
+@e	d7t3bzo94v	\n防具屋へ\nようこそ!\n\n品物を 見るか?-
+@l	1t7r3obxwmi	\n防具屋へ\nようこそ!\n\n品物を 見るか?-
+@r	1u0rjui6ow4	防具屋へようこそ!品物を 見るか?-
+@e	2bemqxz3bj3	\nほかには? 
+@l	sxxrml7l83	\nほかには? 
+@r	mwerinjb22	ほかには?
+@e	12i2m6kljn3	\n    ラドリオン:\n生命の預言者!\n
+@l	1bk9cob7i0p	\n    ラドリオン:\n生命の預言者!\n
+@r	1i2vhzzs4s7	ラドリオン:生命の預言者!
+@e	mixyl2nc83	馬屋:\n
+@l	26z2ujrql8x	馬屋:\n
+@r	6q08am446m	馬屋:
+@e	in0m03t7b0	頭の 値段は、\n
+@l	in0m03t7b0	頭の 値段は、\n
+@r	1shi8n02s3l	頭の 値段は、
+@e	14df51s74gp	gp。\n買うかね? 
+@l	107mxkkiiyy	gp。\n買うかね? 
+@r	21z8xy36ijo	gp。買うかね?
+@e	1ww4umjplb3	ふさわしい\nお布施が なくば\n助けられぬ!\n
+@l	h79o245ivi	ふさわしい\nお布施が なくば\n助けられぬ!\n
+@r	u30e6gcnzu	ふさわしいお布施が なくば助けられぬ!
+@e	217m4n2xj21	気の毒だが\n金が 足りぬ。\n
+@l	vhh951x2iq	気の毒だが\n金が 足りぬ。\n
+@r	1c7d6kcueqb	気の毒だが金が 足りぬ。
+@e	z9d5ugrv5z	\n達者でな、\n子らよ。\n
+@l	1ivv421tnlz	\n達者でな、\n子らよ。\n
+@r	1cdozj5ieqv	達者でな、子らよ。
+@e	20ymsiqj99e	\nようこそ、ほこらへ: 
+@l	ktc3hfozqr	\nようこそ、ほこらへ: 
+@r	1np8o1c8h03	ようこそ、ほこらへ:
+@e	1iezx98irjr	その他!\nだれが-
+@l	rlxy4go0qm	その他!\nだれが-
+@r	1b1n7ecvnsj	その他!だれが-
+@e	6ort23imcm	おめでとう! そなたは エクソダス: ウルティマIIIを\n 
+@l	134plc3gt7m	おめでとう! そなたは エクソダス: ウルティマIIIを\n 
+@r	1vrithg1f7f	おめでとう! そなたは エクソダス: ウルティマIIIを
+@e	15wgu29i4g3	 手で 成しとげた!\n偉業を 伝えよ!
+@l	1irjjm2pxuz	 手で 成しとげた!\n偉業を 伝えよ!
+@r	x1ol9cm680	手で 成しとげた!偉業を 伝えよ!
+@e	1h8w1jsz7z0	\n「EVOCARE」と 叫べ\n\n
+@l	159tx5kyt6c	\n「EVOCARE」と 叫べ\n\n
+@r	x66lk2ungy	「EVOCARE」と 叫べ
+@e	2y3g1rtpqq	旅に出る
+@l	b7m9bc12uk	旅に出る
+@r	2y3g1rtpqq	旅に出る
+@e	81wem04jqz	名簿
+@l	12zbi8a11ab	名簿
+@e	l77v62c724	仲間を 組む
+@l	8s2hcvwsp3	仲間を 組む
+@r	l77v62c724	仲間を 組む
+@e	1gn4mfneu9z	(仲間に いる)
+@l	1jzvo1ziglc	(仲間に いる)
+@r	1gn4mfneu9z	(仲間に いる)
+@e	20k2a6p594g	仲間を 解散する
+@l	1cvyo3mdfea	仲間を 解散する
+@r	20k2a6p594g	仲間を 解散する
+@e	40lyxipgf8	作る
+@l	2fcsv4d603	作る
+@e	rsw68bzjsp	(1〜20のみ!)
+@l	j00zxxe4o1	(1〜20のみ!)
+@r	rsw68bzjsp	(1〜20のみ!)
+@e	14qf2bnr17f	(空いていない!)
+@l	1qk50gkxdcu	(空いていない!)
+@r	14qf2bnr17f	(空いていない!)
+@e	1v6e2br7idg	消す!
+@l	2go9glq9w08	消す!
+@e	2eu2nb35ij1	地獄の 底より…
+@l	1ie1cz77wcx	地獄の 底より…
+@r	2eu2nb35ij1	地獄の 底より…
+@e	1ki9mjwqks0	…やつは 復讐に やってくる!
+@l	1lgdnv9zhus	…やつは 復讐に やってくる!
+@r	1ki9mjwqks0	…やつは 復讐に やってくる!
+@e	6rkijp5e5k	タイトルに もどる
+@l	ux5a0to755	タイトルに もどる
+@r	6rkijp5e5k	タイトルに もどる
+@e	1rcu9j6yh7f	仲間の 編成
+@l	1h4ud3hek5x	仲間の 編成
+@r	1rcu9j6yh7f	仲間の 編成
+@e	27was8rp3aa	えらぶ:
+@l	1fje8as4bbh	えらぶ:
+@r	po9iu5h9nk	えらぶ:
+@e	9hfv6om6au	仲間の 編成
+@l	1ao7rzv1e9v	仲間の 編成
+@r	9hfv6om6au	仲間の 編成
+@e	l78t0y9kvh	名簿を 見る
+@l	2f10kt7po8d	名簿を 見る
+@r	l78t0y9kvh	名簿を 見る
+@e	1qj46283lf0	人物を 作る
+@l	1nva89hf5mk	人物を 作る
+@r	1qj46283lf0	人物を 作る
+@e	7incjgextw	人物を 消す
+@l	19lz48rpah2	人物を 消す
+@r	7incjgextw	人物を 消す
+@e	1rejpejaxy6	最初へ
+@l	1mf8ib5jkzz	最初へ
+@r	1rejpejaxy6	最初へ
+@e	yg0l1udz4u	   無風
+@l	1xhqdh8mvzk	   無風
+@r	1jsw9g9axrc	無風
+@e	125hx8h5kiv	   北風
+@l	1x09kq6ctjr	   北風
+@r	125hx8h5kiv	北風
+@e	2998gpi1qs8	   東風
+@l	12o6f04sqzg	   東風
+@r	fz9u23mun	東風
+@e	nal08ilxhw	   南風
+@l	1y718emrzrf	   南風
+@r	nal08ilxhw	南風
+@e	1usty1nx950	   西風
+@l	ru8jz6m2zv	   西風
+@r	kw8eyjybe7	西風
+@e	1hol1njc1nf	階:0
+@l	w6tvh38qip	階:0
+@e	12z7jqlckn6	向き-
+@l	299h1bumjex	向き-
+@e	1b8ynrl3yus	スペースキー
+@l	3fwbj471o5	スペースキー
+@r	1b8ynrl3yus	スペースキー
+@e	1bq393z3pyx	ウルティマIII
+@l	1jdcxqa1bmp	ウルティマIII
+@r	1bq393z3pyx	ウルティマIII
+@e	18mksw60qi3	体力
+@l	226ii6z5zh2	体力
+@r	18mksw60qi3	体力
+@e	ndeo5nnu3j	蛇のしるし
+@l	185ggrsczqs	蛇のしるし
+@r	ndeo5nnu3j	蛇のしるし
+@e	26a8sopb8nv	いやな化け物、\n  いやな闇、\n備えを 固めて\nから 船出しな\n
+@l	1d7rrz0g3y8	いやな化け物、\n  いやな闇、\n備えを 固めて\nから 船出しな\n
+@r	16g26y38rqw	いやな化け物、  いやな闇、備えを 固めてから 船出しな
+@e	h6wv4qahdr	かくて 賢者は\nそなたに 告げた\n「わが謎を\n解けたなら\n
+@l	1maydg90rr1	かくて 賢者は\nそなたに 告げた\n「わが謎を\n解けたなら\n
+@r	y8bzfm8747	かくて 賢者はそなたに 告げた「わが謎を解けたなら
+@e	28t1pzmq7zv	その使い道は\n数知れず、\n手がかりは\n至る所に ある。\n
+@l	26yy9nk6d9l	その使い道は\n数知れず、\n手がかりは\n至る所に ある。\n
+@r	t449r519q8	その使い道は数知れず、手がかりは至る所に ある。
+@e	2cy0cgjn79m	カードの 組は\n4つ、\nその名は 太陽、\n月、死、\nそして愛。\n
+@l	zka9elzl9g	カードの 組は\n4つ、\nその名は 太陽、\n月、死、\nそして愛。\n
+@r	2dvbv014v56	カードの 組は4つ、その名は 太陽、月、死、そして愛。
+@e	ce2efr5aai	モントールへ\n行き、天の\n導きを\n求めよ。\n
+@l	255yz7j8spd	モントールへ\n行き、天の\n導きを\n求めよ。\n
+@r	13kk8hb17uw	モントールへ行き、天の導きを求めよ。
+@e	1c7foth73qj	謎めいた 探索の\n助けとして\nダンジョンへ\n向かうがよい。\n
+@l	lr6grusqiw	謎めいた 探索の\n助けとして\nダンジョンへ\n向かうがよい。\n
+@r	8a1b0kber5	謎めいた 探索の助けとしてダンジョンへ向かうがよい。
+@e	nwkdt7n3q2	レポンド
+@l	12wcbt2w30w	レポンド
+@e	vju9vwv0ec	ミッタル
+@l	iweuksr4of	ミッタル
+@e	1gck5yykb0e	ローラム
+@l	1h0o33vpg5d	ローラム
+@e	29uig3gheha	ドル・アクロン
+@l	1bpn057e537	ドル・アクロン
+@r	29uig3gheha	ドル・アクロン
+@e	26kvd6dgy1b	スル・アクロン
+@l	1zs4y1dju3z	スル・アクロン
+@r	26kvd6dgy1b	スル・アクロン
+@e	13db6fbfmqg	フルガー
+@l	8sbyv87vb0	フルガー
+@e	1ek33uhqx29	ダグ・アクロン
+@l	ozhz1v8rxj	ダグ・アクロン
+@r	1ek33uhqx29	ダグ・アクロン
+@e	227k25ywrqw	メンタル
+@l	21dwe3mxc63	メンタル
+@e	13dnk7hxsjz	ダグ・ローラム
+@l	2fmdm6oenjo	ダグ・ローラム
+@r	13dnk7hxsjz	ダグ・ローラム
+@e	1dd1khpqx9e	ファル・ディヴィ
+@l	wuoumgb8l3	ファル・ディヴィ
+@r	1dd1khpqx9e	ファル・ディヴィ
+@e	2cxzvp0jv9m	ノクサム
+@l	2ek0n71zbem	ノクサム
+@e	1igum69e7gq	デコープ
+@l	5j9kl4spcr	デコープ
+@e	1m44b9aeh0g	アルテア
+@l	rr5pst5tx5	アルテア
+@e	1e63ynawizj	ダグ・メンタル
+@l	1qa208s41t	ダグ・メンタル
+@r	1e63ynawizj	ダグ・メンタル
+@e	1qlfc36uehq	ネコープ
+@l	1g9yib8bigf	ネコープ
+@e	1jqslu9k7bm	ポントリ
+@l	26owsup8e5q	ポントリ
+@e	75edn4vstb	アッパル・ウネム
+@l	266t5eeridi	アッパル・ウネム
+@r	75edn4vstb	アッパル・ウネム
+@e	1umcppszc9k	サンクトゥ
+@l	dz9o1e6xi	サンクトゥ
+@e	1hwigwih12l	ルミナエ
+@l	20t4uyzkj1m	ルミナエ
+@e	2b53oop73i9	レク・ス
+@l	hv2532i40i	レク・ス
+@r	2b53oop73i9	レク・ス
+@e	26ogz6awiei	レク・ドゥ
+@l	1klyr5oqac6	レク・ドゥ
+@r	26ogz6awiei	レク・ドゥ
+@e	188vgcfwh1d	リブ・レク
+@l	23tkf10xqri	リブ・レク
+@r	188vgcfwh1d	リブ・レク
+@e	1r9fmv607s2	アルコート
+@l	1mll8tqvn61	アルコート
+@e	252cttk0al0	セクイトゥ
+@l	1age9jru9oy	セクイトゥ
+@e	2advp8uo8ya	ソミナエ
+@l	xwc3dmo0zu	ソミナエ
+@e	pnhih7o8se	サンクトゥ・マニ
+@l	1eugy9dpio7	サンクトゥ・マニ
+@r	pnhih7o8se	サンクトゥ・マニ
+@e	1oynq3rwf5g	ヴィエダ
+@l	sjuojol0bl	ヴィエダ
+@e	16p2l90jg0y	エクスクーン
+@l	hzryl2kyxu	エクスクーン
+@e	8a1e1qrxb1	サーマンダム
+@l	45u6cjlzv2	サーマンダム
+@e	8907lhg3kg	ズクスクイブ
+@l	18n79k55ebw	ズクスクイブ
+@e	2fqh6zm235g	アンジュ・セルマニ
+@l	11ruma209e	アンジュ・セルマニ
+@r	2fqh6zm235g	アンジュ・セルマニ
+@e	2d3n4m7iw6y	\n西へ8、南へ35\nそして 夜明けを\n待て!\n\n
+@l	tg8mp88okw	\n西へ8、南へ35\nそして 夜明けを\n待て!\n\n
+@r	1itfz38ltev	西へ8、南へ35そして 夜明けを待て!
+@e	21gy82yqxc9	\nクッキーの声:\n料理は いかが?\n\n
+@l	20gyne0r5s8	\nクッキーの声:\n料理は いかが?\n\n
+@r	ngfwmqsfw0	クッキーの声:料理は いかが?
+@e	48jymq9k8m	\nイオロの歌:\nホー エヨ ヘ ハム!\n\n
+@l	bp14jzmrcc	\nイオロの歌:\nホー エヨ ヘ ハム!\n\n
+@r	1ogfl9upizx	イオロの歌:ホー エヨ ヘ ハム!
+@e	1ofoxnfollu	\nグウィノの歌:\nムー エー オイ オー!\n\n
+@l	1w19ljuxvhh	\nグウィノの歌:\nムー エー オイ オー!\n\n
+@r	yslvej7mjp	グウィノの歌:ムー エー オイ オー!
+@e	kp8d4lf7kj	\n幻の戦士:\n飯が まずい!\n\n
+@l	1b5kdap8d7j	\n幻の戦士:\n飯が まずい!\n\n
+@r	s1nk2qfrfp	幻の戦士:飯が まずい!
+@e	1fcvjggu79s	\n賢き僧侶:\nカード4枚、\n穴も4つ\n\n
+@l	1ew4uh3wcme	\n賢き僧侶:\nカード4枚、\n穴も4つ\n\n
+@r	14qy6h7wlw5	賢き僧侶:カード4枚、穴も4つ
+@e	j8a1o9ucbn	\n入るがよい…\n勇気が あれば!\n\n
+@l	rhth0aresj	\n入るがよい…\n勇気が あれば!\n\n
+@r	grwvv2p28e	入るがよい…勇気が あれば!
+@e	12aueoldr6w	\nチャックルズ:\nみんな ようこそ!\n\n
+@l	1dx2rufi7if	\nチャックルズ:\nみんな ようこそ!\n\n
+@r	xiwui37nkw	チャックルズ:みんな ようこそ!
+@e	e7bij3ckhk	\nだれでも 入れる、\nだが だれも\n出られぬ\n\n
+@l	1l3uhpe0qbs	\nだれでも 入れる、\nだが だれも\n出られぬ\n\n
+@r	1j8jq0v08gm	だれでも 入れる、だが だれも出られぬ
+@e	1bggm79yhvi	\n道は よく\n選ぶがよい!\n\n
+@l	cyarytk086	\n道は よく\n選ぶがよい!\n\n
+@r	24y2wudvc2n	道は よく選ぶがよい!
+@e	15okmw1b2s8	\nどうか\n助けて!!!\n\n
+@l	2bh05cod6qe	\nどうか\n助けて!!!\n\n
+@r	29s7jbwxnna	どうか助けて!!!
+@e	14zewuvxko6	\nここには\n死がある!\n\n
+@l	2bs8vfou4ru	\nここには\n死がある!\n\n
+@r	25pfr03xkzw	ここには死がある!
+@e	o9ntv6mnja	\nすぐに 去れ!\n\n
+@l	6p9m3lzz3m	\nすぐに 去れ!\n\n
+@r	1tehk9hwz92	すぐに 去れ!
+@e	ib170h8jp6	\nすてきでしょう?\n\n
+@l	70pld8haw	\nすてきでしょう?\n\n
+@r	1d48rzmh90z	すてきでしょう?
+@e	2btog1i3fot	\n失われた\nアンブロシアを\n探し求めよ!\n\n
+@l	1bjoetp0kr7	\n失われた\nアンブロシアを\n探し求めよ!\n\n
+@r	1cluud8ky0k	失われたアンブロシアを探し求めよ!
+@e	qifm02g4j0	\n秘宝の武具で\nなければ\n勝てぬ!\n\n
+@l	kbuiuetkpg	\n秘宝の武具で\nなければ\n勝てぬ!\n\n
+@r	n6afvo6p6k	秘宝の武具でなければ勝てぬ!
+@e	punwpcah0r	\nエクソダスは\n銀の大蛇の\n向こうに いる!\n\n
+@l	201t0wvo5ot	\nエクソダスは\n銀の大蛇の\n向こうに いる!\n\n
+@r	23zebusdwoo	エクソダスは銀の大蛇の向こうに いる!
+@e	1rflymklrtl	\n「ドーン」は\n月が そろうたび\n現れる!\n\n
+@l	gcg196mbgw	\n「ドーン」は\n月が そろうたび\n現れる!\n\n
+@r	10x8ol7ad41	「ドーン」は月が そろうたび現れる!
+@e	1aid1cmp88w	\nデュプレの笑い:\n飲め 飲め!\n\n
+@l	1ncjmjo523j	\nデュプレの笑い:\n飲め 飲め!\n\n
+@r	pi6pjgzwd1	デュプレの笑い:飲め 飲め!
+@e	29yjz6ccy3n	\n裏へ まわれ!\n\n
+@l	f247y90cgy	\n裏へ まわれ!\n\n
+@r	14sdlnzl8sb	裏へ まわれ!
+@e	1p0qhhmmgnk	\nホー! ホー!\n\n
+@l	1v4jlqm38tu	\nホー! ホー!\n\n
+@r	y6qm6e7j5r	ホー! ホー!
+@e	1278l74ev3b	\n光栄です!\n\n
+@l	1d5yqdbqsl2	\n光栄です!\n\n
+@r	en25fslkr6	光栄です!
+@e	wr8jvtp3k1	\n真実の ほこらを\n探すがよい\n\n
+@l	yxyhsv8k89	\n真実の ほこらを\n探すがよい\n\n
+@r	1w1545qqq7p	真実の ほこらを探すがよい
+@e	1scz2axda4s	\n衛兵に\n<BRIBE>せよ!\n去ってくれる!\n\n
+@l	771kniksqo	\n衛兵に\n<BRIBE>せよ!\n去ってくれる!\n\n
+@r	17730y54nco	衛兵に<BRIBE>せよ!去ってくれる!
+@e	278ujkibjq	\n武器を取れ!\nいざ 戦いへ!\n\n
+@l	1lsjqlblb61	\n武器を取れ!\nいざ 戦いへ!\n\n
+@r	1w2ocw2fvil	武器を取れ!いざ 戦いへ!
+@e	n54cy0f6bq	\nあなたに\n平和を。\n\n
+@l	6jpnwcf3nu	\nあなたに\n平和を。\n\n
+@r	2pz3n6naqt	あなたに平和を。
+@e	9ktxyc9d6t	\nわしは うず潮の\n向こうへ\n行ったことが ある!\n\n
+@l	csdcuz3j7n	\nわしは うず潮の\n向こうへ\n行ったことが ある!\n\n
+@r	1u284rtcl65	わしは うず潮の向こうへ行ったことが ある!
+@e	25am0fpuk04	\nドーンは\n暗い森に\n現れる。\n\n
+@l	4gi5zt0owx	\nドーンは\n暗い森に\n現れる。\n\n
+@r	1znd6o2kfss	ドーンは暗い森に現れる。
+@e	g6h43ldvn9	\n去れ!\n  さもなくば 死ね!!!\n\n
+@l	1b8oi06n7hx	\n去れ!\n  さもなくば 死ね!!!\n\n
+@r	eufcexaouz	去れ!  さもなくば 死ね!!!
+@e	gmpzpiw1e3	\n探せ、\nさらば 見つからん!\n\n
+@l	2a1nqc1f15d	\n探せ、\nさらば 見つからん!\n\n
+@r	4b4z53t0ww	探せ、さらば 見つからん!
+@e	27rw3su7p14	\n光の輪へ\nようこそ!\n\n
+@l	ltiz6kppoa	\n光の輪へ\nようこそ!\n\n
+@r	1hvc8wi7105	光の輪へようこそ!
+@e	1us4a739ny9	\nボニム アニマ\nテウリ、アーメン!\n\n
+@l	9xkwv0hzrc	\nボニム アニマ\nテウリ、アーメン!\n\n
+@r	1slgga1ydwm	ボニム アニマテウリ、アーメン!
+@e	uy992oa9zs	\n己の敵を\nよく 知れ!!\n\n
+@l	nj312jaqe8	\n己の敵を\nよく 知れ!!\n\n
+@r	2zv2vrz9cx	己の敵をよく 知れ!!
+@e	16zh1d6phem	\nカードを 台に\n<INSERT>せよ!\n\n
+@l	7a54x13ym8	\nカードを 台に\n<INSERT>せよ!\n\n
+@r	16xsqngieje	カードを 台に<INSERT>せよ!
+@e	24k42m2hp7w	\nカード4枚、\n台も4つ\n\n
+@l	24k42m2hp7w	\nカード4枚、\n台も4つ\n\n
+@r	ir3bumtugb	カード4枚、台も4つ
+@e	18m18xnlukl	\n陽気なジョー:\nホー ホー ホー!\n\n
+@l	1x7ztfbq2xm	\n陽気なジョー:\nホー ホー ホー!\n\n
+@r	kxnbjtt8pi	陽気なジョー:ホー ホー ホー!
+@e	8hequybzr8	\n赤ん坊ボブ:\nお金 ちょうだい!\n\n
+@l	1y6txsaozmn	\n赤ん坊ボブ:\nお金 ちょうだい!\n\n
+@r	1oolwhk2rx2	赤ん坊ボブ:お金 ちょうだい!
+@e	11djmqmn0n8	\n「カード」は\n役に立つ!\n\n
+@l	2dne4jsm6kj	\n「カード」は\n役に立つ!\n\n
+@r	xhmwe4mx67	「カード」は役に立つ!
+@e	5ecz7qqd1d	\n「しるし」は\n役に立つ!\n\n
+@l	g9tonklk41	\n「しるし」は\n役に立つ!\n\n
+@r	2g7d1x51usc	「しるし」は役に立つ!
+@e	26hf91fjzsw	\n「秘宝」は\n役に立つ!\n\n
+@l	xk2di5u8km	\n「秘宝」は\n役に立つ!\n\n
+@r	txxxj70loc	「秘宝」は役に立つ!
+@e	19m0g5vdp5o	\nいい品だろ?\n\n
+@l	13d63ikzpv	\nいい品だろ?\n\n
+@r	isxeicuhqf	いい品だろ?
+@e	wc6bvw37kn	\n炎の城で\n道化師を 探せ!\n\n
+@l	q12tv7tibj	\n炎の城で\n道化師を 探せ!\n\n
+@r	26tbdm7ptns	炎の城で道化師を 探せ!
+@e	nu5trkgdp0	\nセントリ:\nうまい酒だ!\n\n
+@l	weni7k721w	\nセントリ:\nうまい酒だ!\n\n
+@r	1dk9ojaed92	セントリ:うまい酒だ!
+@e	2g3l8clcift	\nシャミノ:\nうまい飯だ!\n\n
+@l	ma2flzj6xj	\nシャミノ:\nうまい飯だ!\n\n
+@r	2cd2y0z2gao	シャミノ:うまい飯だ!
+@e	mx33x9yen8	\nほこらで\n<SEARCH>せよ!\n\n
+@l	llarvdojen	\nほこらで\n<SEARCH>せよ!\n\n
+@r	1rctbjutw34	ほこらで<SEARCH>せよ!
+@e	hnubb9jg5h	\n<SEARCH>して\nカードを 探せ!\n\n
+@l	b9u2vyenpj	\n<SEARCH>して\nカードを 探せ!\n\n
+@r	wp8gbjrbqu	<SEARCH>してカードを 探せ!
+@e	1hmjhhigwj5	\nだれも 通さぬ!\n\n
+@l	12s36bxtkbu	\nだれも 通さぬ!\n\n
+@r	2cfltpo1mqx	だれも 通さぬ!
+@e	1viujz2gz97	\nヨー ホー ホー\nラム酒を\n1本!!!\n\n
+@l	1grix4po6px	\nヨー ホー ホー\nラム酒を\n1本!!!\n\n
+@r	1z3h6adb9rh	ヨー ホー ホーラム酒を1本!!!
+@e	4gn1sy75df	\n気をつけな、\nあんちゃん!\n\n
+@l	1ciulw6134e	\n気をつけな、\nあんちゃん!\n\n
+@r	182grc9hgu0	気をつけな、あんちゃん!
+@e	21qqf2bt82l	\n秘宝の武具を\n見たことは\nあるかい?\n\n
+@l	12ri461smpa	\n秘宝の武具を\n見たことは\nあるかい?\n\n
+@r	15lh89fihge	秘宝の武具を見たことはあるかい?
+@e	11ewzs930pk	\n秘宝の\n手がかりは\nドーンに ある!\n\n
+@l	212jaksw225	\n秘宝の\n手がかりは\nドーンに ある!\n\n
+@r	emfmva7yfv	秘宝の手がかりはドーンに ある!
+@e	va1zimcmk6	\n大いなる悪から\n身を 守れるのは\n秘宝だけ!\n\n
+@l	jaalzwd83y	\n大いなる悪から\n身を 守れるのは\n秘宝だけ!\n\n
+@r	1rm3falb6t6	大いなる悪から身を 守れるのは秘宝だけ!
+@e	3us6j3s91g	\n道化師に\nなりたいと\n思わない?\n\n
+@l	1gdils3gvts	\n道化師に\nなりたいと\n思わない?\n\n
+@r	2bm06lhgimk	道化師になりたいと思わない?
+@e	q351knzfza	\nドーンへ\nようこそ!\n\n
+@l	1aefqm7eqrf	\nドーンへ\nようこそ!\n\n
+@r	2427wr1oz41	ドーンへようこそ!
+@e	20agjiqg2pz	\n島で <DIG>せよ\n\n
+@l	og9qxwe2b4	\n島で <DIG>せよ\n\n
+@r	5ls4qtio2y	島で <DIG>せよ
+@e	25e58lhgids	\n<DIG>して 秘宝を\n\n
+@l	29zkey42izz	\n<DIG>して 秘宝を\n\n
+@r	9v8xqs8nlg	<DIG>して 秘宝を
+@e	wq7d8nxxhv	\n注意して <DIG>!\n\n
+@l	1hqobmp893v	\n注意して <DIG>!\n\n
+@r	gbss88kg9c	注意して <DIG>!
+@e	1fp6fxwaxxj	\nごきげんよう!\n\n
+@l	tlaqfnxqqy	\nごきげんよう!\n\n
+@r	1toc0u17n0z	ごきげんよう!
+@e	21txaw3uv0i	\nドーンは\nほんの つかのま\nしか ない!\n\n
+@l	tt7919n6oq	\nドーンは\nほんの つかのま\nしか ない!\n\n
+@r	1ai4yf8wnt7	ドーンはほんの つかのましか ない!
+@e	v4mzj4245	\nアンブロシアが\n待っている!\n\n
+@l	1wzusdvoqis	\nアンブロシアが\n待っている!\n\n
+@r	1dflf9ehz9i	アンブロシアが待っている!
+@e	21dtj758lj2	\n運命を\n探し求めよ!\n\n
+@l	1fdgl7uza7q	\n運命を\n探し求めよ!\n\n
+@r	20e4g6fnnge	運命を探し求めよ!
+@e	u4o9m53buk	\n「しるし」は\nダンジョンで\n手に入る!\n\n
+@l	j1gime11b0	\n「しるし」は\nダンジョンで\n手に入る!\n\n
+@r	18gsf7rts27	「しるし」はダンジョンで手に入る!
+@e	29ukpbi8138	\n焼けた 金属は\n「しるし」を\n残す!\n\n
+@l	13trlvcm4s1	\n焼けた 金属は\n「しるし」を\n残す!\n\n
+@r	1rjhonmx195	焼けた 金属は「しるし」を残す!
+@e	1dqtpdcs102	\n王は「しるし」を\nお好みだ!\n\n
+@l	1l9t5jdvp22	\n王は「しるし」を\nお好みだ!\n\n
+@r	1rcld073wej	王は「しるし」をお好みだ!
+@e	1lb0pzrwrxm	\n「しるし」は\n大蛇を 呼ぶ\n助けになる\n\n
+@l	1hscvojt63q	\n「しるし」は\n大蛇を 呼ぶ\n助けになる\n\n
+@r	aet1kjc6ed	「しるし」は大蛇を 呼ぶ助けになる
+@e	b3qeyj8mj0	\n「しるし」は4つ、\n使い道も4つ!\n\n
+@l	13wauyv5oru	\n「しるし」は4つ、\n使い道も4つ!\n\n
+@r	te2bva0s0r	「しるし」は4つ、使い道も4つ!
+@e	1b8xktxd85v	\n炎の\nダンジョンを\n探せ!\n\n
+@l	1lr86vkar3n	\n炎の\nダンジョンを\n探せ!\n\n
+@r	az55fi74nj	炎のダンジョンを探せ!
+@e	1pyrreyw9v	\nしるしを\n大切にな!\n\n
+@l	1wxq2coge8j	\nしるしを\n大切にな!\n\n
+@r	iggrdvn6u9	しるしを大切にな!
+@e	x16lvnauzc	\n呼び出すため\n<PRAY>せよ!\n\n
+@l	1y6ju8j1tam	\n呼び出すため\n<PRAY>せよ!\n\n
+@r	hwgm209mll	呼び出すため<PRAY>せよ!
+@e	juzeoqngbt	\n光の輪で\n<PRAY>せよ!\n\n
+@l	k0h26zx4nv	\n光の輪で\n<PRAY>せよ!\n\n
+@r	snsv5bb8yf	光の輪で<PRAY>せよ!
+@e	1r8s2ho7671	\n銀の大蛇を\n「呼び出せ」!\n\n
+@l	2d4jzwfed9l	\n銀の大蛇を\n「呼び出せ」!\n\n
+@r	dfinbxx0xt	銀の大蛇を「呼び出せ」!
+@e	jsezhlff8w	\n通るには\nしるしが いる!\n\n
+@l	13ifvczph8b	\n通るには\nしるしが いる!\n\n
+@r	23ymuf8qmx2	通るにはしるしが いる!
+@e	17cy99sd8eq	\nフォーンは\nいい所だよ!\n\n
+@l	1lnf6xm2m6t	\nフォーンは\nいい所だよ!\n\n
+@r	269z4ml6uit	フォーンはいい所だよ!
+@e	16afklmomjl	\nフォーンへ\nようこそ:\n海の都です!\n\n
+@l	1i6q17txvxd	\nフォーンへ\nようこそ:\n海の都です!\n\n
+@r	1yumvgjrdju	フォーンへようこそ:海の都です!
+@e	akp51e00u1	\n去れ、 愚か者!\n\n
+@l	1r3av67hh5q	\n去れ、 愚か者!\n\n
+@r	14kjprvfauf	去れ、 愚か者!
+@e	1h6hw0fqcnm	\n入りたければ\n<BRIBE>せよ\n\n
+@l	1conv5ztyx	\n入りたければ\n<BRIBE>せよ\n\n
+@r	8l2vj0a661	入りたければ<BRIBE>せよ
+@e	13ixlxm7f9x	\nエクソダスは\n四にして 一!\n\n
+@l	1fe25v683km	\nエクソダスは\n四にして 一!\n\n
+@r	i1mdzbfk6l	エクソダスは四にして 一!
+@e	6y7a90donj	愚か者ども、\n破滅へ ようこそ!!
+@l	2e5974qc7hm	愚か者ども、\n破滅へ ようこそ!!
+@r	q1u04iopb7	愚か者ども、破滅へ ようこそ!!
+@e	1zcqggvn92	隠された 角!
+@l	1po0fkqinxe	隠された 角!
+@r	1zcqggvn92	隠された 角!
+@e	1geae2nx6e4	わなと 宝
+@l	2cfhbzaus3h	わなと 宝
+@r	1geae2nx6e4	わなと 宝
+@e	25v0monopa8	風に 気をつけよ
+@l	1kvvq35xozu	風に 気をつけよ
+@r	25v0monopa8	風に 気をつけよ
+@e	64nvloo76r	危険!
+@l	1v8dvpviu8	危険!
+@e	2c21qekqya	地図を よく描け!!!
+@l	9uleqan7f1	地図を よく描け!!!
+@r	2c21qekqya	地図を よく描け!!!
+@e	1ncz5cpptcq	上へ 手をのばせ!
+@l	1gjpym9knf2	上へ 手をのばせ!
+@r	1ncz5cpptcq	上へ 手をのばせ!
+@e	a97q2d7b26	風の 秘密
+@l	c38x5z11rw	風の 秘密
+@r	a97q2d7b26	風の 秘密
+@e	nubb1eg2l5	地獄の 炎に\n気をつけよ!
+@l	1x8ajabj3xi	地獄の 炎に\n気をつけよ!
+@r	v0dqwiwlt5	地獄の 炎に気をつけよ!
+@e	26e49tblv0n	わなの 扉!
+@l	26w3l9gs9t2	わなの 扉!
+@r	26e49tblv0n	わなの 扉!
+@e	pjpi3zx2uh	曲がりくねった 迷路!
+@l	boco2mmehg	曲がりくねった 迷路!
+@r	pjpi3zx2uh	曲がりくねった 迷路!
+@e	qxpmafiaph	風の 通り道!
+@l	24ua6m4flhq	風の 通り道!
+@r	qxpmafiaph	風の 通り道!
+@e	25qavwkq4fq	グレムリンの町!
+@l	16trp87m1y4	グレムリンの町!
+@r	25qavwkq4fq	グレムリンの町!
+@e	1h7zjdzgqnu	悪魔の 巣!
+@l	1100bxfgcu0	悪魔の 巣!
+@r	1h7zjdzgqnu	悪魔の 巣!
+@e	1drf94cmiif	戻れ! 穴だ!
+@l	jfgkurzs2i	戻れ! 穴だ!
+@r	1drf94cmiif	戻れ! 穴だ!
+@e	pq89y3hqat	炎の間!
+@l	1de342k1trb	炎の間!
+@r	pq89y3hqat	炎の間!
+@e	24286t3zfuh	時が 待つ!
+@l	gsm6kfsuge	時が 待つ!
+@r	24286t3zfuh	時が 待つ!
+@e	17y0wlnsavf	グレムリンの金!
+@l	vhntqu60vg	グレムリンの金!
+@r	17y0wlnsavf	グレムリンの金!
+@e	3mi49dy7e1	黄金の 中心!
+@l	1iqk7xzieg9	黄金の 中心!
+@r	3mi49dy7e1	黄金の 中心!
+@e	xkv78tp9bs	天への 階段!
+@l	nl6fqbqfc9	天への 階段!
+@r	xkv78tp9bs	天への 階段!
+@e	274v1vbu01v	時は 残り少ない!
+@l	215u5afjv4i	時は 残り少ない!
+@r	274v1vbu01v	時は 残り少ない!
+@e	z4n68023y6	長い 行進!
+@l	1pxm2ld1fo6	長い 行進!
+@r	z4n68023y6	長い 行進!
+@e	2e5kz6krx67	わな!
+@l	1mvdpqwfji7	わな!
+@e	olq33g1juz	もう すぐだ!
+@l	2d6sinx61rn	もう すぐだ!
+@r	olq33g1juz	もう すぐだ!
+@e	qjvp79i3bs	手がかりは 先に!
+@l	255vxco922i	手がかりは 先に!
+@r	qjvp79i3bs	手がかりは 先に!
+@e	1tqutjj5uxs	カードを\nエクソダスに\n<INSERT>せよ!
+@l	eqm159mr8m	カードを\nエクソダスに\n<INSERT>せよ!
+@r	1u78ixi92z7	カードをエクソダスに<INSERT>せよ!
+@e	10k5a0re78r	ほこらで\n<SEARCH>せよ!
+@l	29dg3as0r9o	ほこらで\n<SEARCH>せよ!
+@r	1rctbjutw34	ほこらで<SEARCH>せよ!
+@e	1krx3krtcpz	下に 死が!
+@l	687fv7au5g	下に 死が!
+@r	1krx3krtcpz	下に 死が!
+@e	hcjsm9f646	飲むな!
+@l	1ftsfwk7o60	飲むな!
+@r	hcjsm9f646	飲むな!
+@e	1dfpp0i544d	グレムリン!
+@l	28cyva8wa90	グレムリン!
+@e	c9k4cpwoq	風と 金!
+@l	1csnxgsf3yw	風と 金!
+@r	c9k4cpwoq	風と 金!
+@e	b4iiycfzww	ペリニアンの深み
+@l	7pg2amcecq	ペリニアンの深み
+@r	b4iiycfzww	ペリニアンの深み
+@e	1hhlv8fb61q	戻れ!
+@l	1ozloltb95b	戻れ!
+@r	1hhlv8fb61q	戻れ!
+@e	dswswe3qvf	ここでは ない!
+@l	27mm156jtph	ここでは ない!
+@r	dswswe3qvf	ここでは ない!
+@e	2bcm6d5i8cp	それぞれ 4分の1!
+@l	f4qd8jazq0	それぞれ 4分の1!
+@r	2bcm6d5i8cp	それぞれ 4分の1!
+@e	qymwqrfp85	死が 待つ!
+@l	2dmxdtjbscd	死が 待つ!
+@r	qymwqrfp85	死が 待つ!
+@e	jjff697jzu	地図を よく描け!
+@l	o6zohy6hy	地図を よく描け!
+@r	jjff697jzu	地図を よく描け!
+@e	16kl1ocgkr1	モリニアの鉱山
+@l	206rgfyr27n	モリニアの鉱山
+@r	16kl1ocgkr1	モリニアの鉱山
+@e	1nrctigp1lp	恐怖の トンネル!
+@l	2gmdargihmv	恐怖の トンネル!
+@r	1nrctigp1lp	恐怖の トンネル!
+@e	u9u6trz0rc	霧の 鉱山!
+@l	1ct9nti4h96	霧の 鉱山!
+@r	u9u6trz0rc	霧の 鉱山!
+@e	d0lu2i98tn	狂気の 鉱山
+@l	ucswvj1h1k	狂気の 鉱山
+@r	d0lu2i98tn	狂気の 鉱山
+@e	jchd6iey30	G、T、そしてG!
+@l	z77egssn2	G、T、そしてG!
+@r	jchd6iey30	G、T、そしてG!
+@e	16czj8xq957	闇が 支配する!
+@l	i7bfwo2slq	闇が 支配する!
+@r	16czj8xq957	闇が 支配する!
+@e	ajq3c6wxe7	かれた 穴
+@l	vd0uj7n4cx	かれた 穴
+@r	ajq3c6wxe7	かれた 穴
+@e	1hesh545r6y	ダーディンの穴!
+@l	1dytpk4nve4	ダーディンの穴!
+@r	1hesh545r6y	ダーディンの穴!
+@e	1jzq7r5ng1f	隠し すべり台!
+@l	140uqm8wqj7	隠し すべり台!
+@r	1jzq7r5ng1f	隠し すべり台!
+@e	2blrzy8gewo	わなに 注意!
+@l	ihq9p55zpv	わなに 注意!
+@r	2blrzy8gewo	わなに 注意!
+@e	ddamibmx1h	永遠の 冒険!
+@l	14vx8ut2mq2	永遠の 冒険!
+@r	ddamibmx1h	永遠の 冒険!
+@e	1nbrvusxxb0	死の円!
+@l	2fd6td6w1of	死の円!
+@r	1nbrvusxxb0	死の円!
+@e	wxwrb5bhs9	巨大な 洞窟!
+@l	lwa8y7dugw	巨大な 洞窟!
+@r	wxwrb5bhs9	巨大な 洞窟!
+@e	24p74ky74rm	わなの先に 金!
+@l	c1pjgat2x2	わなの先に 金!
+@r	24p74ky74rm	わなの先に 金!

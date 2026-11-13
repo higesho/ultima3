@@ -25,6 +25,8 @@ import { DUNGEON_STYLES, paintDungeonSheet, type DungeonStyle } from './dungeonA
 import { MOON_STYLES, MOON_CELL, paintMoons } from './moonArt.ts';
 import { displayOf, type DisplayStyle } from './display.ts';
 import { drawJaGlyph, isJaLetter, JA_LARGE_SETS } from './jaFont.ts';
+import { cgaFont, cgaScenes, cgaTileSheet, CGA_LOGO, exodusLogo, STANDARD_LOGO } from './dosGraphics.ts';
+import type { GameFiles } from '../data/dosGame.ts';
 import { MapValue, Shape, CLASS_COUNT, CLASS_FALLBACK_TILE, FIRST_CLASS_TILE, classFallbackTile, isClassTile } from '../game/tiles.ts';
 
 export const TILE_COLUMNS = 12;
@@ -88,9 +90,9 @@ export const SCENE_NAMES = ['Fountain', 'Rod', 'Shrine', 'TimeLord', 'Exodus'];
 /** The pictures in public/images, by file name without extension. */
 export type ImageMap = Map<string, HTMLImageElement>;
 
-/** Load the pictures shared by every tile set: the title logo, and the cave roof over the attract's fight. */
+/** Load the pictures shared by every tile set: the cave roof over the attract's fight. */
 export async function loadImages(baseUrl = 'images/'): Promise<ImageMap> {
-  const files = ['Exodus.png', 'Stalagtites.png'];
+  const files = ['Stalagtites.png'];
   const images: ImageMap = new Map();
   await Promise.all(
     files.map(async (file) => {
@@ -113,6 +115,15 @@ export async function loadImages(baseUrl = 'images/'): Promise<ImageMap> {
  */
 const CLASS_FIGURE_SETS = new Set(['Standard']);
 
+/** The player's game (data/dosGame.ts), which the PC CGA set and the logos are drawn from (dosGraphics.ts). */
+let gameFiles: GameFiles | null = null;
+export function useGameFiles(files: GameFiles): void {
+  gameFiles = files;
+}
+
+/** A sheet or picture: a file's, or one drawn at run time from the player's game. */
+type Picture = HTMLImageElement | HTMLCanvasElement;
+
 /** The files in the graphics folder, from index.json; null when there is no index (then every candidate is tried). */
 async function loadIndex(baseUrl: string): Promise<Set<string> | null> {
   try {
@@ -124,7 +135,7 @@ async function loadIndex(baseUrl: string): Promise<Set<string> | null> {
   }
 }
 
-function applyMask(tiles: HTMLImageElement, mask: HTMLImageElement | null): HTMLCanvasElement {
+function applyMask(tiles: Picture, mask: HTMLImageElement | null): HTMLCanvasElement {
   const canvas = document.createElement('canvas');
   canvas.width = tiles.width;
   canvas.height = tiles.height;
@@ -182,9 +193,9 @@ export class GraphicsSet {
   private readonly opaqueTiles: HTMLCanvasElement;
 
   private constructor(
-    readonly tiles: HTMLImageElement,
+    readonly tiles: Picture,
     readonly maskedTiles: HTMLCanvasElement,
-    readonly font: HTMLImageElement,
+    readonly font: Picture,
     readonly ui: HTMLImageElement,
     /**
      * The first-person dungeon art: a 3000x512 sheet of wall pieces and
@@ -204,7 +215,7 @@ export class GraphicsSet {
      * from a set shows as a black window; a missing logo falls back to
      * the shared one in public/images. See docs/scene-images.md.
      */
-    readonly scenes: Map<string, HTMLImageElement> = new Map(),
+    readonly scenes: Map<string, Picture> = new Map(),
     /** Moons painted for the set at run time (moonArt.ts), or null to use the UI sheet's. */
     readonly moons: HTMLCanvasElement | null = null,
     /** Whether the sheet draws cells 68-78, one figure per class (see CLASS_FIGURE_SETS); if not, `tileRect` shows the shared figures. */
@@ -247,10 +258,12 @@ export class GraphicsSet {
       }
       return null;
     };
-    const tiles = await tryLoad('Tiles', ['png', 'gif']);
+    // The PC CGA set is the player's DOS game's own tiles and letters (dosGraphics.ts).
+    const fromGame = name === 'PC CGA' && gameFiles !== null;
+    const tiles = fromGame ? cgaTileSheet(gameFiles!) : await tryLoad('Tiles', ['png', 'gif']);
     if (!tiles) throw new Error('No tile sheet could be loaded');
-    const mask = await tryLoad('Mask', ['gif', 'png'], false); // only a set's own: Standard's would not fit another sheet
-    const font = await tryLoad('Font', ['gif', 'png']);
+    const mask = fromGame ? null : await tryLoad('Mask', ['gif', 'png'], false); // only a set's own: Standard's would not fit another sheet
+    const font = fromGame ? cgaFont(gameFiles!) : await tryLoad('Font', ['gif', 'png']);
     const ui = await tryLoad('UI', ['png', 'gif']);
     if (!font || !ui) throw new Error('Font or UI sheet missing');
     // Dungeon art: the set's own sheet if it has one, else painted from its style, else Standard's sheet.
@@ -259,11 +272,14 @@ export class GraphicsSet {
     const style = ownShapes ? null : (DUNGEON_STYLES[name] ?? null);
     const dungeonShapes =
       ownShapes ?? (style && dungeonMasks ? paintDungeonSheet(style, dungeonMasks) : await tryLoad('DungeonShapes', ['png', 'jpg']));
-    const scenes = new Map<string, HTMLImageElement>();
+    const scenes = new Map<string, Picture>(fromGame ? cgaScenes(gameFiles!) : []);
     for (const scene of SCENE_NAMES) {
+      if (scenes.has(scene)) continue;
       const own = await tryLoad(scene, ['png', 'jpg', 'gif'], false);
       if (own) scenes.set(scene, own);
     }
+    // The title's logo is the DOS game's, in the set's colours.
+    if (gameFiles && !scenes.has('Exodus')) scenes.set('Exodus', exodusLogo(gameFiles, name === 'PC CGA' ? CGA_LOGO : STANDARD_LOGO));
     const moonStyle = MOON_STYLES[name];
     const moons = moonStyle ? paintMoons(moonStyle) : null;
     const set = new GraphicsSet(

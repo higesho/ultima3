@@ -45,8 +45,8 @@ describe('talking', () => {
   it('decodes NPC dialogue from the talk table', () => {
     const world = newWorld();
     const talk = world.resources.talk.get(MapId.LordBritishCastle)!;
-    expect(speech(talk, 1)).toContain('WEST');
-    expect(speech(talk, 2)).toContain('COOKIE');
+    expect(speech(talk, 1)).toContain('West');
+    expect(speech(talk, 2)).toContain('Cookie');
   });
 
   it('talks to a townsperson and to a merchant across a counter', async () => {
@@ -70,7 +70,7 @@ describe('talking', () => {
     const gold = world.party.gold;
     const food = world.party.food;
     await transact(world, io);
-    expect(io.output).toContain('GROCER');
+    expect(io.output).toContain('Grocer');
     expect(world.party.gold).toBe(gold - 20);
     expect(world.party.food).toBe(food + 20);
   });
@@ -85,7 +85,7 @@ describe('shops', () => {
     // No list; buy a mace; decline to ready it; Escape leaves the shop (buying stays in buy mode, as in the original).
     io.keys = ['N', 'B', 'C', 'N', Key.Escape];
     await shop(world, io, 3, 1);
-    expect(io.output).toContain('WEAPONS SHOP');
+    expect(io.output).toContain('Weapons Shop');
     expect(io.output).toContain('Readied: Dagger');
     expect(io.output).toContain('Here you are');
     expect(io.output).toContain('Ready it? (Y/N)-N');
@@ -147,7 +147,7 @@ describe('shops', () => {
     expect(io.output).not.toContain('SCUM');
     io.inputs = ['3'];
     await shop(world, io, 0, 0);
-    expect(io.output).toContain('LEAVE MY SHOP');
+    expect(io.output).toContain('Leave my shop');
     expect(io.sounds).toContain('Error1');
     expect(world.party.gold).toBe(100);
   });
@@ -175,7 +175,7 @@ describe('doors, chests and stealing', () => {
     const food = world.party.food;
     const gold = world.party.gold;
     await transactToward(world, io, 1, 0);
-    expect(io.output).toContain('GROCER');
+    expect(io.output).toContain('Grocer');
     expect(world.party.food).toBe(food + 10);
     expect(world.party.gold).toBe(gold - 10);
   });
@@ -200,7 +200,7 @@ describe('doors, chests and stealing', () => {
     await getChest(world, io, 0, 'command');
     expect(world.getXYVal(world.x, world.y)).toBe(MapValue.Floor);
     expect(world.party.gold).toBeGreaterThan(gold);
-    expect(io.output).toContain('GOLD+');
+    expect(io.output).toContain('Gold+');
   });
 
   it('starts "Who?" on the likeliest member for a chest or a theft', async () => {
@@ -223,7 +223,7 @@ describe('doors, chests and stealing', () => {
     io.keys = ['1', Key.Right];
     await steal(world, io);
     expect(world.getXYVal(23, 20)).toBe(MapValue.Floor);
-    expect(io.output).toContain('GOLD+');
+    expect(io.output).toContain('Gold+');
   });
 
   it("steals at the game's own shop counters, as LairWare's Steal did", async () => {
@@ -236,7 +236,7 @@ describe('doors, chests and stealing', () => {
     io.keys = ['1', Key.Up];
     await steal(world, io);
     expect(world.getXYVal(36, 16)).toBe(MapValue.Floor);
-    expect(io.output).toContain('GOLD+');
+    expect(io.output).toContain('Gold+');
   });
 });
 
@@ -313,7 +313,7 @@ describe('spells', () => {
     cleric.hitPoints = 10;
     io.keys = ['3', 'C', '3']; // Sanctu (cleric C), heal member 3
     await cast(world, io);
-    expect(io.output).toContain('SANCTU');
+    expect(io.output).toContain('Sanctu');
     expect(cleric.hitPoints).toBeGreaterThan(10);
     expect(cleric.mana).toBe(10);
   });
@@ -355,7 +355,7 @@ describe('other commands', () => {
       destroyed = m.type(0) === 0;
     }
     expect(destroyed).toBe(true);
-    expect(io.output).toContain('destroyed!');
+    expect(io.output).toContain('Destroyed!');
     expect(world.getXYVal(34, 32)).toBe(MapValue.Water);
   });
 });
@@ -506,7 +506,7 @@ describe('party keys', () => {
     io.keys = [];
     await unlockToward(world, io, 1, 0);
     expect(io.output).not.toContain('Whose key');
-    expect(io.output).toContain('None left');
+    expect(io.output).toContain('None Left');
     expect(world.getXYVal(21, 20)).toBe(MapValue.LetterI);
   });
 });
@@ -566,7 +566,7 @@ describe('Lord British', () => {
     p.bytes[30] = 1;
     io.keys = ['3']; // the prompt lists only the due member on a controller; a keyboard still types the number
     await transactToward(world, io, 1, 0);
-    expect(io.output).toContain('Transact-3');
+    expect(io.output).toContain('Transact? 3');
     expect(io.output.toUpperCase()).toContain('GREATER');
     expect(p.maxHitPoints).toBe(200);
     expect(p.hitPoints).toBe(200); // the raise comes with the hit points, not just the room

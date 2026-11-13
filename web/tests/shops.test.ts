@@ -124,7 +124,7 @@ describe('weighing an armament for a member, on a card over the party panel', ()
     const fireball = spellOption(world, 5, 'F', 0);
     expect(fireball.card!.title).toBe('Fireball');
     expect(rows(fireball.card!)).toEqual([
-      'FULGAR [dim]',
+      'Fulgar [dim]',
       '',
       'Cost         25',
       'Mana         10 [worse]',
@@ -226,8 +226,8 @@ describe('weighing an armament for a member, on a card over the party panel', ()
 
   // A menu shows the wares with their prices, so with one the shop asks no "list (Y/N)?": it goes to Buy or Sell.
   it.each([
-    ['weapons', 3, 'WEAPONS SHOP!'],
-    ['armour', 4, 'ARMOUR SHOP!'],
+    ['weapons', 3, 'Weapons Shop!'],
+    ['armour', 4, 'Armour Shop!'],
   ])('offers no price list in the %s shop when its prompts are menus', async (_name, type, welcome) => {
     const world = newWorld();
     member(world, 'F', 1, 1);
@@ -244,10 +244,10 @@ describe('weighing an armament for a member, on a card over the party panel', ()
     io.keys = ['B', Key.Escape]; // Buy, and leave
     await shop(world, io, type, 0);
     expect(io.output).toContain(welcome);
-    expect(io.output).not.toContain('list (Y/N)');
+    expect(io.output).not.toContain('List?');
     expect(io.output).not.toContain('AVAILABLE');
     expect(menus[0].map((o) => o.key)).toEqual(['B', 'S']); // the first question is Buy or Sell
-    expect(io.output).toContain('Buy or Sell?-B');
+    expect(io.output).toContain('Buy or sell?');
   });
 
   it('still offers the price list when prompts are keys, as the Apple II did', async () => {
@@ -257,7 +257,7 @@ describe('weighing an armament for a member, on a card over the party panel', ()
     const io = new FakeIO(world.resources);
     io.keys = ['N', 'B', Key.Escape];
     await shop(world, io, 3, 0);
-    expect(io.output).toContain('list (Y/N)?-N');
+    expect(io.output).toContain('List? N');
   });
 
   it("fits the guild's wares and prices whole in a menu window", async () => {

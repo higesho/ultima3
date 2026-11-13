@@ -13,13 +13,13 @@
  */
 export function speech(talk: Uint8Array, person: number): string {
   let p = 0;
-  while (person > 0 && p < 256) {
-    while (talk[p] !== 0 && p < 256) p++;
+  while (person > 0 && p < talk.length) {
+    while (talk[p] !== 0 && p < talk.length) p++;
     person--;
     p++;
   }
   let out = '';
-  while (p < 256 && talk[p] !== 0) {
+  while (p < talk.length && talk[p] !== 0) {
     out += talk[p] === 0xff ? '\n' : String.fromCharCode(talk[p] & 0x7f);
     p++;
   }

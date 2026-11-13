@@ -257,9 +257,12 @@ export class Attract {
     }
     s.logo(1);
     if (await s.wait(60 * TICK_MS)) return true;
-    s.text('by', BY_AT.x, BY_AT.y);
-    if (await s.wait(10 * TICK_MS)) return true;
-    const strokes = signatureStrokes(this.signature);
+    // Lord British's signature, when there is one to write (the DOS game has none: data/dosGame.ts).
+    const strokes = this.signature.length > 1 ? signatureStrokes(this.signature) : [];
+    if (strokes.length) {
+      s.text('by', BY_AT.x, BY_AT.y);
+      if (await s.wait(10 * TICK_MS)) return true;
+    }
     for (let i = 0; i < strokes.length; i++) {
       for (const [x, y] of strokes[i]) s.dot(SIGNATURE_X + x, SIGNATURE_Y + y);
       if (i % 2 && (await s.wait(TICK_MS))) return true; // the screen shown every other step, a tick apart

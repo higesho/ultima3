@@ -118,7 +118,7 @@ describe('the quick heal', () => {
     expect(world.member(2).mana).toBe(10);
     expect(world.member(0).hitPoints).toBeGreaterThanOrEqual(40); // Great heal gives 20..100
     expect(io.output).toContain('Great heal\non Tatiana');
-    expect(io.output).toContain('SANCTU MANI');
+    expect(io.output).toContain('Sanctu Mani');
     expect(world.lastSpell[2]).toBe(GREAT_HEAL);
   });
 
@@ -202,7 +202,7 @@ describe('the Safe chest shortcut', () => {
     const gold = world.party.gold;
     expect(await quickSafeChest(world, io)).toBe(true);
     expect(io.output).toContain('Safe chest\nby Norric');
-    expect(io.output).toContain('APPAR UNEM');
+    expect(io.output).toContain('Appar Unem');
     expect(world.member(2).mana).toBe(25);
     expect(world.getXYVal(world.x, world.y)).toBe(MapValue.Grass);
     expect(world.party.gold).toBeGreaterThan(gold);

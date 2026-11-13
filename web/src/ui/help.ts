@@ -13,20 +13,7 @@
  * then the 32-pixel colour sets, the Apple II colour set, the
  * monochrome sets, and the 16-pixel 8-bit and early PC sets.
  */
-export const TILE_SETS = [
-  'Standard',
-  'Lairware',
-  'PC VGA',
-  'Nintendo',
-  'PC Ultima V',
-  'PC MCGA',
-  'Apple II Color',
-  'Apple II Mono',
-  'Macintosh B&W',
-  'PC EGA',
-  'PC CGA',
-  'Commodore 64',
-];
+export const TILE_SETS = ['Standard', 'PC CGA'];
 
 export interface HelpPage {
   title: string;

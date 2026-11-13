@@ -1154,21 +1154,13 @@ export class Screen implements GameIO {
       () => [
         { key: 'S', label: `Sound FX: ${w.soundEnabled ? this.sounds.set : 'Off'}` },
         { key: 'F', label: `FX level: ${levelLabel(this.sounds.level)}` },
-        { key: 'M', label: `Music: ${onOff(this.musicPlayer.enabled)}` },
-        { key: 'U', label: `Music level: ${levelLabel(this.musicPlayer.level)}` },
       ],
       async (key, place) => {
         switch (key) {
           case 'S':
-            // Standard, Lairware, Off, round again.
-            if (!w.soundEnabled) {
-              w.soundEnabled = true;
-              this.sounds.set = 'Standard';
-            } else if (this.sounds.set === 'Standard') {
-              this.sounds.set = 'Lairware';
-            } else {
-              w.soundEnabled = false;
-            }
+            // Standard or Off (the music, the Mac's recordings of the original's songs, is not shipped).
+            w.soundEnabled = !w.soundEnabled;
+            this.sounds.set = 'Standard';
             break;
           case 'M':
             this.musicPlayer.enabled = !this.musicPlayer.enabled; // the player stops or resumes the current track itself

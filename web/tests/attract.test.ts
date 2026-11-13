@@ -1,8 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { resourcesFromBundle, type Bundle } from '../src/data/resources.ts';
 import {
   Attract,
   DemoPlayer,
@@ -16,13 +12,10 @@ import {
   type AttractStage,
 } from '../src/ui/attract.ts';
 import { mainMenu, TITLE_MENU_FIRST_ROW } from '../src/game/menu.ts';
-import { FakeIO, newWorld } from './helpers.ts';
+import { FakeIO, loadTestResources, newWorld } from './helpers.ts';
 import { Music, type MenuOption, type MenuPlacement } from '../src/game/io.ts';
 
-const HERE = dirname(fileURLToPath(import.meta.url));
-const { demo, signature } = resourcesFromBundle(
-  JSON.parse(readFileSync(join(HERE, '..', 'public', 'data', 'resources.json'), 'utf8')) as Bundle,
-);
+const { demo, signature } = loadTestResources();
 
 /** A stage that records what it is asked, and has a press come at the `pressAt`th wait. */
 function fakeStage(pressAt = Infinity): AttractStage & { log: string[]; waits: number } {
@@ -109,18 +102,8 @@ describe('the attract demo', () => {
 });
 
 describe('the signature', () => {
-  it('is pen strokes from the data, in the bounds of the picture it was made for', () => {
-    const steps = signatureStrokes(signature);
-    const dots = steps.flat();
-    expect(steps.length).toBeGreaterThan(100);
-    expect(steps[0][0]).toEqual([0, 0]);
-    // A pen's move leaves two dots, the step and the half step to it.
-    expect(steps.some((s) => s.length === 2)).toBe(true);
-    const [xs, ys] = [dots.map((d) => d[0]), dots.map((d) => d[1])];
-    expect(Math.min(...xs)).toBeGreaterThanOrEqual(-16);
-    expect(Math.max(...xs)).toBeLessThanOrEqual(260);
-    expect(Math.min(...ys)).toBeGreaterThanOrEqual(-16);
-    expect(Math.max(...ys)).toBeLessThanOrEqual(40);
+  it('is not in the DOS game, so the opening goes without it', () => {
+    expect(signature.length).toBe(1);
   });
 
   it('reads moves, a lift of the pen with signed bytes, and the end', () => {
@@ -190,7 +173,7 @@ describe("the dragon's breath", () => {
 });
 
 describe('the opening', () => {
-  it("dissolves the logo in, signs, credits, fights with the set's own figures, burns the party and goes on to the demo", async () => {
+  it("dissolves the logo in, credits, fights with the set's own figures, burns the party and goes on to the demo", async () => {
     const stage = fakeStage();
     stage.rest = () => stage.log.includes('map');
     await new Attract(stage, demo, signature, ['the credit', 'and another']).run();
@@ -198,10 +181,10 @@ describe('the opening', () => {
     expect(at('border')).toBeGreaterThan(-1);
     expect(at('logo part')).toBeGreaterThan(at('roof'));
     expect(at('logo whole')).toBeGreaterThan(at('logo part'));
-    expect(at('text by')).toBeGreaterThan(at('logo whole'));
-    expect(at('dot')).toBeGreaterThan(at('text by'));
-    expect(at('caption the credit')).toBeGreaterThan(at('dot'));
-    expect(at('caption and another')).toBeGreaterThan(at('dot'));
+    expect(at('text by')).toBe(-1); // no signature in the DOS game
+    expect(at('dot')).toBe(-1);
+    expect(at('caption the credit')).toBeGreaterThan(at('logo whole'));
+    expect(at('caption and another')).toBeGreaterThan(at('logo whole'));
     expect(stage.log.lastIndexOf('tile 29')).toBeGreaterThan(at('caption the credit'));
     expect(at('sound Immolate')).toBeGreaterThan(at('caption the credit'));
     expect(stage.log.filter((e) => e === 'lava')).toHaveLength(4);
@@ -211,7 +194,7 @@ describe('the opening', () => {
   });
 
   it('goes straight to the title on a press, the demo skipped, the sound stopped and the press let go', async () => {
-    for (const pressAt of [1, 5, 60, 150]) {
+    for (const pressAt of [1, 5, 40, 80]) {
       const stage = fakeStage(pressAt);
       await new Attract(stage, demo, signature, []).run();
       expect(stage.log).not.toContain('border divided');

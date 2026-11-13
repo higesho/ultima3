@@ -299,7 +299,7 @@ async function equipmentShop(world: World, io: GameIO, p: PlayerRecord, isWeapon
   const welcome = isWeapon ? Msg.WeaponsShop : Msg.ArmourShop;
   if (io.showsMenus) {
     // The Buy menu lists the wares with their prices, so a menu is not asked whether to list them first.
-    io.print(world.resources.strings.Messages[welcome - 1].replace(/\s*list \(Y\/N\)\?-$/, ''));
+    io.print(world.resources.strings.Messages[welcome - 1].replace(/\s*list( \(Y\/N\))?\?[- ]?$/i, ''));
   } else {
     io.printMessage(welcome);
     const list = await io.chooseOption(

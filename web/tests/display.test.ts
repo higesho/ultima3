@@ -6,14 +6,11 @@ import { TILE_SETS } from '../src/ui/help.ts';
 describe('display styles', () => {
   it('know one monochrome monitor and one light ground', () => {
     expect(hexRgb(DISPLAY_STYLES['Apple II Mono'].phosphor!)).toEqual([140, 248, 140]);
-    expect(TILE_SETS.filter((s) => displayOf(s).phosphor)).toEqual(['Apple II Mono']);
-    expect(TILE_SETS.filter((s) => displayOf(s).lightGround)).toEqual(['Macintosh B&W']);
+    expect(displayOf('Macintosh B&W').lightGround).toBe(true);
+    expect(TILE_SETS.filter((s) => displayOf(s).phosphor || displayOf(s).lightGround)).toEqual([]); // neither is shipped
     expect(displayOf('No such set')).toEqual({});
   });
 
-  it('name only sets that are shipped', () => {
-    for (const set of Object.keys(DISPLAY_STYLES)) expect(TILE_SETS, set).toContain(set);
-  });
 });
 
 describe('the combat marker colour', () => {
