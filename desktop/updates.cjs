@@ -6,8 +6,8 @@
 //   - in a copy run unpackaged or built locally (a development version), or with --no-update-check.
 // A failure to ask (offline, GitHub down) is only logged. ULTIMA3_RELEASES_API points the question elsewhere, to test.
 
-const LATEST_API = 'https://api.github.com/repos/synthwave-pixel/ultima3/releases/latest';
-const RELEASES_PAGE = 'https://github.com/synthwave-pixel/ultima3/releases/latest';
+const LATEST_API = 'https://api.github.com/repos/higesho/ultima3/releases/latest';
+const RELEASES_PAGE = 'https://github.com/higesho/ultima3/releases/latest';
 
 /** Whether this copy should look for a newer release (see above). */
 function shouldCheck({ packaged, env, argv, version, gamescope }) {

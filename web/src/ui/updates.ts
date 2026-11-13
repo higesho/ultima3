@@ -11,8 +11,8 @@
  * update ("Update: restart"), and the Flatpak its repository's.
  */
 
-export const RELEASES_PAGE = 'https://github.com/synthwave-pixel/ultima3/releases/latest';
-const LATEST_API = 'https://api.github.com/repos/synthwave-pixel/ultima3/releases/latest';
+export const RELEASES_PAGE = 'https://github.com/higesho/ultima3/releases/latest';
+const LATEST_API = 'https://api.github.com/repos/higesho/ultima3/releases/latest';
 
 /** A newer release to offer: its version and its page. */
 export interface ReleaseOffer {
