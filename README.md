@@ -4,6 +4,8 @@
 > the DOS game sold by GOG.com and Steam ("Ultima 3"), reading its files; the Mac resources, the other machines'
 > tile sets, the music and the box art are not in this branch. Download: [Releases](https://github.com/higesho/ultima3/releases).
 > 日本語版の紹介ページ: <https://higesho.github.io/ultima-ja/ultima3/>
+> The original data was removed from this branch's whole history: see [ORIGINAL_DATA_REMOVED.md](ORIGINAL_DATA_REMOVED.md)
+> （原作データを履歴から取り除いたことの説明）.
 
 *A modernized port of the original game. Both historic and modern play,
 for the browser, Windows, macOS, Linux, Android and the Steam Deck.*
