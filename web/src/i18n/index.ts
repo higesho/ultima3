@@ -126,11 +126,19 @@ function matchPattern(text: string, depth = 0): string | null {
     if (!hit) continue;
     const out = to.replace(/\$(\d)/g, (_, n: string) => {
       const part = hit[Number(n)] ?? '';
-      return lookup(part) ?? matchPattern(part, depth + 1) ?? part;
+      return lookup(part) ?? matchPattern(part, depth + 1) ?? byWords(part);
     });
     return m[1] + out + m[3];
   }
   return null;
+}
+
+/** A run of words set two or more spaces apart (a summary: "Ulric  Male  Human"), each translated on its own. */
+function byWords(part: string): string {
+  return part
+    .split(/(\s{2,})/)
+    .map((w) => (/\s{2,}/.test(w) ? w : (lookup(w) ?? w)))
+    .join('');
 }
 
 function noteMissing(text: string): void {

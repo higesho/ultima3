@@ -885,7 +885,7 @@ Classic (Hardcore)	クラシック(手ごわい)
 Story (Relaxed)	ストーリー(やさしい)
 Choose Thine Adventure!	冒険を 選べ!
 Clear notes	記録を 消す
-re:(\d+) \(empty\)	$1 (空き)
+re:(\s*\d+\.?) \(empty\)	$1 (空き)
 re:Max STR (\d+) DEX (\d+) INT (\d+) WIS (\d+)	最大 力$1 早$2 知$3 恵$4
 any weapon	武器は すべて
 re:to ([a-z0-9+ -]+)	$1まで
@@ -896,7 +896,7 @@ wizard magic,	魔術の 魔法、
 steals,	盗む、
 Which entry?	どの 番号?
 The roster is full.	名簿が いっぱい。
-re:Entry (\d+): (.+)	番号 $1: $2
+re:Entry (\d+):(.*)	番号 $1:$2
 Type a name	名前を 入れる
 re:Use "(.+)"	「$1」に する
 Another random name	ほかの 名前
@@ -1400,5 +1400,7 @@ re:(Human|Elf|Dwarf|Bobbit|Fuzzy)
 $2
 
 seen	見た
+Undiscovered	まだ 見つけていない
+re:((?:both magics|cleric magic|wizard magic), )?(steals, )?(any weapon|to [a-z0-9+ -]+), (any armour|to [a-z0-9+ -]+)	$1$2$3、$4
 # ================= 汎用の型（最後に試す） =================
 re:([A-P]) ([^()]+?)( \(.*\))?	$1 $2$3

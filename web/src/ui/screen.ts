@@ -1759,6 +1759,8 @@ export class Screen implements GameIO {
   }
 
   async allocatePoints(labels: string[], total: number, min: number, max: number, place: MenuPlacement): Promise<number[] | null> {
+    // In Japanese the labels are translated before they are padded into the rows.
+    labels = labels.map((l) => tr(l));
     // Start with an even spread, the remainder going to the first rows.
     const n = labels.length;
     const values = labels.map((_, i) => Math.floor(total / n) + (i < total % n ? 1 : 0));
