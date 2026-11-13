@@ -10,7 +10,7 @@
 // are turned off: see below. Only one copy runs; a second launch brings the
 // first window forward.
 const { app, BrowserWindow, protocol, net, shell, session, ipcMain, screen, dialog } = require('electron');
-const { join, normalize } = require('node:path');
+const { join, normalize, dirname } = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { writeFileSync, existsSync, readdirSync, readFileSync, statSync } = require('node:fs');
 const { execFileSync } = require('node:child_process');
@@ -213,6 +213,10 @@ function steamLibraries() {
 function gameCandidates() {
   const list = [];
   if (process.env.U3_GAME_DIR) list.push(process.env.U3_GAME_DIR);
+  // The app put in the game's own folder (the release is unpacked there, beside EXODUS.BIN), or in a folder inside it:
+  // the portable .exe's folder, or the installed or unpacked app's.
+  const own = process.env.PORTABLE_EXECUTABLE_DIR || (app.isPackaged ? dirname(process.execPath) : null);
+  if (own) list.push(own, dirname(own));
   try {
     const saved = JSON.parse(readFileSync(gameChoice(), 'utf8')).dir;
     if (typeof saved === 'string') list.push(saved);
@@ -250,6 +254,7 @@ const fromGamePage = (event) => String(event.senderFrame?.url ?? '').startsWith(
 ipcMain.handle('game-files', (event, names) => {
   if (!fromGamePage(event)) return null;
   const dir = gameCandidates().find(holdsGame);
+  console.log(`game folder: ${dir ?? 'not found'}`);
   return dir ? readGame(dir, names) : null;
 });
 ipcMain.handle('choose-game-folder', async (event, names) => {

@@ -120,6 +120,7 @@ const TEXT = {
     lead: 'This app plays your own copy of Ultima III: Exodus, the game sold by GOG.com and on Steam. It has none of the game in it.',
     ask: 'Choose the folder the game is installed in (the one holding EXODUS.BIN).',
     browser: 'The files are kept in this browser, so this is asked once.',
+    app: 'Or put this app in that folder and start it from there.',
     button: 'Choose the game folder',
     drop: 'or drop the folder here',
     reading: 'Reading the game...',
@@ -130,6 +131,7 @@ const TEXT = {
     lead: 'このアプリは、お持ちの Ultima III（GOG.com 版か Steam 版）のファイルを読み込んで遊びます。ゲームのデータは入っていません。',
     ask: 'ゲームを入れたフォルダ（EXODUS.BIN があるフォルダ）を選んでください。',
     browser: 'ファイルはこのブラウザの中に保存されるので、選ぶのは最初の1回だけです。',
+    app: 'または、このアプリをそのフォルダに置いて、そこから起動してください。',
     button: 'ゲームのフォルダを選ぶ',
     drop: 'または、フォルダをここにドロップ',
     reading: 'ゲームを読み込んでいます…',
@@ -152,7 +154,7 @@ function page(lang: Lang, inBrowser: boolean) {
   const lead = document.createElement('p');
   lead.textContent = t.lead;
   const ask = document.createElement('p');
-  ask.textContent = t.ask + (inBrowser ? ' ' + t.browser : '');
+  ask.textContent = `${t.ask} ${inBrowser ? t.browser : t.app}`;
   const button = document.createElement('button');
   button.type = 'button';
   button.textContent = t.button;
